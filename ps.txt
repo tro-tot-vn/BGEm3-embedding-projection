@@ -1,0 +1,9 @@
+price_string -> tiền
+price_million_per_m2 -> diện tích
+region_name -> thành phố
+area_name -> quận
+subject -> title
+body -> mô tả (description)
+params -> tiện nghi mà trọ có
+
+-> gom promt để căn cho chuẩn, đỡ tốn api key.
