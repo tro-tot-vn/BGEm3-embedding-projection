@@ -1,4 +1,4 @@
-{
+WEIGHT_CONFIG = {
     "location": 2.5,
     "price": 2.0,
     "area": 1.5,
