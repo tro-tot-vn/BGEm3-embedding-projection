@@ -7,8 +7,9 @@ from transformers import AutoModel, AutoTokenizer
 
 MODEL_NAME = "BAAI/bge-m3"
 D_IN = 1024
-D_OUT = 128
+D_OUT = 256  # Increased from 128 to 256 for better information preservation
 TAU = 0.07  # temperature cho InfoNCE
+
 
 def mean_pool(last_hidden_state, attention_mask):
     # last_hidden_state: [B, T, H], attention_mask: [B, T]
@@ -16,6 +17,7 @@ def mean_pool(last_hidden_state, attention_mask):
     summed = (last_hidden_state * mask).sum(dim=1)                  # [B,H]
     counts = mask.sum(dim=1).clamp(min=1e-6)                        # [B,1]
     return summed / counts
+
 
 class ProjectionHead(nn.Module):
     def __init__(self, d_in: int, d_out: int, use_layernorm: bool = False):
@@ -33,11 +35,13 @@ class ProjectionHead(nn.Module):
         x = F.normalize(x, p=2, dim=-1)
         return x
 
+
 class BGEM3WithHead(nn.Module):
     def __init__(self, d_out: int = D_OUT, freeze_encoder: bool = True, use_layernorm=False):
         super().__init__()
         self.encoder = AutoModel.from_pretrained(MODEL_NAME)
-        self.tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, use_fast=True)
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            MODEL_NAME, use_fast=True)
         if freeze_encoder:
             for p in self.encoder.parameters():
                 p.requires_grad = False
@@ -51,7 +55,8 @@ class BGEM3WithHead(nn.Module):
         if device is not None:
             enc = {k: v.to(device) for k, v in enc.items()}
         out = self.encoder(**enc)
-        pooled = mean_pool(out.last_hidden_state, enc["attention_mask"])  # [B, 1024]
+        pooled = mean_pool(out.last_hidden_state,
+                           enc["attention_mask"])  # [B, 1024]
         return pooled
 
     def forward(self, texts: List[str], max_length: int = 512, device=None) -> torch.Tensor:
@@ -63,5 +68,6 @@ class BGEM3WithHead(nn.Module):
             if device is not None:
                 enc = {k: v.to(device) for k, v in enc.items()}
             out = self.encoder(**enc)
-            pooled = mean_pool(out.last_hidden_state, enc["attention_mask"])  # [B,1024]
+            pooled = mean_pool(out.last_hidden_state,
+                               enc["attention_mask"])  # [B,1024]
         return self.head(pooled)  # [B,128] (L2-normalized)

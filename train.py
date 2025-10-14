@@ -14,7 +14,15 @@ class ContrastiveTrainer(nn.Module):
         # q, d: [B, D], đã L2-norm => cosine = q @ d.T
         logits = (q @ d.t()) / self.tau                 # [B,B]
         labels = torch.arange(q.size(0), device=q.device)
-        return F.cross_entropy(logits, labels)
+        
+        # Thay vì:
+        # loss = F.cross_entropy(logits, labels)
+        
+        # Thành:
+        loss_q2d = F.cross_entropy(logits, labels)       # q matches d
+        loss_d2q = F.cross_entropy(logits.t(), labels)   # d matches q
+        loss = (loss_q2d + loss_d2q) / 2
+        return loss
 
     def training_step(self, batch: Dict[str, List[str]]):
         # batch: {"query": [..], "pos": [..]}
