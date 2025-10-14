@@ -1,0 +1,11 @@
+[
+    {
+        "query": "phòng q10 wc riêng 25m2 5tr5",
+        "pos": "Cho thuê phòng Quận 10, 25m², WC khép kín, giá 5.5 triệu",
+        "hard_neg": [
+            "Cho thuê phòng Quận 10, 25m², WC chung, giá 5.5 triệu",
+            "Cho thuê phòng Quận 10, 25m², WC khép kín, giá 7 triệu",
+            "Cho thuê phòng Quận 11, 25m², WC khép kín, giá 5.5 triệu"
+        ]
+    }
+]
