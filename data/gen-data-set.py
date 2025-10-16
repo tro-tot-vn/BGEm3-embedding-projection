@@ -9,7 +9,7 @@ from tqdm import trange
 
 # ================== CẤU HÌNH ==================
 MODEL_NAME = "gemini-2.5-flash"
-API_KEY = "AIzaSyDJGS_GWs24AYnO5N7ytOZ7_dQNvZ9q2gw"
+API_KEY = "AIzaSyBoutqJZTOfuueOujaGrscfwhIcZNOg-rM"
 RANDOM_SEED = 42
 random.seed(RANDOM_SEED)
 
@@ -182,9 +182,9 @@ def gen_batch(model, count: int) -> List[Dict[str, Any]]:
 # ================== MAIN ==================
 def main():
     parser = argparse.ArgumentParser(description="Generate rental search triplets (query, pos, hard_neg[]) via Gemini")
-    parser.add_argument("--n", type=int, default=2500, help="Tổng số mẫu cần sinh")
-    parser.add_argument("--batch", type=int, default=10, help="Kích thước lô cho mỗi lần gọi API")
-    parser.add_argument("--out", type=str, default="out_triplets.json", help="Đường dẫn file xuất (json/jsonl)")
+    parser.add_argument("--n", type=int, default=400, help="Tổng số mẫu cần sinh")
+    parser.add_argument("--batch", type=int, default=100, help="Kích thước lô cho mỗi lần gọi API")
+    parser.add_argument("--out", type=str, default="out_triplets_1.json", help="Đường dẫn file xuất (json/jsonl)")
     parser.add_argument("--jsonl", action="store_true", help="Nếu đặt cờ này sẽ ghi JSONL thay vì JSON mảng")
     args = parser.parse_args()
 
