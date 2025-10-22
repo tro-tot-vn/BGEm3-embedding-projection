@@ -1,0 +1,17 @@
+{
+    "location": 2.5,
+    "price": 2.0,
+    "area": 1.5,
+    "amenity": 1.0,
+    "furniture": 0.8,
+    "floor": 0.5,
+    "other": 0.5,
+    
+    "_metadata": {
+        "method": "max_incremental",
+        "increment_ratio": 0.3,
+        "cap": 4.0,
+        "description": "Vietnamese rental market feature weights",
+        "version": "1.0"
+    }
+}

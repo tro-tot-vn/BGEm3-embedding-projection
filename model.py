@@ -5,9 +5,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoModel, AutoTokenizer
 
-MODEL_NAME = "BAAI/bge-m3"
+MODEL_NAME = "BAAI/bge-m3" # -> 1024 dim
 D_IN = 1024
-D_OUT = 256  # Increased from 128 to 256 for better information preservation
+D_OUT = 256  # -> 256
 TAU = 0.07  # temperature cho InfoNCE
 
 
