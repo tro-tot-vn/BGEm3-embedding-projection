@@ -13,8 +13,8 @@ from weight_calculator import WeightCalculator
 
 
 def populate_dataset_weights(
-    input_path="data/data-set.json",
-    output_path="data/data-set.json",
+    input_path="data/gen-data-set.json",
+    output_path="data/data-set-with-weight.json",
     backup=True
 ):
     """
@@ -103,12 +103,12 @@ def main():
     )
     parser.add_argument(
         "--input",
-        default="data/data-set.json",
+        default="data/gen-data-set.json",
         help="Input dataset path"
     )
     parser.add_argument(
         "--output",
-        default="data/data-set.json",
+        default="data/data-set-with-weight.json",
         help="Output dataset path"
     )
     parser.add_argument(
