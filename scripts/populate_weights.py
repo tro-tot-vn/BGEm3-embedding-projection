@@ -1,5 +1,5 @@
 """
-Populate weight field in data-set.json
+Populate weight field in gen-data-set.json
 Calculates weights for hard negatives based on their feature types
 """
 
@@ -14,7 +14,7 @@ from weight_calculator import WeightCalculator
 
 def populate_dataset_weights(
     input_path="data/gen-data-set.json",
-    output_path="data/data-set-with-weight.json",
+    output_path="data/gen-data-set.json",
     backup=True
 ):
     """
@@ -108,7 +108,7 @@ def main():
     )
     parser.add_argument(
         "--output",
-        default="data/data-set-with-weight.json",
+        default="data/gen-data-set.json",
         help="Output dataset path"
     )
     parser.add_argument(

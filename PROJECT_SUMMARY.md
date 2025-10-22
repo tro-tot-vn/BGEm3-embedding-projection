@@ -38,7 +38,7 @@ ProjectionHead (Linear + L2-norm, TRAINABLE)
 
 ## 📊 Dataset Structure
 
-### Format: `data/data-set.json`
+### Format: `data/gen-data-set.json`
 ```json
 [
     {
@@ -332,7 +332,7 @@ python scripts/populate_weights.py
 # Verify dataset structure
 python -c "
 import json
-with open('data/data-set.json') as f:
+with open('data/gen-data-set.json') as f:
     data = json.load(f)
 print(f'Loaded {len(data)} examples')
 print(f'First hard_neg weight: {data[0][\"hard_neg\"][0][\"weight\"]}')
@@ -355,7 +355,7 @@ from train import ContrastiveTrainer
 from pair_dataset import PairDataset, collate
 
 # Load data
-with open("data/data-set.json") as f:
+with open("data/gen-data-set.json") as f:
     data = json.load(f)
 
 # Create dataset WITH hard negatives
@@ -455,9 +455,8 @@ BGEm3-embedding-projection/
 ├── PROJECT_SUMMARY.md          # This file (technical context)
 │
 ├── data/
-│   ├── data-set.json          # Training data (query-pos-hardneg)
-│   ├── weight-config.json     # Feature importance weights
-│   └── estimated-ctr.py       # CTR analysis (research)
+│   ├── gen-data-set.json      # Training data (query-pos-hardneg)
+│   └── weight-config.json     # Feature importance weights
 │
 ├── scripts/
 │   ├── weight_calculator.py   # Core weight calculation logic

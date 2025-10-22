@@ -45,7 +45,7 @@ def test_dataset_loading():
     print("="*60)
     
     # Load dataset
-    data_path = Path(__file__).parent / "data" / "data-set.json"
+    data_path = Path(__file__).parent / "data" / "gen-data-set.json"
     
     if not data_path.exists():
         print(f"⚠️  Dataset not found: {data_path}")
