@@ -88,11 +88,18 @@ pairs = [
 loader = DataLoader(PairDataset(pairs), batch_size=128,
                     shuffle=True, collate_fn=collate, drop_last=True)
 
-model.train()
-for epoch in range(2):
-    for batch in loader:
-        optimizer.zero_grad()
-        loss = trainer.training_step(batch)
-        loss.backward()
-        optimizer.step()
-    print("epoch", epoch, "loss", float(loss))
+if __name__ == "__main__":
+    # Demo training code
+    model.train()
+    for epoch in range(2):
+        epoch_loss = 0.0
+        num_batches = 0
+        for batch in loader:
+            optimizer.zero_grad()
+            loss = trainer.training_step(batch)
+            loss.backward()
+            optimizer.step()
+            epoch_loss += loss.item()
+            num_batches += 1
+        avg_loss = epoch_loss / num_batches if num_batches > 0 else 0.0
+        print(f"epoch {epoch}, avg_loss {avg_loss:.4f}")

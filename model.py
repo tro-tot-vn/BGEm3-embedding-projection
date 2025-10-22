@@ -60,7 +60,17 @@ class BGEM3WithHead(nn.Module):
         return pooled
 
     def forward(self, texts: List[str], max_length: int = 512, device=None) -> torch.Tensor:
-        """Trả về embedding 128d đã L2-norm"""
+        """
+        Forward pass: encode texts to embeddings
+        
+        Args:
+            texts: List of input texts
+            max_length: Maximum sequence length (default: 512)
+            device: Target device (cuda/cpu)
+            
+        Returns:
+            L2-normalized embeddings [B, d_out] (default d_out=256)
+        """
         with torch.set_grad_enabled(any(p.requires_grad for p in self.encoder.parameters())):
             enc = self.tokenizer(
                 texts, padding=True, truncation=True, max_length=max_length, return_tensors="pt"
@@ -70,4 +80,4 @@ class BGEM3WithHead(nn.Module):
             out = self.encoder(**enc)
             pooled = mean_pool(out.last_hidden_state,
                                enc["attention_mask"])  # [B,1024]
-        return self.head(pooled)  # [B,128] (L2-normalized)
+        return self.head(pooled)  # [B, d_out] (L2-normalized)
