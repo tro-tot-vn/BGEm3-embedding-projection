@@ -6,25 +6,60 @@ Vietnamese Rental Market - Phòng Trọ Embedding
 Usage:
     python train_script.py [--config CONFIG_FILE]
     python train_script.py --help
+    
+Environment Support:
+    - Local development
+    - Google Colab: !python path/to/train_script.py
+    - Jupyter Notebook
 """
 
 import json
 import torch
 import os
+import sys
 import argparse
+from pathlib import Path
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 from datetime import datetime
+
+# ===== Auto-detect Project Root =====
+# This allows the script to work from any directory (Colab, local, etc.)
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR
+
+# Add project root to Python path to import modules
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from model import BGEM3WithHead
 from train import ContrastiveTrainer
 from pair_dataset import PairDataset, collate
 
 
+# ===== Helper Functions for Path Resolution =====
+def resolve_path(path_str):
+    """Resolve path relative to project root if not absolute"""
+    path = Path(path_str)
+    if path.is_absolute():
+        return path
+    return PROJECT_ROOT / path
+
+
+def is_colab():
+    """Check if running in Google Colab"""
+    try:
+        import google.colab
+        return True
+    except:
+        return False
+
+
 # ===== Default Configuration =====
+# Note: Paths will be auto-resolved relative to PROJECT_ROOT
 DEFAULT_CONFIG = {
     # Data
-    "data_path": "data/gen-data-set.json",
+    "data_path": "data/gen-data-set.json",  # Will be resolved to absolute path
     "train_split": 0.9,  # 90% train, 10% validation
     
     # Model
@@ -45,7 +80,7 @@ DEFAULT_CONFIG = {
     "warmup_steps": 0,  # Set to > 0 to enable warmup
     
     # Checkpointing
-    "output_dir": "checkpoints",
+    "output_dir": "checkpoints",  # Will be resolved to absolute path
     "save_every": 2,  # Save every N epochs
     "save_best": True,
     
@@ -88,9 +123,31 @@ def setup_device(device_config):
 
 def load_dataset(config):
     """Load and split dataset"""
-    print(f"\n📊 Loading dataset from: {config['data_path']}")
+    # Resolve data path relative to project root
+    data_path = resolve_path(config["data_path"])
     
-    with open(config["data_path"], 'r', encoding='utf-8') as f:
+    print(f"\n📊 Loading dataset")
+    print(f"   Project root: {PROJECT_ROOT}")
+    print(f"   Data path: {data_path}")
+    
+    # Check if file exists with helpful error message
+    if not data_path.exists():
+        print(f"\n❌ Dataset file not found: {data_path}")
+        print(f"\n💡 Troubleshooting:")
+        print(f"   1. Check if file exists in project:")
+        print(f"      ls {PROJECT_ROOT / 'data' / 'gen-data-set.json'}")
+        print(f"   2. Current working directory: {Path.cwd()}")
+        print(f"   3. Project root detected: {PROJECT_ROOT}")
+        print(f"   4. Available data files:")
+        data_dir = PROJECT_ROOT / 'data'
+        if data_dir.exists():
+            for f in data_dir.glob('*.json'):
+                print(f"      - {f.name}")
+        else:
+            print(f"      ⚠️  Data directory not found: {data_dir}")
+        raise FileNotFoundError(f"Dataset not found: {data_path}")
+    
+    with open(data_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     print(f"✅ Loaded {len(data)} examples")
@@ -205,9 +262,11 @@ def validate(model, trainer, val_loader, device):
 
 def save_checkpoint(model, optimizer, epoch, loss, config, filename):
     """Save training checkpoint"""
-    os.makedirs(config["output_dir"], exist_ok=True)
+    # Resolve output directory relative to project root
+    output_dir = resolve_path(config["output_dir"])
+    output_dir.mkdir(parents=True, exist_ok=True)
     
-    checkpoint_path = os.path.join(config["output_dir"], filename)
+    checkpoint_path = output_dir / filename
     
     torch.save({
         'epoch': epoch,
@@ -223,12 +282,17 @@ def save_checkpoint(model, optimizer, epoch, loss, config, filename):
 def train(config):
     """Main training function"""
     
-    # Print header
+    # Print header with environment info
     print("=" * 80)
     print("🚀 BGE-M3 PROJECTION HEAD TRAINING")
     print("   Vietnamese Rental Market (Phòng Trọ)")
     print("=" * 80)
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"\n📍 Environment:")
+    print(f"   Platform: {'Google Colab' if is_colab() else 'Local/Other'}")
+    print(f"   Working dir: {Path.cwd()}")
+    print(f"   Project root: {PROJECT_ROOT}")
+    print(f"   Python: {sys.version.split()[0]}")
     
     # Setup
     device = setup_device(config["device"])
@@ -240,11 +304,12 @@ def train(config):
     best_val_loss = float('inf')
     best_train_loss = float('inf')
     
-    # Create output directory
-    os.makedirs(config["output_dir"], exist_ok=True)
+    # Create output directory (resolved to absolute path)
+    output_dir = resolve_path(config["output_dir"])
+    output_dir.mkdir(parents=True, exist_ok=True)
     
     # Save config
-    config_path = os.path.join(config["output_dir"], "config.json")
+    config_path = output_dir / "config.json"
     with open(config_path, 'w') as f:
         json.dump(config, f, indent=2)
     print(f"\n💾 Config saved to: {config_path}")
@@ -343,14 +408,15 @@ def train(config):
         print("-" * 80)
     
     # Final save
-    final_path = os.path.join(config["output_dir"], "bgem3_projection_final.pt")
+    output_dir = resolve_path(config["output_dir"])
+    final_path = output_dir / "bgem3_projection_final.pt"
     torch.save(model.state_dict(), final_path)
     
     print("\n" + "=" * 80)
     print("✅ TRAINING COMPLETE!")
     print("=" * 80)
     print(f"Finished at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"\n📁 Output directory: {config['output_dir']}/")
+    print(f"\n📁 Output directory: {output_dir}")
     print(f"   - Final model:  bgem3_projection_final.pt")
     if config["save_best"]:
         print(f"   - Best model:   bgem3_projection_best.pt")
@@ -442,7 +508,7 @@ def main():
         train(config)
     except KeyboardInterrupt:
         print("\n\n⚠️  Training interrupted by user!")
-        print("   Checkpoint saved in:", config["output_dir"])
+        print("   Checkpoint saved in:", resolve_path(config["output_dir"]))
     except Exception as e:
         print(f"\n\n❌ Training failed with error:")
         print(f"   {type(e).__name__}: {e}")
