@@ -1,237 +1,239 @@
-# gen_triplets.py
-import json, re, time, random, argparse
+# gen_data_batched.py
+# Sinh dataset từ .md theo kiểu chia lô: gọi nhiều lượt (per-call) cho đủ target.
+# - API key: --api-key hoặc nhập tương tác (ẩn ký tự)
+# - Ghi đè số lượng "Generate N examples ..." trong .md theo per-call
+# - Gộp tất cả kết quả thành 1 JSON array
+
+import re, json, time, argparse, random, getpass
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import Any, List
 
-# pip install google-generativeai python-dotenv tqdm
 import google.generativeai as genai
-from tqdm import trange
+from google.generativeai.types import RequestOptions, GenerationConfig
 
-# ================== CẤU HÌNH ==================
-MODEL_NAME = "gemini-2.5-flash"
-API_KEY = "AIzaSyBoutqJZTOfuueOujaGrscfwhIcZNOg-rM"
-RANDOM_SEED = 42
-random.seed(RANDOM_SEED)
+# ===== Config =====
+MODEL_NAME_DEFAULT = "gemini-2.5-flash"
+TEMPERATURE = 0.2
+MAX_OUTPUT_TOKENS = 65536    # đệm lớn để hạn chế bị cắt
+REQUEST_TIMEOUT = 240.0
 
-ALLOWED_TYPES = {"amenity", "price", "location", "area"}  # có thể mở rộng: "deposit", "noise", ...
-DEFAULT_WEIGHT = 0
+MAX_RETRY = 1                # 1 retry tối đa (tổng 2 lần)
+BASE_BACKOFF = 1.5
+BACKOFF_CAP = 6.0
+COOLDOWN_BETWEEN_CALLS = 0.4 # nghỉ giữa các lượt
 
-DISTRICTS_HCMC = [
-    "Quận 1", "Quận 3", "Quận 4", "Quận 5", "Quận 7",
-    "Quận 10", "Quận 11", "Bình Thạnh", "Phú Nhuận",
-    "Gò Vấp", "Tân Bình", "Tân Phú", "Thủ Đức", "Bình Tân"
-]
+# ===== JSON helpers (robust parsing) =====
+def _strip_code_fences(s: str) -> str:
+    s = s.strip()
+    if s.startswith("```"):
+        s = re.sub(r"^```(?:json)?\s*", "", s)
+        s = re.sub(r"\s*```$", "", s)
+    return s
 
-AMENITIES = [
-    "WC khép kín", "WC chung", "máy lạnh", "ban công", "thang máy",
-    "bếp trong phòng", "bếp chung", "chỗ để xe", "giờ giấc tự do", "máy giặt chung"
-]
+def _sanitize_json_text(s: str) -> str:
+    s = s.replace("“", '"').replace("”", '"').replace("’", "'")
+    s = re.sub(r'^\s*//.*$', '', s, flags=re.MULTILINE)
+    s = re.sub(r'/\*.*?\*/', '', s, flags=re.DOTALL)
+    s = s.replace("\ufeff", "")
+    s = re.sub(r",\s*([}\]])", r"\1", s)
+    s = s.replace(",]", "]").replace(",}", "}")
+    return s
 
+def _extract_outer_json_block(s: str) -> str:
+    lb, rb = s.find("["), s.rfind("]")
+    if lb != -1 and rb != -1 and rb > lb:
+        return s[lb:rb+1]
+    lb, rb = s.find("{"), s.rfind("}")
+    if lb != -1 and rb != -1 and rb > lb:
+        return s[lb:rb+1]
+    return s
 
-# ================== TIỆN ÍCH ==================
-def extract_json_block(text: str) -> str:
-    """
-    Cố gắng lấy khối JSON thuần từ response (nếu model có in thêm text).
-    Ưu tiên mảng [...] dài nhất; nếu không có sẽ lấy object {...}.
-    """
-    candidates = re.findall(r'(\[.*\]|\{.*\})', text, flags=re.DOTALL)
-    if not candidates:
-        return text.strip()
-    # chọn khối dài nhất để giảm rủi ro bị cắt
-    return max(candidates, key=len).strip()
+def _collect_objects_from_array(s: str) -> List[str]:
+    out, cur, stk, in_obj = [], [], 0, False
+    for ch in s:
+        if ch == "{":
+            stk += 1
+            in_obj = True
+        if in_obj:
+            cur.append(ch)
+        if ch == "}":
+            stk -= 1
+            if stk == 0 and in_obj:
+                out.append("".join(cur))
+                cur = []
+                in_obj = False
+    return out
 
-
-def loads_safely(text: str) -> Any:
-    """Tải JSON với vài sửa lỗi nhỏ thường gặp (dấu phẩy dư)."""
-    raw = extract_json_block(text)
+def _safe_json_from_text(txt: str) -> Any:
+    s = _strip_code_fences(txt or "")
+    s = _sanitize_json_text(s)
+    block = _extract_outer_json_block(s)
+    block = _sanitize_json_text(block)
     try:
-        return json.loads(raw)
+        return json.loads(block)
     except Exception:
-        raw = re.sub(r",\s*([}\]])", r"\1", raw)  # bỏ trailing commas
-        return json.loads(raw)
+        pass
+    if block.strip().startswith("["):
+        items = []
+        for r in _collect_objects_from_array(block):
+            try:
+                items.append(json.loads(_sanitize_json_text(r)))
+            except Exception:
+                continue
+        if items:
+            return items
+    try:
+        return json.loads(_sanitize_json_text(_extract_outer_json_block(s)))
+    except Exception as e:
+        raise ValueError(f"Không parse được JSON sau khi sửa lỗi thường gặp: {e}")
 
-
-def normalize_type(t: str) -> str:
-    t = (t or "").strip().lower()
-    if t in ALLOWED_TYPES:
-        return t
-    # ánh xạ đơn giản
-    mapping = {
-        "amenities": "amenity",
-        "tiện ích": "amenity",
-        "khu vực": "location",
-        "địa điểm": "location",
-        "giá": "price",
-        "diện tích": "area",
+# ===== Model helpers =====
+def _resp_text(resp) -> str:
+    try:
+        if getattr(resp, "text", None):
+            return resp.text
+    except Exception:
+        pass
+    parts = []
+    for c in getattr(resp, "candidates", []) or []:
+        content = getattr(c, "content", None)
+        for p in getattr(content, "parts", []) or []:
+            t = getattr(p, "text", None)
+            if t:
+                parts.append(t)
+    if parts:
+        return "\n".join(parts)
+    diag = {
+        "finish_reasons": [getattr(c, "finish_reason", None)
+                           for c in (getattr(resp, "candidates", []) or [])],
+        "prompt_feedback": getattr(resp, "prompt_feedback", None),
+        "usage_metadata": getattr(resp, "usage_metadata", None),
     }
-    return mapping.get(t, "amenity")  # fallback "amenity"
+    raise RuntimeError(f"Model không trả text về. Chẩn đoán: {diag}")
 
+_RECOVERABLE = ("429", "rate limit", "timeout", "timed out", "deadline",
+                "server error", "unavailable", "overloaded", "502", "503", "500")
 
-def postprocess_item(item: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Đảm bảo đúng schema:
-    {
-      "query": str,
-      "pos": str,
-      "hard_neg": [{"text": str, "type": [..], "weight": 0}, ...]
-    }
-    """
-    item["query"] = str(item.get("query", "")).strip()
-    item["pos"] = str(item.get("pos", "")).strip()
+def _recoverable(e: Exception) -> bool:
+    return any(h in str(e).lower() for h in _RECOVERABLE)
 
-    hard_neg = item.get("hard_neg") or []
-    fixed = []
-    for hn in hard_neg:
-        text = str(hn.get("text", "")).strip()
-        tlist = hn.get("type", [])
-        if isinstance(tlist, str):
-            tlist = [tlist]
-        tlist = [normalize_type(x) for x in (tlist or [])]
-        # lọc rỗng + ràng buộc tập allowed
-        tlist = [x for x in tlist if x in ALLOWED_TYPES]
-        if not tlist:
-            # nếu model không gán type hợp lệ, đoán đại loại phổ biến
-            tlist = [random.choice(list(ALLOWED_TYPES))]
-        fixed.append({
-            "text": text,
-            "type": tlist,
-            "weight": int(hn.get("weight", DEFAULT_WEIGHT))
-        })
-    item["hard_neg"] = fixed
-    return item
-
-
-# ================== PROMPT ==================
-PROMPT = r"""
-Bạn là hệ thống tạo dữ liệu cho website TÌM PHÒNG TRỌ tiếng Việt.
-
-DỮ LIỆU GỐC (gọi là "pos"):
----
-{pos}
----
-
-MỤC TIÊU
-- Sinh dữ liệu HUẤN LUYỆN hợp lý, tự nhiên như người dùng Việt Nam.
-- Ưu tiên bám sát "pos". Cho phép SUY DIỄN NHẸ về cách viết số/địa danh/tiện ích tương đương (không mâu thuẫn rõ ràng):
-  • "5tr5" ~ "5,5tr" ~ "5.5tr"   • "q10" ~ "q.10" ~ "quận 10"   • "wc riêng" ~ "wc khép kín"
-
-NGÔN NGỮ & PHONG CÁCH QUERIES
-- Ngắn gọn, tự nhiên, giống người Việt tìm trọ.
-- Cho phép viết tắt/không dấu/slang/thiếu chủ ngữ/ghép số-chữ:
-  • ví dụ: "q10", "q.10", "quan 10", "tphcm", "sg", "wc rieng", "full nt", "co gac", "gan dhbk",
-           "co may lanh", "5tr5", "5,5tr", "5.5tr", "duoi 6tr", "25m2", "25 m"
-- Đa dạng hình thức: câu hỏi ngắn / list từ khóa / mô tả cực ngắn.
-
-HARD NEGATIVES
-- Mỗi record phải có EXACTLY {k_neg} phần tử "hard_neg".
-- Mỗi "hard_neg" là mô tả GẦN GIỐNG "pos" nhưng CỐ Ý SAI 1 HOẶC NHIỀU NHÓM THUỘC TÍNH:
-  "location", "price", "area", "amenity", "other".
-- "type" là MẢNG gồm ≥1 phần tử, chọn từ: ["location","price","area","amenity","other"].
-- "weight" luôn = 0.
-
-ĐỊNH DẠNG TRẢ VỀ (JSON THUẦN, KHÔNG markdown, KHÔNG chú thích):
-- TRẢ VỀ MỘT MẢNG JSON có EXACTLY {k_query} PHẦN TỬ.
-- Mỗi PHẦN TỬ (RECORD) có cấu trúc CHÍNH XÁC:
-[
-  {{
-    "query": "chuỗi truy vấn ngắn gọn tự nhiên (có thể viết tắt/không dấu)",
-    "pos": "{pos}",
-    "hard_neg": [
-      {{"text": "mô tả gần đúng nhưng cố ý sai", "type": ["location"],                "weight": 0}},
-      {{"text": "mô tả gần đúng nhưng cố ý sai", "type": ["price","amenity"],         "weight": 0}},
-      {{"text": "mô tả gần đúng nhưng cố ý sai", "type": ["area","other"],            "weight": 0}}
-    ]
-  }}
-]
-
-RÀNG BUỘC JSON
-- CHỈ TRẢ VỀ JSON HỢP LỆ. KHÔNG kèm văn bản khác.
-- MẢNG kết quả phải có đúng {k_query} record.
-- Trong mỗi record:
-  • "pos" PHẢI đúng y chuỗi: "{pos}"
-  • "hard_neg" PHẢI có đúng {k_neg} phần tử; mỗi phần tử phải có đủ ba trường:
-    "text" (string), "type" (array string, chỉ thuộc tập cho phép), "weight" (số 0).
-"""
-
-
-# ================== GỌI GEMINI ==================
-def make_model():
-    api_key = API_KEY
+def _make_model(model_name: str, api_key: str):
     if not api_key:
-        raise RuntimeError("Chưa có GEMINI_API_KEY trong .env")
+        raise RuntimeError("Thiếu API key.")
     genai.configure(api_key=api_key)
-    return genai.GenerativeModel(MODEL_NAME)
+    return genai.GenerativeModel(
+        model_name=model_name,
+        generation_config=GenerationConfig(
+            temperature=TEMPERATURE,
+            max_output_tokens=MAX_OUTPUT_TOKENS,
+            response_mime_type="application/json",
+        )
+    )
 
+def _call_model_once(model, prompt: str) -> Any:
+    for attempt in range(1, MAX_RETRY + 2):
+        try:
+            resp = model.generate_content(prompt, request_options=RequestOptions(timeout=REQUEST_TIMEOUT))
+            return _safe_json_from_text(_resp_text(resp))
+        except Exception as e:
+            if attempt > MAX_RETRY or not _recoverable(e):
+                raise
+            backoff = min(BACKOFF_CAP, BASE_BACKOFF * (2 ** (attempt - 1)))
+            time.sleep(backoff + random.uniform(0, 0.5))
 
-def gen_batch(model, count: int) -> List[Dict[str, Any]]:
-    prompt = PROMPT.replace("{COUNT}", str(count))
-    resp = model.generate_content(prompt)
-    data = loads_safely(resp.text)
+# ===== Prompt utils =====
+# Regex “bắt rộng” các câu yêu cầu số lượng để ghi đè N theo --per-call
+_QUANT_RE = re.compile(
+    r"(Generate|Please generate)\s+\d+\s+(?:high-quality\s+training\s+)?examples(?:\s+at\s+a\s+time)?",
+    flags=re.IGNORECASE
+)
 
-    # Đảm bảo là list
-    if isinstance(data, dict):
-        data = [data]
-    if not isinstance(data, list):
-        raise ValueError("Model không trả về mảng JSON như yêu cầu.")
+def _apply_per_call(prompt: str, n: int) -> str:
+    new_clause = f"Generate {n} examples at a time"
+    if _QUANT_RE.search(prompt):
+        return _QUANT_RE.sub(new_clause, prompt)
+    # nếu .md không có câu theo mẫu, gắn hướng dẫn rõ ở cuối
+    return prompt.rstrip() + f"\n\nReturn only a valid JSON array. {new_clause}."
 
-    # Hậu xử lý từng item
-    fixed = [postprocess_item(x) for x in data]
-    return fixed
+# ===== Find .md =====
+def _resolve_md_path(user_input: str) -> Path:
+    script_dir = Path(__file__).resolve().parent
+    candidates = [
+        Path(user_input).expanduser(),
+        script_dir / user_input,
+        script_dir.parent / user_input,
+    ]
+    for p in candidates:
+        if p.exists():
+            return p
+    tried = "\n - ".join(str(x) for x in candidates)
+    raise FileNotFoundError(f"Không tìm thấy file .md. Đã thử:\n - {tried}")
 
-
-# ================== MAIN ==================
+# ===== Main =====
 def main():
-    parser = argparse.ArgumentParser(description="Generate rental search triplets (query, pos, hard_neg[]) via Gemini")
-    parser.add_argument("--n", type=int, default=400, help="Tổng số mẫu cần sinh")
-    parser.add_argument("--batch", type=int, default=100, help="Kích thước lô cho mỗi lần gọi API")
-    parser.add_argument("--out", type=str, default="out_triplets_1.json", help="Đường dẫn file xuất (json/jsonl)")
-    parser.add_argument("--jsonl", action="store_true", help="Nếu đặt cờ này sẽ ghi JSONL thay vì JSON mảng")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser(description="Generate rental dataset in batches to avoid token limit.")
+    ap.add_argument("--md", required=True, help="Đường dẫn file .md chứa prompt")
+    ap.add_argument("--out", default="dataset.json", help="File JSON đầu ra (mảng)")
+    ap.add_argument("--target", type=int, default=200, help="Tổng số mẫu cần sinh (gộp nhiều lượt)")
+    ap.add_argument("--per-call", type=int, default=20, help="Số mẫu mỗi lượt gọi (10–30 khuyến nghị)")
+    ap.add_argument("--model", default=MODEL_NAME_DEFAULT, help="Model ID (mặc định gemini-2.5-flash)")
+    ap.add_argument("--api-key", default=None, help="API key Gemini (nếu không truyền, sẽ hỏi tương tác)")
+    args = ap.parse_args()
 
-    out_path = Path(args.out)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
+    # Đọc prompt gốc
+    md_path = _resolve_md_path(args.md)
+    base_prompt = md_path.read_text(encoding="utf-8")
+    print(f"[INFO] Using prompt file: {md_path}")
 
-    model = make_model()
+    api_key = args.api_key or getpass.getpass("Enter Gemini API key: ").strip()
+    model = _make_model(args.model, api_key)
 
-    results: List[Dict[str, Any]] = []
-    total = args.n
-    batch = max(1, args.batch)
+    results: List[Any] = []
+    rounds = (args.target + args.per_call - 1) // args.per_call
 
-    steps = (total + batch - 1) // batch
-    for _ in trange(steps, desc="Generating"):
-        need = min(batch, total - len(results))
+    for i in range(rounds):
+        need = min(args.per_call, args.target - len(results))
         if need <= 0:
             break
 
-        # gọi model, retry nhẹ nếu lỗi parse
-        for attempt in range(3):
+        prompt = _apply_per_call(base_prompt, need)
+        print(f"[INFO] Call {i+1}/{rounds} → request {need} examples")
+
+        data = _call_model_once(model, prompt)
+
+        # ép thành list
+        if isinstance(data, dict):
+            data = [data]
+        if not isinstance(data, list):
+            print("[WARN] Model không trả về mảng; bỏ lượt này.")
+            data = []
+
+        # lọc item rỗng/thiếu field chính
+        filtered = []
+        for x in data:
             try:
-                chunk = gen_batch(model, need)
-                # lọc item rỗng
-                chunk = [x for x in chunk if x.get("query") and x.get("pos") and x.get("hard_neg")]
-                results.extend(chunk)
-                break
-            except Exception as e:
-                if attempt == 2:
-                    raise
-                time.sleep(0.8)
+                q = str(x.get("query", "")).strip()
+                p = str(x.get("pos", "")).strip()
+                hn = x.get("hard_neg", [])
+                if q and p and isinstance(hn, list) and hn:
+                    filtered.append({"query": q, "pos": p, "hard_neg": hn})
+            except Exception:
+                continue
 
-        time.sleep(0.25)  # lịch sự với API
+        results.extend(filtered)
+        print(f"[INFO] Collected this call: {len(filtered)} | Total: {len(results)}/{args.target}")
+        time.sleep(COOLDOWN_BETWEEN_CALLS)
 
-    # Cắt đúng số lượng
-    results = results[:total]
+        if len(filtered) == 0:
+            print("[WARN] Lượt này không thu được mẫu nào (có thể do JSON hỏng hoặc bị cắt). Tiếp tục lượt kế.")
 
-    # Ghi file
-    if args.jsonl:
-        with out_path.open("w", encoding="utf-8") as f:
-            for item in results:
-                f.write(json.dumps(item, ensure_ascii=False) + "\n")
-    else:
-        with out_path.open("w", encoding="utf-8") as f:
-            json.dump(results, f, ensure_ascii=False, indent=2)
+    # cắt đúng target
+    results = results[:args.target]
 
-    print(f"Đã ghi {len(results)} mẫu vào: {out_path.resolve()}")
-
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[DONE] Saved {len(results)} items → {out_path.resolve()}")
 
 if __name__ == "__main__":
     main()
