@@ -175,20 +175,133 @@ For each hard negative, specify which features DIFFER from the positive:
    - "Phòng trọ quận Đống Đa, 20m2, 4tr5, có đầy đủ nội thất"
 
 4. **Conversational (20%):**
-   - "Cho thuê phòng quận 10 gần đại học Bách Khoa không?"
+   - "Cho thuê phòng quận 10 gần chợ không?"
    - "Có phòng nào Q3 khoảng 5tr không ạ?"
+   - "Tìm trọ Bình Thạnh gần trường học có không?"
 
-### Landmarks to Mention (Add Realism)
+### Landmarks Strategy (Add Realism Safely)
 
-**TPHCM:**
-- ĐH Bách Khoa, ĐH Kinh Tế, ĐH KHTN, ĐH Sư Phạm
-- Chợ Bến Thành, Vincom, Lotte Mart
-- Công viên Tao Đàn, Công viên Lê Văn Tám
+🎯 **GOAL:** Make data realistic, but NEVER sacrifice correctness!
 
-**Hà Nội:**
-- ĐH Bách Khoa HN, ĐH Kinh Tế Quốc Dân, ĐH Ngoại Thương
-- Vincom, Big C, Aeon Mall
-- Hồ Gươm, Công viên Thống Nhất
+⚠️ **CRITICAL RULE:** 
+**Better to have NO landmark than a WRONG landmark!**
+- Wrong landmark-district pair = Dataset corruption = Model learns wrong associations
+- No landmark = Safe = Model focuses on other features (price, area, amenities)
+
+---
+
+#### **Strategy 1: Specific Landmarks (Use ONLY if 100% certain)**
+
+Only use specific landmarks if you have CONFIRMED knowledge that the landmark exists in that specific district.
+
+**Decision process:**
+```
+Ask yourself: Do I KNOW for certain this landmark is in this district?
+├─ YES (100% verified) → Use it!
+│  Example: "Phòng trọ [District] gần [verified landmark]"
+│
+└─ NO / UNSURE → Use Strategy 2 (generic) or Strategy 3 (omit) instead!
+   DO NOT GUESS!
+```
+
+**How to verify:**
+- You have reliable knowledge that the landmark belongs to that district
+- You would stake the dataset quality on this information being correct
+- When in doubt → DON'T USE! Use generic terms instead.
+
+**When to use:** 30% of entries (only when 100% confident!)
+
+---
+
+#### **Strategy 2: Generic Landmarks (Always Safe - Recommended)**
+
+Use generic terms that apply to ANY district:
+
+**Generic Location Terms:**
+- "gần chợ" (near local market)
+- "gần siêu thị" (near supermarket)
+- "gần bệnh viện" (near hospital)
+- "gần trường học" (near school)
+- "gần công viên" (near park)
+- "gần trung tâm quận" (near district center)
+- "khu dân cư" (residential area)
+- "đường chính" / "đường lớn" (main road)
+- "hẻm yên tĩnh" (quiet alley)
+- "gần ngã tư" (near intersection)
+- "gần bến xe" (near bus station)
+
+**Example Usage:**
+```json
+"Phòng trọ 25m² Quận 3, giá 5tr gần chợ và trường học"
+"Phòng trọ 20m² Bình Thạnh, giá 4tr trên đường chính, hẻm yên tĩnh"
+```
+✅ Always correct! (every district has markets, schools, main roads, etc.)
+
+**When to use:** 50% of entries (most frequent - recommended default)
+
+---
+
+#### **Strategy 3: No Landmark (Safest)**
+
+Simply describe the room without any landmark:
+
+**Examples:**
+```json
+"Phòng trọ 25m² Quận 10, có máy lạnh, wc riêng, giá 5tr"
+"Phòng trọ 30m² Thanh Xuân, đầy đủ nội thất, giá 6tr"
+```
+
+✅ Still complete and useful data!
+✅ Zero risk of location mismatch!
+✅ Model focuses on price/area/amenities (often more important than landmarks anyway)
+
+**When to use:** 20% of entries
+
+---
+
+#### **Distribution Target:**
+
+Aim for this mix across your dataset:
+- 30% Strategy 1 (specific landmarks, only if 100% certain)
+- 50% Strategy 2 (generic - safest and most realistic)
+- 20% Strategy 3 (no landmark)
+
+---
+
+#### **⛔ What NOT to Do:**
+
+**DON'T guess or assume landmark locations:**
+```json
+❌ "Phòng trọ Quận 10 gần Chợ Bến Thành"
+   → Only if you KNOW Chợ Bến Thành is in Q10!
+
+❌ "Phòng trọ Quận 3 gần ĐH Bách Khoa"
+   → Only if you KNOW ĐHBK is in Q3!
+
+❌ "Phòng trọ Bình Thạnh gần Hồ Gươm"
+   → Only if you KNOW Hồ Gươm is in Bình Thạnh!
+```
+
+**If unsure → Use Strategy 2 (generic) or Strategy 3 (omit)!**
+
+---
+
+### 💡 Summary Decision Tree:
+
+```
+Do I know the landmark-district pair is correct?
+│
+├─ YES (100% certain)
+│  └─→ Use Strategy 1 (specific landmark)
+│
+├─ MAYBE / NOT SURE
+│  └─→ Use Strategy 2 (generic) or Strategy 3 (omit)
+│
+└─ NO
+   └─→ Use Strategy 2 (generic) or Strategy 3 (omit)
+```
+
+**Remember:** Validation can catch some errors, but prevention is better!
 
 ## 📝 Complete Example
 
@@ -196,25 +309,25 @@ Here's a perfect example following all rules:
 
 {
   "query": "Tìm phòng trọ Quận 10, 25m², giá 5tr, có máy lạnh, wc riêng",
-  "pos": "Phòng trọ 25m² Quận 10, có máy lạnh, wc riêng, ban công, giá 5tr gần ĐH Bách Khoa",
+  "pos": "Phòng trọ 25m² Quận 10, có máy lạnh, wc riêng, ban công, giá 5tr gần chợ",
   "hard_neg": [
     {
-      "text": "Phòng trọ 25m² Quận 3, có máy lạnh, wc riêng, ban công, giá 5tr gần Công viên Tao Đàn",
+      "text": "Phòng trọ 25m² Quận 3, có máy lạnh, wc riêng, ban công, giá 5tr gần siêu thị",
       "type": ["location"],
       "weight": 0
     },
     {
-      "text": "Phòng trọ 25m² Quận 10, có máy lạnh, wc riêng, ban công, giá 7tr gần ĐH Bách Khoa",
+      "text": "Phòng trọ 25m² Quận 10, có máy lạnh, wc riêng, ban công, giá 7tr",
       "type": ["price"],
       "weight": 0
     },
     {
-      "text": "Phòng trọ 18m² Quận 10, có máy lạnh, wc chung, không ban công, giá 5tr gần Chợ Bến Thành",
+      "text": "Phòng trọ 18m² Quận 10, có máy lạnh, wc chung, không ban công, giá 5tr gần trường học",
       "type": ["area", "amenity"],
       "weight": 0
     },
     {
-      "text": "Phòng trọ 25m² Quận 10, không máy lạnh, wc riêng, ban công, giá 5tr gần ĐH Bách Khoa",
+      "text": "Phòng trọ 25m² Quận 10, không máy lạnh, wc riêng, ban công, giá 5tr",
       "type": ["amenity"],
       "weight": 0
     }
@@ -222,6 +335,9 @@ Here's a perfect example following all rules:
 }
 
 Explanation:
+✅ Used generic landmarks ("gần chợ", "gần siêu thị", "gần trường học") - Always safe!
+✅ Some entries have no landmark - Also safe and valid!
+✅ All location matches are guaranteed correct
 ✅ Query asks for Q10 → Positive is in Q10 (location match!)
 ✅ Query asks for 25m² → Positive is 25m² (area match!)
 ✅ Query asks for 5tr → Positive is 5tr (price match!)
@@ -243,7 +359,7 @@ Before outputting each example, verify:
 - [ ] All prices in reasonable range (2tr-10tr)
 - [ ] All areas in reasonable range (15m²-40m²)
 - [ ] All text is in natural, correct Vietnamese
-- [ ] Used realistic landmarks and locations
+- [ ] All landmarks are either verified-correct, generic, or omitted (no guessing!)
 
 ## 🎯 Output Format
 
