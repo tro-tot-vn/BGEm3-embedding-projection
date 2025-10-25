@@ -200,7 +200,7 @@ from model import BGEM3WithHead
 
 # Load trained model
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = BGEM3WithHead(d_out=256, freeze_encoder=True)
+model = BGEM3WithHead(d_out=128, freeze_encoder=True)
 model.load_state_dict(torch.load("checkpoints/bgem3_projection_best.pt"))
 model.eval()
 model.to(device)
@@ -208,7 +208,7 @@ model.to(device)
 # Encode texts
 with torch.no_grad():
     queries = ["phòng trọ q10 giá rẻ", "căn hộ quận 1"]
-    embeddings = model(queries, device=device)  # [2, 256]
+    embeddings = model(queries, device=device)  # [2, 128]
     
     print(f"Embeddings shape: {embeddings.shape}")
     print(f"L2-normalized: {torch.norm(embeddings, dim=1)}")

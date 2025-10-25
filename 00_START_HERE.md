@@ -301,7 +301,7 @@ python train_script.py  # Just works!
 1. **Deploy Model:**
    ```python
    # inference.py
-   model = BGEM3WithHead(d_out=256, freeze_encoder=True)
+   model = BGEM3WithHead(d_out=128, freeze_encoder=True)
    model.load_state_dict(torch.load("checkpoints/bgem3_projection_best.pt"))
    model.eval()
    

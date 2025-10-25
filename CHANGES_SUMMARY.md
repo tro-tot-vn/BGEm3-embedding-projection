@@ -66,7 +66,7 @@ NEW (RIGHT): loss = -log(exp(pos) / (exp(pos) + Σ weight_i × exp(sim_i)))
 
 ### 3. **Fixed Documentation in `model.py`** 📝
 
-**Issue:** Comments said "128d" but actual output is "256d" (d_out parameter).
+**Issue:** Comments said "128d" but actual output is "128d" (d_out parameter).
 
 **Changes:**
 ```python
@@ -84,7 +84,7 @@ Args:
     device: Target device (cuda/cpu)
     
 Returns:
-    L2-normalized embeddings [B, d_out] (default d_out=256)
+    L2-normalized embeddings [B, d_out] (default d_out=128)
 """
 return self.head(pooled)  # [B, d_out] (L2-normalized)
 ```

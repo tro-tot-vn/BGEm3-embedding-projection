@@ -23,7 +23,7 @@
 ### What You'll Train
 
 - **Base Model:** BGE-M3 (BAAI/bge-m3, 560M params, **FROZEN**)
-- **Trainable Component:** Projection Head (1024 → 256 dims)
+- **Trainable Component:** Projection Head (1024 → 128 dims)
 - **Training Method:** Contrastive learning with weighted hard negatives
 - **Loss Function:** Symmetric InfoNCE with feature-based weighting
 
@@ -190,8 +190,8 @@ if item.get('hard_neg'):
 
 | Parameter | Default | Range | Description |
 |-----------|---------|-------|-------------|
-| **d_out** | 256 | 128-512 | Output embedding dimension |
-| **batch_size** | 128 | 64-256 | Batch size (adjust for GPU memory) |
+| **d_out** | 128 | 128-512 | Output embedding dimension |
+| **batch_size** | 128 | 64-128 | Batch size (adjust for GPU memory) |
 | **learning_rate** | 2e-4 | 1e-5 - 5e-4 | AdamW learning rate |
 | **weight_decay** | 0.01 | 0.001-0.1 | L2 regularization |
 | **temperature** | 0.07 | 0.05-0.1 | InfoNCE temperature (τ) |
@@ -205,20 +205,20 @@ if item.get('hard_neg'):
 batch_size = 64
 d_out = 128
 epochs = 5
-max_length = 256
+max_length = 128
 ```
 
 #### ⚡ **Standard Training (8GB GPU)**
 ```python
 batch_size = 128
-d_out = 256
+d_out = 128
 epochs = 10
 max_length = 512
 ```
 
 #### 🔥 **High Quality (16GB+ GPU)**
 ```python
-batch_size = 256
+batch_size = 128
 d_out = 512
 epochs = 15
 max_length = 512
@@ -251,7 +251,7 @@ from pair_dataset import PairDataset, collate
 CONFIG = {
     "data_path": "data/gen-data-set.json",
     "output_dir": "checkpoints",
-    "d_out": 256,
+    "d_out": 128,
     "batch_size": 128,
     "learning_rate": 2e-4,
     "weight_decay": 0.01,
@@ -408,7 +408,7 @@ python train_script.py
 📊 Loading dataset from data/gen-data-set.json
 ✅ Loaded 1000 training examples
 ✅ Created DataLoader: 7 batches per epoch
-🤖 Initializing model (d_out=256)
+🤖 Initializing model (d_out=128)
 ✅ Trainable parameters: 262,144 / 560,394,240
    (0.05% of total)
 🏋️  Starting training for 10 epochs
@@ -445,7 +445,7 @@ loader = DataLoader(dataset, batch_size=128, shuffle=True,
                    collate_fn=collate, drop_last=True)
 
 # Initialize model
-model = BGEM3WithHead(d_out=256, freeze_encoder=True).to(device)
+model = BGEM3WithHead(d_out=128, freeze_encoder=True).to(device)
 trainer = ContrastiveTrainer(model)
 
 # Optimizer
@@ -590,7 +590,7 @@ batch_size = 64  # or 32
 
 2. **Reduce max_length:**
 ```python
-max_length = 256  # or 128
+max_length = 128  # or 128
 ```
 
 3. **Use gradient accumulation:**
@@ -695,7 +695,7 @@ loader = DataLoader(dataset, batch_size=128, num_workers=4, ...)
 
 2. **Reduce max_length:**
 ```python
-max_length = 256  # Faster tokenization
+max_length = 128  # Faster tokenization
 ```
 
 3. **Profile bottlenecks:**
@@ -805,7 +805,7 @@ python scripts/populate_weights.py
 
 ```python
 # Load trained model
-model = BGEM3WithHead(d_out=256, freeze_encoder=True)
+model = BGEM3WithHead(d_out=128, freeze_encoder=True)
 model.load_state_dict(torch.load("checkpoints/bgem3_projection_best.pt"))
 model.eval()
 model.to(device)
@@ -813,12 +813,12 @@ model.to(device)
 # Encode queries
 with torch.no_grad():
     queries = ["phòng trọ q10 giá rẻ", "căn hộ quận 1"]
-    query_embs = model(queries, device=device)  # [2, 256]
+    query_embs = model(queries, device=device)  # [2, 128]
 
 # Encode documents
 with torch.no_grad():
     docs = ["Cho thuê phòng Quận 10...", "Căn hộ Quận 1..."]
-    doc_embs = model(docs, device=device)  # [2, 256]
+    doc_embs = model(docs, device=device)  # [2, 128]
 
 # Compute similarities
 similarities = query_embs @ doc_embs.T  # [2, 2]

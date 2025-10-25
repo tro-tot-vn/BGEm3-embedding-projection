@@ -69,7 +69,7 @@ class BGEM3WithHead(nn.Module):
             device: Target device (cuda/cpu)
             
         Returns:
-            L2-normalized embeddings [B, d_out] (default d_out=256)
+            L2-normalized embeddings [B, d_out] (default d_out=128)
         """
         with torch.set_grad_enabled(any(p.requires_grad for p in self.encoder.parameters())):
             enc = self.tokenizer(

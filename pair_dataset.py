@@ -73,7 +73,7 @@ def collate(batch):
 
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = BGEM3WithHead(d_out=256, freeze_encoder=True,
+model = BGEM3WithHead(d_out=128, freeze_encoder=True,
                       use_layernorm=False).to(device)
 trainer = ContrastiveTrainer(model)
 

@@ -6,7 +6,7 @@
   "train_split": 0.9,
   
   "// === Model Settings ===": "",
-  "d_out": 256,
+  "d_out": 128,
   "freeze_encoder": true,
   "use_layernorm": false,
   

@@ -63,7 +63,7 @@ DEFAULT_CONFIG = {
     "train_split": 0.9,  # 90% train, 10% validation
     
     # Model
-    "d_out": 256,
+    "d_out": 128,
     "freeze_encoder": True,
     "use_layernorm": False,
     

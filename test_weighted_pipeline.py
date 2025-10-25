@@ -150,7 +150,7 @@ def test_model_forward():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
     
-    model = BGEM3WithHead(d_out=256, freeze_encoder=True, use_layernorm=False)
+    model = BGEM3WithHead(d_out=128, freeze_encoder=True, use_layernorm=False)
     model = model.to(device)
     model.eval()
     
@@ -164,7 +164,7 @@ def test_model_forward():
     print(f"✓ Output shape: {embs.shape}")
     print(f"✓ L2-normalized: {torch.norm(embs, dim=1)}")
     
-    assert embs.shape == (2, 256), "Should output [2, 256]"
+    assert embs.shape == (2, 128), "Should output [2, 128]"
     assert torch.allclose(torch.norm(embs, dim=1), torch.ones(2, device=device), atol=1e-5), "Should be L2-normalized"
     
     print("\n✅ Model forward pass working!")
@@ -178,7 +178,7 @@ def test_training_step():
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
-    model = BGEM3WithHead(d_out=256, freeze_encoder=True, use_layernorm=False)
+    model = BGEM3WithHead(d_out=128, freeze_encoder=True, use_layernorm=False)
     model = model.to(device)
     trainer = ContrastiveTrainer(model)
     
@@ -244,7 +244,7 @@ def test_backward_pass():
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
     
-    model = BGEM3WithHead(d_out=256, freeze_encoder=True, use_layernorm=False)
+    model = BGEM3WithHead(d_out=128, freeze_encoder=True, use_layernorm=False)
     model = model.to(device)
     model.train()
     

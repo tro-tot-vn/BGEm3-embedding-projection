@@ -41,7 +41,7 @@ def load_model(checkpoint_path: str, device: str = "cuda"):
     if not checkpoint_path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {checkpoint_path}")
     
-    model = BGEM3WithHead(d_out=256, freeze_encoder=True)
+    model = BGEM3WithHead(d_out=128, freeze_encoder=True)
     
     # Handle both state_dict and full checkpoint
     checkpoint = torch.load(checkpoint_path, map_location=device)

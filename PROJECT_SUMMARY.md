@@ -18,12 +18,12 @@ BGE-M3 Encoder (BAAI/bge-m3, 560M params, FROZEN)
     ↓ 1024-dim embeddings
 ProjectionHead (Linear + L2-norm, TRAINABLE)
     ↓
-256-dim embeddings (final output)
+128-dim embeddings (final output)
 ```
 
 **Key Decisions:**
 - **Freeze encoder:** Only train projection head (faster, less overfitting)
-- **256 dimensions:** Balance between quality and efficiency
+- **128 dimensions:** Balance between quality and efficiency
 - **L2-normalization:** Enable cosine similarity via dot product
 
 ### Training Strategy
@@ -142,7 +142,7 @@ class BGEM3WithHead(nn.Module):
     BGE-M3 encoder + trainable projection head
     
     Args:
-        d_out: Output dimension (256)
+        d_out: Output dimension (128)
         freeze_encoder: Whether to freeze BGE-M3 (True)
         use_layernorm: Add LayerNorm before projection (False)
     """
@@ -365,7 +365,7 @@ loader = DataLoader(dataset, batch_size=128, shuffle=True,
 
 # Initialize model
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model = BGEM3WithHead(d_out=256, freeze_encoder=True).to(device)
+model = BGEM3WithHead(d_out=128, freeze_encoder=True).to(device)
 trainer = ContrastiveTrainer(model)
 
 # Optimizer (only train projection head)
@@ -392,18 +392,18 @@ torch.save(model.state_dict(), "checkpoints/bgem3_projection.pt")
 ### **Step 5: Inference**
 ```python
 # Load trained model
-model = BGEM3WithHead(d_out=256, freeze_encoder=True)
+model = BGEM3WithHead(d_out=128, freeze_encoder=True)
 model.load_state_dict(torch.load("checkpoints/bgem3_projection.pt"))
 model.eval()
 model.to(device)
 
 # Encode queries and documents
 with torch.no_grad():
-    query_emb = model(["phòng trọ q10 giá rẻ"], device=device)  # [1, 256]
+    query_emb = model(["phòng trọ q10 giá rẻ"], device=device)  # [1, 128]
     doc_embs = model([
         "Cho thuê phòng Quận 10, giá 3 triệu",
         "Cho thuê phòng Quận 1, giá 3 triệu"
-    ], device=device)  # [2, 256]
+    ], device=device)  # [2, 128]
     
     # Similarity (already L2-normalized)
     similarities = query_emb @ doc_embs.T  # [1, 2]
@@ -414,13 +414,13 @@ with torch.no_grad():
 
 ## 🎯 Key Design Decisions & Rationale
 
-### **Why 256 Dimensions?**
+### **Why 128 Dimensions?**
 - **Balance:** Quality vs efficiency
 - **Comparison:** 128 too low (info loss), 512+ too large (overfitting)
-- **Evidence:** 256 works well for similar retrieval tasks
+- **Evidence:** 128 works well for similar retrieval tasks
 
 ### **Why Freeze Encoder?**
-- **Faster Training:** Only 256×1024 params to train (vs 560M)
+- **Faster Training:** Only 128×1024 params to train (vs 560M)
 - **Less Overfitting:** Preserve pre-trained knowledge
 - **Better Transfer:** BGE-M3 already strong on multilingual text
 
@@ -624,7 +624,7 @@ increment_ratio = 1.0 - 0.62 = 0.38
 - Weight calculation strategy is empirically grounded (CTR analysis)
 - increment_ratio=0.3 is conservative; can increase to 0.35-0.4
 - Model freezing is intentional (faster training, less overfitting)
-- 256 dimensions chosen as sweet spot (quality vs efficiency)
+- 128 dimensions chosen as sweet spot (quality vs efficiency)
 
 **For Questions:**
 - Check code comments in respective files
