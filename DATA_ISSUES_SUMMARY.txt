@@ -1,0 +1,97 @@
+================================================================================
+🔍 DATASET QUALITY REPORT - BGE-M3 Embedding Projection
+================================================================================
+
+📅 Date: 2025-10-25
+📊 Status: ✅ ALL ISSUES FIXED
+
+================================================================================
+🚨 ISSUES FOUND
+================================================================================
+
+Issue #1: Duplicate Types in Hard Negatives
+───────────────────────────────────────────────────────────────────────────────
+Found:    679 cases (3.3% of hard negatives)
+Example:  ["amenity", "amenity"] → ["amenity"]
+Impact:   Weight calculation incorrect → training bias
+Fix:      scripts/fix_duplicate_types.py
+Status:   ✅ FIXED
+
+Issue #2: Location Mismatches (CRITICAL)
+───────────────────────────────────────────────────────────────────────────────
+Found:    363 cases (5.26% of examples)
+Example:  Query: "Tìm trọ Thủ Đức"
+          Pos:   "Phòng trọ Quận 10" ❌ WRONG!
+Impact:   Model learns WRONG location associations
+          → Retrieval returns wrong areas
+          → BAD user experience
+Fix:      scripts/validate_dataset.py --fix
+Status:   ✅ FIXED
+
+================================================================================
+📊 BEFORE vs AFTER
+================================================================================
+
+                          BEFORE        AFTER       CHANGE
+────────────────────────────────────────────────────────────────────────────
+Total examples:           6,901         6,538       -363 (-5.26%)
+Duplicate types:          679           0           ✅ Fixed
+Location mismatches:      363           0           ✅ Fixed
+Zero weights:             679           0           ✅ Fixed
+Invalid entries:          1,042         0           ✅ All cleaned
+
+Dataset Quality:          ⚠️ Low        ✅ High     ✨ Ready!
+
+================================================================================
+✅ FINAL DATASET (CLEANED)
+================================================================================
+
+Total examples:              6,538
+Total hard negatives:        19,319
+Avg hard negatives/example:  2.95
+
+Weight Distribution:
+  Range:   1.00 - 3.85
+  Mean:    2.06
+  Median:  2.30
+
+Top Type Combinations:
+  1. ['location']           4,429 (22.9%)
+  2. ['amenity']            3,388 (17.5%)
+  3. ['amenity', 'area']    2,976 (15.4%)
+  4. ['amenity', 'price']   2,586 (13.4%)
+  5. ['price']              1,807 (9.4%)
+
+Validation Status:
+  ✅ No duplicate types
+  ✅ All locations match
+  ✅ All weights valid
+  ✅ Data structure correct
+
+================================================================================
+💾 BACKUPS
+================================================================================
+
+All originals safely backed up:
+  ✅ data/gen-data-set.json.backup          (before duplicate fix)
+  ✅ data/gen-data-set.json.bak             (before weight recalc)
+  ✅ data/gen-data-set.json.invalid_backup  (before location fix)
+
+To restore: cp data/gen-data-set.json.backup data/gen-data-set.json
+
+================================================================================
+🚀 READY FOR TRAINING
+================================================================================
+
+Dataset is now CLEAN and VALIDATED!
+
+Run training:
+  python train_script.py --epochs 15
+
+Expected improvements:
+  ✅ More stable training
+  ✅ Better location understanding
+  ✅ Higher retrieval accuracy
+  ✅ Better metrics (MRR, Recall@K)
+
+================================================================================

@@ -1057,7 +1057,6 @@
             {
                 "text": "Chdv không ban công, full NT, WC riêng, rộng 25m2, có máy lạnh, bếp, cửa sổ nhỏ, view không có, gần ĐH Sài Gòn, ĐH Sư Phạm, q5, giá 5tr5, hẻm xe ba gác, lối đi riêng, giờ giấc tự do",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1171,7 +1170,6 @@
             {
                 "text": "Phòng trọ 25m2, giá 5.5tr, có máy lạnh, wc chung, Q.10, gần bệnh viện 115",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1201,7 +1199,6 @@
             {
                 "text": "Phòng trọ 25m2, giá 5.5tr, không có máy lạnh, wc riêng, Q.10, gần chợ An Đông",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1231,7 +1228,6 @@
             {
                 "text": "Phòng trọ 25m2, giá 5.5tr, có máy lạnh, wc chung, Q.10, gần nhà thi đấu Phú Thọ",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1290,7 +1286,6 @@
             {
                 "text": "Phòng trọ 25m2, giá 5.5tr, không có máy lạnh, wc riêng, Q.10, gần bệnh viện Nhi Đồng 1",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1796,7 +1791,6 @@
             {
                 "text": "Phòng trọ 25m2 không gác, wc chung, không cho nấu ăn. Giá 5.5tr. Địa chỉ: Q10, gần ĐH Bách Khoa",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -1854,7 +1848,6 @@
             {
                 "text": "Phòng trọ 25m2 không gác, không máy lạnh, wc chung, phòng chung chủ. Giá 5.5tr. Địa chỉ: Q10, gần ĐH Bách Khoa",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -2171,7 +2164,6 @@
                 "text": "Cho thuê phòng trọ cao cấp có ban công, bếp riêng, WC riêng, quạt, diện tích 20m2 tại 123 Đường 3/2, Phường 11, Quận 10, TP.HCM. Giá 5.5 triệu/tháng. Gần trường ĐH Sư Phạm.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -2773,7 +2765,6 @@
                 "text": "Phòng trọ 18m2 full nội thất, không có ban công, gần chợ Hòa Hưng Q10, giá 5tr5. Có máy lạnh, máy giặt riêng, có chung chủ.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -2803,7 +2794,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, có ban công, gần chợ Hòa Hưng Q10, giá 5tr5. Có máy lạnh, máy giặt riêng, có chung chủ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -2833,7 +2823,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, không ban công, gần chợ Hòa Hưng Q10, giá 5tr5. Có máy lạnh, máy giặt chung, có chung chủ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -2863,7 +2852,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, có ban công, gần chợ Hòa Hưng Q10, giá 5tr5. Không có máy lạnh, máy giặt chung, có chung chủ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -2926,7 +2914,6 @@
                 "type": [
                     "area",
                     "price",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 3.05
@@ -3941,7 +3928,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2 có máy lạnh, wc riêng. Gần ĐH Bách Khoa, quận 10. Giá 5.5tr/tháng.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -4271,66 +4257,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dhbk 5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng ở Quận 3, gần ĐH Mở, giá 5tr/tháng",
-                "type": [
-                    "location",
-                    "amenity"
-                ],
-                "weight": 2.8
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, không máy lạnh, wc riêng ở Quận 10, gần ĐH Bách Khoa, giá 6tr/tháng",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 15m2 có gác, máy lạnh, wc riêng ở Quận 10, gần Bệnh viện 115, giá 5tr/tháng",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "can phong co gac may lanh wc rieng q.10",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng ở Quận 11, gần Lotte Mart, giá 5tr/tháng",
-                "type": [
-                    "location",
-                    "amenity"
-                ],
-                "weight": 2.8
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc chung ở Quận 10, gần ĐH Bách Khoa, giá 4tr/tháng",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 25m2 không gác, máy lạnh, wc riêng ở Quận 10, gần ĐH Bách Khoa, giá 5tr/tháng",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
         "query": "tro 20m2 duoi 5tr5 co may lanh quan 10",
         "pos": "{pos}",
         "hard_neg": [
@@ -4354,7 +4280,6 @@
                 "text": "Phòng trọ 18m2 có gác, máy lạnh, wc chung ở Quận 10, gần ĐH Y Dược, giá 5tr/tháng",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -4810,7 +4735,6 @@
             {
                 "text": "Phòng trọ cũ, không gác, chỉ có quạt. Diện tích 25m2. Giá 5.5 triệu. Gần ĐH Bách Khoa, Q.10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -4894,7 +4818,6 @@
             {
                 "text": "Phòng trọ cũ, có gác, máy lạnh, bếp chung. Diện tích 25m2. Giá 5.5 triệu. Gần ĐH Bách Khoa, Q.10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5087,7 +5010,6 @@
                 "text": "Phòng trọ 20m2 không gác, máy lạnh, full nội thất. Giá 6.5 triệu. Xa sân bay, Quận Tân Bình, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -5259,7 +5181,6 @@
             {
                 "text": "Phòng share 20m2 có WC riêng, không máy lạnh, không gác. Giá 5.5tr. Địa chỉ: hẻm 270 Phan Đình Giót, P.2, Q.Tân Bình, TP.HCM. Gần sân bay TSN.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5317,7 +5238,6 @@
             {
                 "text": "Phòng trọ mới xây, full nội thất, có ban công, gần chợ Hòa Hưng, Quận 10. Giá 6.2 triệu, diện tích 28m2, không máy lạnh, không nước nóng, bếp riêng, không giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5347,7 +5267,6 @@
             {
                 "text": "Phòng trọ mới xây, full nội thất, có ban công, gần chợ Hòa Hưng, Quận 10. Giá 6.2 triệu, diện tích 28m2, không máy lạnh, không nước nóng, bếp riêng, không giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5377,7 +5296,6 @@
             {
                 "text": "Phòng trọ mới xây, full nội thất, có ban công, gần chợ Hòa Hưng, Quận 10. Giá 6.2 triệu, diện tích 28m2, không máy lạnh, không nước nóng, bếp riêng, không giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5407,7 +5325,6 @@
             {
                 "text": "Phòng trọ mới xây, full nội thất, có ban công, gần chợ Hòa Hưng, Quận 10. Giá 6.2 triệu, diện tích 28m2, không máy lạnh, không nước nóng, bếp riêng, không giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -5853,7 +5770,6 @@
             {
                 "text": "Phòng cho thuê 25m2 có máy lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4tr5",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -6227,145 +6143,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan cho 5tr5 co ban cong 25m2",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần chợ, quận 3",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 4.5 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất đầy đủ, giá 5.5 triệu, diện tích 30m2, gần chợ, quận 10",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong tro co ban cong full nt q.10 gia 5.5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ không ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần chợ, quận Tân Bình",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 6 triệu, diện tích 20m2, gần chợ, quận 10",
-                "type": [
-                    "price",
-                    "area"
-                ],
-                "weight": 2.45
-            }
-        ]
-    },
-    {
-        "query": "phong q10 25m2 5tr5 co ban cong noi that cb",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Căn hộ mini có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần trường học, quận 10",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 7 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            }
-        ]
-    },
-    {
-        "query": "can thue phong tro ban cong noi that q10 duoi 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có ban công, không nội thất, giá 5.5 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 30m2, gần chợ, quận 10",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 4 triệu, diện tích 25m2, gần chợ, quận 5",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            }
-        ]
-    },
-    {
-        "query": "phong cho thue q10 co ban cong dien tich 25m gia 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.0 triệu, diện tích 25m2, gần chợ, quận 10",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ có gác, nội thất cơ bản, giá 5.5 triệu, diện tích 20m2, gần chợ, quận 10",
-                "type": [
-                    "amenity",
-                    "area"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ có ban công, nội thất cơ bản, giá 5.5 triệu, diện tích 25m2, gần chợ, quận Bình Thạnh",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            }
-        ]
-    },
-    {
         "query": "phong tro binh thanh 5tr5 co may lanh",
         "pos": "Phòng trọ 20m2, có gác, máy lạnh, wc riêng. Giá 5.5tr. Địa chỉ: Hẻm 25, đường Nguyễn Xí, P13, Q Bình Thạnh, TP.HCM.",
         "hard_neg": [
@@ -6469,7 +6246,6 @@
             {
                 "text": "Phòng trọ 20m2, không gác, không máy lạnh, wc riêng. Giá 5.5tr. Địa chỉ: Hẻm 25, đường Nguyễn Xí, P13, Q Bình Thạnh, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -6673,7 +6449,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, không ban công, WC riêng, giờ giấc tự do, không chỗ để xe. Giá 4tr5. Gần Bách Khoa, quận 10.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -6731,7 +6506,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2 có máy lạnh, không gác lửng, WC riêng, bếp riêng. Giá 5 triệu. Địa chỉ: Đường Sư Vạn Hạnh, Quận 10, TP.HCM. Gần Bệnh viện 115, Đại học Y Dược.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -6819,7 +6593,6 @@
             {
                 "text": "Cho thuê căn hộ dịch vụ 25m2 có máy lạnh, không gác lửng, WC riêng, bếp riêng. Giá 5 triệu. Địa chỉ: Đường Sư Vạn Hạnh, Quận 10, TP.HCM. Gần Bệnh viện 115, Đại học Y Dược.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -7418,7 +7191,6 @@
             {
                 "text": "Phòng trọ Quận 10, gần ĐH Bách Khoa, có gác, WC riêng, máy lạnh, không bếp, diện tích 25m², giá 5.5 triệu/tháng, ưu tiên nữ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -7448,7 +7220,6 @@
             {
                 "text": "Phòng trọ Quận 10, gần ĐH Bách Khoa, có gác, WC riêng, máy lạnh, không bếp, diện tích 25m², giá 5.5 triệu/tháng, ưu tiên nữ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -7478,39 +7249,9 @@
             {
                 "text": "Phòng trọ Quận 10, gần ĐH Bách Khoa, có gác, WC riêng, máy lạnh, không bếp, diện tích 25m², giá 5.5 triệu/tháng, ưu tiên nữ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 gan dh bach khoa 5tr5 full noi that",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất có máy lạnh, WC riêng, gần ĐH Sư Phạm Kỹ Thuật, quận Thủ Đức, giá 5.5 triệu/tháng, có gác.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất có máy lạnh, WC chung, gần ĐH Bách Khoa, quận 10, giá 4.5 triệu/tháng, có gác.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2 full nội thất có máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu/tháng, không gác.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
             }
         ]
     },
@@ -7535,34 +7276,6 @@
             },
             {
                 "text": "Phòng trọ 20m2 full nội thất có máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu/tháng, có gác.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            }
-        ]
-    },
-    {
-        "query": "can thue phong gan dhbk q10 gia duoi 6tr full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất có máy lạnh, WC riêng, gần chợ Bến Thành, quận 1, giá 5.5 triệu/tháng, có gác.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất không máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, giá 6.5 triệu/tháng, có gác.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 35m2 full nội thất có máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu/tháng, có gác.",
                 "type": [
                     "area"
                 ],
@@ -7964,7 +7677,6 @@
             {
                 "text": "Phòng trọ 20m2 khép kín, có gác, không máy lạnh, khu vực Tân Bình, giá 4.5 triệu, xa chợ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -8204,7 +7916,6 @@
             {
                 "text": "Phòng trọ 25m² không full nội thất, có máy lạnh, WC riêng, có gác, giá 5.5 triệu/tháng, gần trường Đại học Bách khoa, Quận 10 TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -8239,7 +7950,6 @@
             {
                 "text": "Phòng trọ 25m² có máy lạnh, WC riêng, có gác, giá 5.5 triệu/tháng, phù hợp sinh viên, gần trường Đại học Bách khoa, Quận 10 TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9080,7 +8790,6 @@
             {
                 "text": "Phòng trọ Quận 10, giá 5.5 triệu, diện tích 30m2, có máy lạnh, gác lửng, WC chung, có giờ giới nghiêm.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9110,7 +8819,6 @@
             {
                 "text": "Phòng trọ Quận 10, giá 5.5 triệu, diện tích 30m2, có máy lạnh, gác lửng, WC chung, có giờ giới nghiêm.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9140,7 +8848,6 @@
             {
                 "text": "Phòng trọ Quận 10, giá 5.5 triệu, diện tích 30m2, có máy lạnh, gác lửng, WC chung, có giờ giới nghiêm.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9170,7 +8877,6 @@
             {
                 "text": "Phòng trọ Quận 10, giá 5.5 triệu, diện tích 30m2, có máy lạnh, gác lửng, WC chung, có giờ giới nghiêm.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9590,7 +9296,6 @@
             {
                 "text": "Phòng trọ mới xây, WC riêng, full nội thất, có cửa sổ lớn đón nắng. Diện tích 25m2, có gác lửng. Giá 5.5 triệu/tháng. Gần Đại học Bách Khoa, Q.10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9876,7 +9581,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, có gác, không máy lạnh, wc chung, cửa sổ thoáng mát, giờ giới nghiêm, ngay ngã tư Hàng Xanh, quận Bình Thạnh, TP.HCM",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -9990,8 +9694,7 @@
                 "text": "Phòng trọ không gác, máy lạnh, WC riêng, ở Quận 10, gần Đại học Bách Khoa, diện tích 20m2, giá 5tr5. Giờ giấc tự do.",
                 "type": [
                     "amenity",
-                    "area",
-                    "amenity"
+                    "area"
                 ],
                 "weight": 2.1
             }
@@ -10236,7 +9939,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, bếp, WC riêng, giờ giấc chung chủ, gần ĐH Bách Khoa, quận 10, giá 5.5tr.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -12476,7 +12178,6 @@
             {
                 "text": "Phòng trọ 18m2 có máy lạnh, gác, WC riêng. Ban công nhỏ. Giá 3tr8. Q.7. Gần Lotte Mart.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -12506,7 +12207,6 @@
             {
                 "text": "Phòng trọ 18m2 không máy lạnh, có gác, WC riêng. Ban công bí. Giá 3tr8. Q.7. Gần Lotte Mart.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -12596,34 +12296,6 @@
                     "amenity"
                 ],
                 "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "Phòng trọ thủ đức gần spkt giá 4tr5 full nội thất",
-        "pos": "Phòng trọ 18m2, full nội thất, giờ giấc tự do, gần ĐH Sư Phạm Kỹ Thuật TPHCM, giá 4.5 triệu/tháng",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 18m2, full nội thất, giờ giấc tự do, gần Bệnh viện Ung Bướu, giá 4.5 triệu/tháng",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 18m2, nội thất cơ bản, giờ giấc giới hạn, gần ĐH Sư Phạm Kỹ Thuật TPHCM, giá 4.5 triệu/tháng",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 18m2, full nội thất, giờ giấc tự do, gần ĐH Sư Phạm Kỹ Thuật TPHCM, giá 3.5 triệu/tháng",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
             }
         ]
     },
@@ -13683,7 +13355,6 @@
             {
                 "text": "Phòng trọ không ban công, nội thất đầy đủ (máy lạnh, tủ lạnh, bếp), diện tích 30m2, giá 6.5 triệu/tháng. Địa chỉ: Hẻm 123, đường Nguyễn Trãi, Quận 1, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -14341,35 +14012,6 @@
         ]
     },
     {
-        "query": "phong tro q.phu nhuan 30m2 gia 7tr full noi that",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC riêng, bếp riêng, giá 7 triệu, hẻm 123 Phan Xích Long, P7, Q.Bình Thạnh, HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC chung, bếp riêng, giá 8 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 25m2, full nội thất, có điều hòa, WC riêng, không bếp riêng, giá 7 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
         "query": "tìm phòng có điều hòa wc bếp riêng phan xích long",
         "pos": "{pos}",
         "hard_neg": [
@@ -14395,63 +14037,6 @@
                     "amenity"
                 ],
                 "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro quan phu nhuan co bep gia duoi 7tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC riêng, bếp riêng, giá 7 triệu, hẻm 123 Phan Xích Long, P7, Q.Gò Vấp, HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC riêng, bếp riêng, giá 8 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 20m2, full nội thất, có điều hòa, WC riêng, không bếp riêng, giá 7 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro full noi that p7 q phu nhuan",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC riêng, bếp riêng, giá 7 triệu, hẻm 123 Phan Xích Long, P6, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 30m2, không nội thất, có điều hòa, WC riêng, bếp riêng, giá 6 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "amenity",
-                    "price"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có điều hòa, WC riêng, bếp chung, giá 7.5 triệu, hẻm 123 Phan Xích Long, P7, Q.Phú Nhuận, HCM.",
-                "type": [
-                    "amenity",
-                    "price"
-                ],
-                "weight": 2.3
             }
         ]
     },
@@ -16015,7 +15600,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, WC chung. Giá 5.5tr/tháng. Giờ giấc có giới hạn. Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -16045,7 +15629,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, WC chung. Giá 5.5tr/tháng. Giờ giấc có giới hạn. Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -16075,7 +15658,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, WC chung. Giá 5.5tr/tháng. Giờ giấc có giới hạn. Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -16105,7 +15687,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, WC chung. Giá 5.5tr/tháng. Giờ giấc có giới hạn. Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -16441,7 +16022,6 @@
             {
                 "text": "Phòng trọ 20m2 khép kín không điều hòa giá 3.5tr ở quận 10 gần đại học Bách Khoa, chỉ cho nữ thuê.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -17595,46 +17175,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dhbk co may lanh 4tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng. Gần ĐH Kinh Tế, Q.3. Giá 4.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 5.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            }
-        ]
-    },
-    {
-        "query": "tim phong 20m2 co wc rieng co gac q10 duoi 5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 15m2 có gác, máy lạnh, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 4.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, wc chung. Gần ĐH Bách Khoa, Q.10. Giá 4.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
         "query": "phong tro full tien nghi gan dhbk gia 4.5tr",
         "pos": "{pos}",
         "hard_neg": [
@@ -17647,46 +17187,6 @@
             },
             {
                 "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 4.5 triệu/tháng. Điện nước kinh doanh.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro 4tr5 q10 gan bach khoa co gac rieng tu",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 4.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng. Gần ĐH Sư Phạm, Q.5. Giá 4.5 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            }
-        ]
-    },
-    {
-        "query": "thue phong 20m2 co dieu hoa q.10 duoi 4.7tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 4.9 triệu/tháng. Điện nước giá dân.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, wc riêng. Gần ĐH Bách Khoa, Q.10. Giá 4.5 triệu/tháng. Điện nước giá dân.",
                 "type": [
                     "amenity"
                 ],
@@ -18139,7 +17639,6 @@
             {
                 "text": "Cho thuê phòng trọ riêng biệt, có bếp nấu ăn riêng, WC riêng, có chỗ để xe, an ninh, giờ giấc hạn chế. Phòng 25m2, giá 4tr5, tại 130 Đường Tô Hiệu, Phường Hiệp Tân, Quận Tân Phú, TPHCM. Không có máy lạnh, nước nóng năng lượng mặt trời.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -18197,7 +17696,6 @@
             {
                 "text": "Cho thuê phòng trọ riêng biệt, có bếp nấu ăn riêng, WC riêng, không có chỗ để xe, an ninh kém, giờ giấc tự do. Phòng 25m2, giá 4tr5, tại 130 Đường Tô Hiệu, Phường Hiệp Tân, Quận Tân Phú, TPHCM. Có máy lạnh, nước nóng năng lượng mặt trời.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -18856,7 +18354,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, bếp chung, WC khép kín. Giá 4.5tr. Địa chỉ: hẻm 210 CMT8, P.10, Q.3, TP.HCM. Giờ giấc tự do.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -18961,7 +18458,6 @@
             {
                 "text": "Phòng trọ cũ, không ban công, nội thất cơ bản. Giá 4.5tr. Địa chỉ: Hẻm 280 Lương Định Của, P. An Phú, Q2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -18983,7 +18479,6 @@
             {
                 "text": "Phòng trọ cũ, không ban công, nội thất cơ bản. Giá 4.5tr. Địa chỉ: Hẻm 280 Lương Định Của, P. An Phú, Q2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -19005,7 +18500,6 @@
             {
                 "text": "Phòng trọ cũ, không ban công, nội thất cơ bản. Giá 4.5tr. Địa chỉ: Hẻm 280 Lương Định Của, P. An Phú, Q2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -19631,7 +19125,6 @@
             {
                 "text": "Căn hộ dịch vụ 20m2 chỉ có tủ lạnh, máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, HCM. Giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -19690,7 +19183,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, có ban công, máy lạnh, WC chung, gần ĐH Bách Khoa, quận 10, HCM. Giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -19749,7 +19241,6 @@
             {
                 "text": "Studio 20m2 full nội thất, không ban công, máy lạnh, WC riêng, gần ĐH Bách Khoa, quận 10, HCM. Giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -20003,7 +19494,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, không máy lạnh, ban công, giá 4tr5, điện nước riêng, giờ giới hạn, gần ĐH Bách Khoa, Q10",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -20089,7 +19579,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, không máy lạnh, không ban công, giá 4tr5, điện nước riêng, giờ giới hạn, gần ĐH Bách Khoa, đường Tô Hiến Thành, Q10",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -20234,7 +19723,6 @@
             {
                 "text": "Phòng trọ 30m2 có gác, WC chung, máy lạnh. Giá 5.5tr. Hẻm 793 Trần Xuân Soạn Q7. Chủ ở chung.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -20264,39 +19752,9 @@
             {
                 "text": "Phòng trọ 30m2 có gác, WC riêng, không máy lạnh. Giá 5.5tr. Hẻm 793 Trần Xuân Soạn Q7. Giờ giấc tự do nhưng chung chủ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 gan dhbk 5tr5 full tien nghi",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, có gác, máy lạnh, WC riêng, ở Quận 3, giá 5.5tr, gần Đại học Kinh Tế",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2, có gác, quạt, WC chung, ở Quận 10, giá 4.5tr, gần Đại học Bách Khoa TPHCM",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 18m2, có gác, không máy lạnh, WC riêng, ở Quận 10, giá 5.5tr, gần Đại học Bách Khoa TPHCM",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
             }
         ]
     },
@@ -20324,34 +19782,6 @@
                     "amenity"
                 ],
                 "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro 25m2 q.10 co may lanh gan bach khoa",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, có gác, máy lạnh, WC riêng, ở Quận 5, giá 5.5tr, gần Đại học Y Dược",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, có gác, máy lạnh, WC riêng, ở Quận 10, giá 5.5tr, gần Đại học Bách Khoa TPHCM",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ 25m2, có gác, máy lạnh, WC chung, ở Quận 10, giá 4tr, gần Đại học Bách Khoa TPHCM",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
             }
         ]
     },
@@ -20944,7 +20374,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, quận 10 gần ĐH Bách Khoa, không có máy lạnh, WC riêng, có tủ lạnh",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21003,8 +20432,7 @@
                 "text": "Phòng trọ 25m2 không gác Q.10, giá 6tr full nội thất, gần Công Viên Lê Thị Riêng",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -21031,7 +20459,6 @@
             {
                 "text": "Phòng trọ 25m2 không gác Q.10, giá 5tr5 không nội thất, gần ĐH Y Dược",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21060,7 +20487,6 @@
                 "text": "Phòng trọ 30m2 có gác Q.10, giá 5tr5 không nội thất, gần Chợ An Đông",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -21089,40 +20515,9 @@
                 "text": "Phòng trọ 20m2 không gác Q.10, giá 5tr5 full nội thất, gần Bệnh Viện 115",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 5tr5 full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có WC riêng, máy lạnh, ban công, bếp, gần ĐH Kinh Tế Q3, giá 4.5tr",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 18m2 có WC chung, không máy lạnh, ban công, bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
             }
         ]
     },
@@ -21149,37 +20544,6 @@
             {
                 "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
                 "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro 5,5tr q10 co may lanh wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có WC riêng, máy lạnh, ban công, bếp, gần ĐH Kinh Tế Q3, giá 4.5tr",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 18m2 có WC chung, không máy lạnh, ban công, bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21651,7 +21015,6 @@
             {
                 "text": "Phòng trọ QBT, 30m2, giá 6.5 triệu/tháng. Xa bệnh viện Ung Bướu. Không có ban công.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21688,7 +21051,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21717,7 +21079,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21746,7 +21107,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -21775,7 +21135,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -22496,7 +21855,6 @@
             {
                 "text": "Phòng trọ 20m2 ở Q.10, có WC chung, chỉ máy lạnh, giá 5tr5. Gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -22706,35 +22064,6 @@
             },
             {
                 "text": "Phòng trọ 18m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Giao Thông Vận Tải, có WC riêng, máy lạnh, có gác, giá 4.8tr.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro quan binh thanh co may lanh duoi 5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, Quận Phú Nhuận, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, máy lạnh, có gác, giá 4.8tr.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, không máy lạnh, có gác, giá 5.2tr.",
-                "type": [
-                    "amenity",
-                    "price"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, máy lạnh, không gác, giá 4.8tr.",
                 "type": [
                     "area",
                     "amenity"
@@ -23408,7 +22737,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -23439,7 +22767,6 @@
             {
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "location",
                     "price"
@@ -23472,7 +22799,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -23504,7 +22830,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -23535,7 +22860,6 @@
             {
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "location",
                     "price"
@@ -24247,7 +23571,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC chung, không máy lạnh, tủ lạnh, bếp từ, giới hạn giờ giấc, gần ĐH Bách Khoa Q10, giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -24477,7 +23800,6 @@
                 "text": "Phòng trọ 22m2, có gác, máy lạnh, WC chung, gần ĐH Bách Khoa, quận 10. Giá 5.5 triệu. Full nội thất. Không cho nuôi thú cưng.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -24513,7 +23835,6 @@
             {
                 "text": "Căn hộ mini 20m2, ban công, WC riêng, chỉ có máy lạnh và tủ quần áo. Giá 4.5 triệu. Gần chợ Bà Chiểu, quận Bình Thạnh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -24572,7 +23893,6 @@
             {
                 "text": "Căn hộ mini 25m2 có gác, WC chung, máy lạnh, bếp. Giá 5.5 triệu. Gần ĐH Bách Khoa, quận 10, TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -24691,7 +24011,6 @@
             {
                 "text": "Phòng trọ 25m2 có máy lạnh, bếp riêng, WC riêng, giờ giấc giới hạn, gần ĐH Bách Khoa, quận 10, giá 5.5tr.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -25059,7 +24378,6 @@
             {
                 "text": "Phòng trọ ở Quận 10, TP.HCM, gần trường Đại học Bách Khoa. Diện tích 25m2, giá 5.5 triệu/tháng. Có WC riêng, không máy lạnh, không tủ lạnh, không bếp, không có gác. Không ưu tiên nữ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -25448,35 +24766,6 @@
             },
             {
                 "text": "Phòng trọ mới xây 2PN riêng biệt, 40m2, full nội thất (tủ, giường, máy lạnh, bếp từ, tủ lạnh), có ban công, WC riêng. Giá 8 triệu/tháng. Địa chỉ: Hẻm 123, đường Nguyễn Trãi, P.Nguyễn Cư Trinh, Quận 1, TP.HCM. Gần chợ Bến Thành, tiện đi bộ ra phố đi bộ.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 gan bach khoa 5tr5 full noi that",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ mới xây Q11, gần ĐH Sư Phạm, 5.5 triệu/tháng, 25m2, có máy lạnh, WC riêng, có gác, full nội thất, sạch sẽ an ninh.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ mới xây Q10, gần ĐH Bách Khoa, 4.5 triệu/tháng, 25m2, không máy lạnh, WC chung, có gác, nội thất cơ bản, sạch sẽ an ninh.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ đã xây lâu Q10, gần ĐH Bách Khoa, 5.5 triệu/tháng, 18m2, có máy lạnh, WC riêng, có gác, full nội thất, khu vực hơi phức tạp.",
                 "type": [
                     "area",
                     "amenity"
@@ -26034,7 +25323,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, nội thất cơ bản, có máy lạnh, WC riêng, gần ĐH Bách Khoa, Q.10, HCM",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -26055,7 +25343,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, full nội thất, không máy lạnh, không gác, WC riêng, gần ĐH Bách Khoa, Q.10, HCM",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -26402,7 +25689,6 @@
             {
                 "text": "Phòng trọ cao cấp có ban công, nội thất đầy đủ (thiếu tủ lạnh, máy giặt), WC riêng. Giá 6.5 triệu/tháng, 30m2. Bình Thạnh. Giờ giới nghiêm 11h đêm.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -26452,7 +25738,6 @@
             {
                 "text": "Phòng trọ cao cấp có ban công, nội thất đầy đủ, WC riêng. Giá 6.5 triệu/tháng, 30m2. Bình Thạnh. Không có chỗ để xe, giờ giấc phải báo trước.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -26629,7 +25914,6 @@
             {
                 "text": "Phòng trọ Quận 10, đường Sư Vạn Hạnh, gần ĐH Bách Khoa, 5.5 triệu/tháng, 25m2, có WC riêng, không máy lạnh, giờ giấc giới hạn 23h.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -26771,7 +26055,6 @@
                 "text": "Phòng trọ thường, full nội thất, có ban công, không thang máy, bảo vệ 24/7. Địa chỉ: Hẻm 123, đường Nguyễn Thị Thập, P.Tân Hưng, Quận 7. Diện tích 20m2. Giá thuê 6tr/tháng. Gần Lotte Mart Q7.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -27308,7 +26591,6 @@
             {
                 "text": "Phòng share 20m2, WC riêng, có bếp, không ban công, giá 4.5tr, hẻm 123 Phan Văn Trị, P11, Q Bình Thạnh, gần E-mart",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -27446,7 +26728,6 @@
                 "text": "phòng trọ q10 4tr5 không ban công wc riêng 18m2 không giờ tự do",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -28408,7 +27689,6 @@
             {
                 "text": "Phòng trọ 20m2, ban công riêng, WC khép kín, có máy lạnh, không nội thất, giờ giấc tự do, khu phức tạp, giá 4.5 triệu, hẻm 256 Đặng Văn Ngữ, P.14, Phú Nhuận, HCM. Gần chợ, công viên, trung tâm thể dục.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -28869,35 +28149,6 @@
                     "amenity"
                 ],
                 "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong tro q10 full noi that uu tien nu gia duoi 6tr",
-        "pos": "Phòng trọ 20m2 khép kín, có máy lạnh, tủ lạnh, kệ bếp, WC riêng. Gần ĐH Bách Khoa TP.HCM. Giá 5.5 triệu/tháng, ưu tiên nữ.",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 khép kín, có máy lạnh, tủ lạnh, kệ bếp, WC riêng. Gần ĐH Bách Khoa TP.HCM (Quận 5). Giá 5.5 triệu/tháng, ưu tiên nữ.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 khép kín, có máy lạnh, kệ bếp, WC riêng. Gần ĐH Bách Khoa TP.HCM. Giá 5.5 triệu/tháng.",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 18m2 khép kín, có máy lạnh, tủ lạnh, kệ bếp, WC riêng. Gần ĐH Bách Khoa TP.HCM. Giá 6.5 triệu/tháng, ưu tiên nữ.",
-                "type": [
-                    "price",
-                    "area"
-                ],
-                "weight": 2.45
             }
         ]
     },
@@ -29460,34 +28711,6 @@
                     "price"
                 ],
                 "weight": 2.45
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 gan dhbk 5tr5 full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, full nội thất, có ban công, giá 5.5tr, wc riêng, gần ĐH Y Dược, quận 3",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2, full nội thất, có ban công, giá 7tr, wc riêng, gần ĐH Bách Khoa, quận 10",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 18m2, nội thất cơ bản, wc chung, giá 5.5tr, gần ĐH Bách Khoa, quận 10",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
             }
         ]
     },
@@ -30225,7 +29448,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, wc riêng, có máy lạnh, giá 3.5 triệu, ở quận Bình Thạnh, gần chợ Bà Chiểu. Chỉ nữ thuê.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -30878,7 +30100,6 @@
             {
                 "text": "Phòng trọ cũ, có ban công, nội thất cơ bản, WC riêng. Gần ĐH Bách Khoa, Q10. Giá 5.5tr, DT 25m2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -31514,7 +30735,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, cửa sổ thoáng mát ở Quận 10, TPHCM. Giá 5.5 triệu. Xa ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -32153,7 +31373,6 @@
             {
                 "text": "Phòng trọ 20m2 KHÔNG nội thất có máy lạnh, gác lửng, ban công riêng, KHÔNG GIỜ TỰ DO, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -32183,7 +31402,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, ban công riêng, CHỈ CHO NỮ THUÊ, KHÔNG GIỜ TỰ DO, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -32324,7 +31542,6 @@
             {
                 "text": "Phòng trọ 25m2, có gác, không máy lạnh, bếp riêng, wc riêng, hẻm xe hơi, Q.Tân Bình, giá 5tr5, gần siêu thị Big C.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -32406,7 +31623,6 @@
             {
                 "text": "Phòng trọ 25m2, không gác, máy lạnh, bếp riêng, wc riêng, hẻm xe hơi, Q.Tân Bình, giá 5tr5, gần Lotte Mart Cộng Hòa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -32542,7 +31758,6 @@
             {
                 "text": "Phòng trọ 25m2, có gác, máy lạnh, tủ lạnh, WC chung, giờ giới nghiêm, gần ĐH Bách Khoa, Q10, giá 5.5tr",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -33690,62 +32905,6 @@
         ]
     },
     {
-        "query": "thue phong 25m2 q10 gan dh bach khoa wc rieng duoi 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có ban công, máy lạnh, WC riêng. Giá 7tr ở Quận 10, gần ĐH Bách Khoa. Giờ giấc tự do, không chung chủ.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 30m2 có máy lạnh, WC riêng. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa. Giờ giấc tự do, không chung chủ.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2 có ban công, máy lạnh, WC riêng. Giá 5.5tr ở Quận Bình Thạnh, gần cầu Sài Gòn. Giờ giấc tự do, không chung chủ.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            }
-        ]
-    },
-    {
-        "query": "tim phong tro q.10 co may lanh, tu do, ko chung chu",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có ban công, máy lạnh, WC riêng. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa. Chung chủ, không giờ giấc tự do.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có ban công, WC chung. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa. Giờ giấc tự do, không chung chủ.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có ban công, máy lạnh, WC riêng. Giá 6.5tr ở Quận 1, gần nhà thờ Đức Bà. Giờ giấc tự do, không chung chủ.",
-                "type": [
-                    "price",
-                    "location"
-                ],
-                "weight": 3.1
-            }
-        ]
-    },
-    {
         "query": "phong tro q7 tran xuan soan co ban cong full tien nghi 5tr5",
         "pos": "Cho thuê phòng trọ có ban công, máy lạnh, tủ lạnh, bếp, wc riêng, có chỗ để xe ở hẻm 677 Trần Xuân Soạn, Q7, giá 5.5 triệu/tháng.",
         "hard_neg": [
@@ -34656,7 +33815,6 @@
             {
                 "text": "Căn hộ mini 25m2, có máy lạnh, WC riêng, gần ĐH Bách Khoa TP.HCM, Q.10. Giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -35414,7 +34572,6 @@
             {
                 "text": "Phòng trọ riêng, có gác, có máy lạnh, WC chung. Giờ giấc có giới hạn. Khu vực Q.Tân Bình, gần Ngã tư Bảy Hiền. Diện tích 20m2. Giá 4.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -36486,7 +35643,6 @@
             {
                 "text": "Căn hộ mini Quận 10, 5.5 triệu, 25m2, full nội thất, WC riêng, có gác, không máy lạnh, gần ĐH Bách Khoa",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -36918,92 +36074,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dh bach khoa 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ mới xây, có gác, WC riêng, máy lạnh. DT 25m2. Giá 5.5 triệu. Gần ĐH Sư Phạm Kỹ Thuật Q.Thủ Đức.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ mới xây, có gác, WC chung, không máy lạnh. DT 25m2. Giá 4 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ cũ, có gác, WC riêng, máy lạnh. DT 18m2. Giá 5.5 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tro q10 duoi 6tr co may lanh wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ mới xây, không gác, WC riêng, máy lạnh. DT 25m2. Giá 5.5 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ mới xây, có gác, WC riêng, máy lạnh. DT 30m2. Giá 6.5 triệu. Gần ĐH Kinh Tế Q.Bình Thạnh.",
-                "type": [
-                    "area",
-                    "price",
-                    "location"
-                ],
-                "weight": 3.55
-            },
-            {
-                "text": "Phòng trọ cũ, có gác, WC riêng, máy lạnh. DT 25m2. Giá 5.5 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro 25m2 co gac may lanh q10",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ mới xây, có gác, WC riêng, máy lạnh. DT 25m2. Giá 4.5 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ mới xây, có gác, WC chung, máy lạnh. DT 25m2. Giá 5.5 triệu. Gần ĐH Sài Gòn Q.1.",
-                "type": [
-                    "location",
-                    "amenity"
-                ],
-                "weight": 2.8
-            },
-            {
-                "text": "Phòng trọ mới xây, có gác, WC riêng, máy lạnh. DT 15m2. Giá 5.5 triệu. Gần ĐH Bách Khoa Q.10.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            }
-        ]
-    },
-    {
         "query": "phòng trọ q10 25m2 có gác máy lạnh wc riêng",
         "pos": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐH Bách Khoa. Giá 5tr5. Điện 3.5k/số, nước 100k/người. Giờ giấc tự do.",
         "hard_neg": [
@@ -37329,7 +36399,6 @@
                 "text": "Phòng trọ 18m2, không gác, wc chung, máy lạnh. Giá 4.5tr. Gần ĐH Bách Khoa, Quận 10, TPHCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -37398,7 +36467,6 @@
             {
                 "text": "Phòng trọ 20m2, không gác, wc riêng, không máy lạnh. Giá 4.5tr. Gần ĐH Bách Khoa, Quận 10, TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -38018,7 +37086,6 @@
             {
                 "text": "phòng trọ q10 25m2 có gác, wc riêng, cửa sổ lớn thoáng mát, có bếp nấu ăn, máy lạnh, tủ lạnh, máy giặt, không có chỗ để xe. Giá 5tr5, không giờ giấc tự do, gần ĐH Y Phạm Ngọc Thạch",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -38048,7 +37115,6 @@
             {
                 "text": "phòng trọ q10 25m2 không gác, wc riêng, cửa sổ lớn thoáng mát, có bếp nấu ăn, máy lạnh, tủ lạnh, máy giặt, có chỗ để xe. Giá 5tr5, không giờ giấc tự do, gần ĐH Y Phạm Ngọc Thạch",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -38134,7 +37200,6 @@
             {
                 "text": "Phòng trọ đã cũ, full nội thất, có WC chung, ban công, máy lạnh. Diện tích 25m2, giá 5.5 triệu. Gần chợ Bàn Cờ Q3. Liên hệ 0901234567",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -38285,28 +37350,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dh bk full noi that 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, 5tr5, full nội thất, có ban công, gần ĐH Sư Phạm, Q.3, TPHCM",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 18m2, 6tr, có máy lạnh, không ban công, gần ĐH Bách Khoa, Q.10, TPHCM",
-                "type": [
-                    "price",
-                    "area",
-                    "amenity"
-                ],
-                "weight": 2.75
-            }
-        ]
-    },
-    {
         "query": "tim phong co ban cong full nt quan 10 5,5tr",
         "pos": "{pos}",
         "hard_neg": [
@@ -38344,47 +37387,6 @@
                     "price"
                 ],
                 "weight": 3.1
-            }
-        ]
-    },
-    {
-        "query": "q.10 tphcm phòng trọ 5tr5 đầy đủ nội thất có ban công",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, 5tr5, có tủ lạnh, máy giặt, có ban công, gần ĐH Bách Khoa, Q.10, TPHCM",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 20m2, 6tr5, full nội thất, có ban công, gần ĐH Bách Khoa, Q.Tân Bình, TPHCM",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            }
-        ]
-    },
-    {
-        "query": "can phong 5.5tr q10 gan dh bach khoa 20m2",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 15m2, 5tr5, full nội thất, có ban công, gần ĐH Bách Khoa, Q.10, TPHCM",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ 20m2, 5tr5, full nội thất, có ban công, gần ĐH Công Nghiệp, Q.Gò Vấp, TPHCM",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
             }
         ]
     },
@@ -38473,60 +37475,6 @@
         ]
     },
     {
-        "query": "phòng trọ q10 5tr5 có gác máy lạnh wc riêng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 1, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 4tr5.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 25m2 không gác, wc chung ở quận 10, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "tìm phòng 25m2 q.10 có máy lạnh gần đhbk",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐH Kinh tế. Giá 5tr5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 6.5tr.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            }
-        ]
-    },
-    {
         "query": "phong tro quan 10 duoi 6tr co may lanh co gac",
         "pos": "{pos}",
         "hard_neg": [
@@ -38550,87 +37498,6 @@
                     "area"
                 ],
                 "weight": 1.5
-            }
-        ]
-    },
-    {
-        "query": "phòng trọ 5.5tr q10 gần dhbk",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 6tr.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, xa ĐHBK. Giá 5tr5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 18m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            }
-        ]
-    },
-    {
-        "query": "trọ 25m2 q10 full tiện nghi 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 5, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc chung ở quận 10, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 5tr.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            }
-        ]
-    },
-    {
-        "query": "phòng 25m q10 có điều hoà riêng tư 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận Bình Thạnh, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 không gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 5tr5.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, máy lạnh, wc riêng ở quận 10, gần ĐHBK. Giá 7.5tr.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
             }
         ]
     },
@@ -39047,7 +37914,6 @@
             {
                 "text": "Phòng trọ thường 20m2 ở Q. Bình Thạnh, giá 5.5tr, không ban công, wc chung, bếp, nội thất cơ bản, gần ĐH HUTECH",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -39355,7 +38221,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, wc chung, P.12, Q.10. Giá 5.5tr. Hẻm nhỏ, không gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -39773,7 +38638,6 @@
             {
                 "text": "Phòng trọ 25m2 có WC chung, ban công, máy lạnh, giới hạn giờ, giá 5tr5, hẻm 793 Trần Xuân Soạn, P.Tân Hưng, Q7, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -39866,7 +38730,6 @@
                 "text": "Phòng trọ 25m2 trống, không ban công, wc riêng, giá 5tr5, hẻm xe máy quận 10, gần ĐH Bách Khoa",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -39931,34 +38794,6 @@
         ]
     },
     {
-        "query": "phong tro 25m2 co may lanh co gac o q10",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, 5.5tr/tháng, WC riêng, có máy lạnh, gác lửng, ban công, giờ giấc tự do, an ninh, gần ĐH Sài Gòn Q5 TPHCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, 4.5tr/tháng, WC riêng, có máy lạnh, gác lửng, ban công, giờ giấc tự do, an ninh, gần ĐH Bách Khoa Q10 TPHCM.",
-                "type": [
-                    "price",
-                    "area"
-                ],
-                "weight": 2.45
-            },
-            {
-                "text": "Phòng trọ 25m2, 5.5tr/tháng, WC riêng, không máy lạnh, không gác lửng, ban công, giờ giấc tự do, an ninh, gần ĐH Bách Khoa Q10 TPHCM.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
         "query": "tim phong tro 5tr5 co ban cong gio tu do tphcm",
         "pos": "{pos}",
         "hard_neg": [
@@ -39979,7 +38814,6 @@
             {
                 "text": "Phòng trọ 25m2, 5.5tr/tháng, WC riêng, có máy lạnh, gác lửng, không ban công, giờ giấc tự do, không an ninh, gần ĐH Bách Khoa Q10 TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -40331,7 +39165,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC riêng, tủ lạnh. Giá 5.5 triệu. Gần ĐH Bách Khoa, Quận 10, TP.HCM. Không giờ giấc tự do, có chỗ để xe.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -41104,7 +39937,6 @@
             {
                 "text": "Phòng trọ 25m2, full nội thất, có ban công, WC chung, gác lửng, view đẹp, phòng cũ, giá 7.5 triệu, tại Quận 10, gần đại học Bách Khoa TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -41134,7 +39966,6 @@
             {
                 "text": "Phòng trọ 25m2, full nội thất, có ban công, WC chung, gác lửng, view đẹp, phòng cũ, giá 7.5 triệu, tại Quận 10, gần đại học Bách Khoa TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -41164,7 +39995,6 @@
             {
                 "text": "Phòng trọ 25m2, full nội thất, có ban công, WC chung, gác lửng, view đẹp, phòng cũ, giá 7.5 triệu, tại Quận 10, gần đại học Bách Khoa TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -41194,7 +40024,6 @@
             {
                 "text": "Phòng trọ 25m2, full nội thất, có ban công, WC chung, gác lửng, view đẹp, phòng cũ, giá 7.5 triệu, tại Quận 10, gần đại học Bách Khoa TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -41224,7 +40053,6 @@
             {
                 "text": "Phòng trọ 25m2, full nội thất, có ban công, WC chung, gác lửng, view đẹp, phòng cũ, giá 7.5 triệu, tại Quận 10, gần đại học Bách Khoa TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -42301,7 +41129,6 @@
             {
                 "text": "Phòng trọ thường 25m2, có ban công, đầy đủ nội thất, WC chung. Giá 5.5 triệu. Gần ĐH Bách Khoa Q.10.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -42375,36 +41202,6 @@
         ]
     },
     {
-        "query": "phong tro q10 5tr5 full nt co may lanh",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, wc riêng, full NT, máy lạnh. Giá 4.5tr ở Quận 11, gần ĐH Sư Phạm Kỹ Thuật.",
-                "type": [
-                    "price",
-                    "location"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 20m2 không gác, wc chung, full NT. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2 không gác, wc riêng, full NT, không máy lạnh, chỉ cho nữ thuê. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
         "query": "can phong 25m2 gan bach khoa wc rieng co gac",
         "pos": "{pos}",
         "hard_neg": [
@@ -42427,39 +41224,9 @@
             {
                 "text": "Phòng trọ 25m2 có gác, wc riêng, chỉ có một số NT, máy lạnh. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa, không cho nấu ăn.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "tim phong q.10 duoi 6tr co may lanh full noi that",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, wc riêng, full NT, máy lạnh. Giá 5.5tr ở Quận 3, gần Chợ Bến Thành.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 có gác, wc riêng, không máy lạnh. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, wc riêng, full NT, máy lạnh, không cho nuôi thú cưng. Giá 4.5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
             }
         ]
     },
@@ -42485,39 +41252,9 @@
             {
                 "text": "Phòng trọ 25m2 có gác, wc chung, full NT, máy lạnh, chỉ cho nam thuê. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "q10 phong 5tr5 co may lanh",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, wc riêng, full NT, máy lạnh. Giá 5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, wc riêng, không máy lạnh. Giá 5.5tr ở Quận 10, gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 30m2 có gác, wc riêng, full NT, máy lạnh, ưu tiên sinh viên. Giá 5.5tr ở Quận 10, gần ĐH Sư Phạm.",
-                "type": [
-                    "area",
-                    "location",
-                    "amenity"
-                ],
-                "weight": 3.25
             }
         ]
     },
@@ -42845,7 +41582,6 @@
             {
                 "text": "Phòng trọ 25m2 có máy lạnh, wc riêng, cửa sổ thoáng mát, gần Đại học Bách Khoa TP.HCM, Quận 10, giá 5.5tr. Có chỗ để xe, chung chủ.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -44197,7 +42933,6 @@
             {
                 "text": "Phòng trọ 30m2 có gác, WC riêng, máy lạnh, không bếp, giá 5tr5, hẻm xe máy, gần chợ Phạm Văn Hai, Tân Bình.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -44354,7 +43089,6 @@
             {
                 "text": "Phòng trọ 25m2, có máy lạnh, kệ bếp chung, WC riêng, ban công, giờ giới hạn. Giá 6.2 triệu/tháng. Q. Bình Thạnh, gần chợ Bà Chiểu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -44413,7 +43147,6 @@
             {
                 "text": "Căn hộ mini 20m2, có WC chung. Gần ĐH Bách Khoa, đường Tô Hiến Thành, Q.10. Giá 5,5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -44533,27 +43266,6 @@
         ]
     },
     {
-        "query": "phong tro co wc rieng q.10 duoi 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ mới 25m2, có cửa sổ lớn, WC chung. Giá 5.5tr. Giờ tự do. Khu vực an ninh. Quận 10.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ có wc riêng, giá 7tr. Quận 3. Gần ĐH Kinh tế.",
-                "type": [
-                    "price",
-                    "location"
-                ],
-                "weight": 3.1
-            }
-        ]
-    },
-    {
         "query": "tim tro 25m2 co gac co may lanh",
         "pos": "{pos}",
         "hard_neg": [
@@ -44583,7 +43295,6 @@
                 "text": "Phòng trọ cho nam, giờ giới hạn. Gần ĐH Bách Khoa. Giá 5tr.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "price"
                 ],
                 "weight": 2.6
@@ -44594,92 +43305,6 @@
                     "location"
                 ],
                 "weight": 2.5
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 gan dh bk co may lanh wc rieng duoi 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Cho thuê phòng trọ Quận 3, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC riêng, có ban công. Giá 5.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC chung, có ban công. Giá 4.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 30m2, có máy lạnh, WC riêng, không ban công. Giá 5.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong tro 25m2 q.10 5tr5 full tien ich",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Cho thuê phòng trọ Quận Tân Bình, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC riêng, có ban công. Giá 5.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC riêng, có ban công. Giá 6.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 20m2, không máy lạnh, WC riêng, có ban công. Giá 5.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro co ban cong wc rieng gan dhbk q10 5.5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC riêng, có ban công. Giá 5.5 triệu/tháng. Gần chợ An Đông.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Cho thuê phòng trọ Quận 10, Hồ Chí Minh. Diện tích 25m2, có máy lạnh, WC chung, có ban công. Giá 5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Cho thuê căn hộ dịch vụ mini Quận 10, Hồ Chí Minh. Diện tích 30m2, có máy lạnh, WC riêng, có ban công. Giá 5.5 triệu/tháng. Gần trường Đại học Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
             }
         ]
     },
@@ -44735,7 +43360,6 @@
                 "text": "Phòng trọ 35m2 có ban công, gác, wc riêng, bếp, giờ tự do, không camera an ninh, hẻm xe máy, gần chợ Bình Thới, Q.11 TPHCM, giá 5tr",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -44764,7 +43388,6 @@
                 "text": "Phòng trọ 20m2 có ban công, không gác, wc chung, không bếp, giờ giới nghiêm, camera an ninh, hẻm xe máy, gần chợ Bình Thới, Q.11 TPHCM, giá 5tr",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -44823,7 +43446,6 @@
                 "text": "Phòng trọ 25m2 có ban công, gác, wc riêng, bếp, giờ giới nghiêm, không camera an ninh, hẻm xe hơi, gần chợ Bình Thới, Q.11 TPHCM, giá 5tr",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -45968,7 +44590,6 @@
             {
                 "text": "Phòng trọ 25m2, WC riêng, có ban công, nội thất cơ bản, có bếp. Giá 4.500.000 VNĐ. Ở 1 người. Q.Bình Thạnh, hẻm xe hơi, gần ĐH Giao Thông Vận Tải. Có máy giặt chung. Phòng thoáng mát.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -46144,36 +44765,6 @@
                     "amenity"
                 ],
                 "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro binh thanh full nt 4tr8",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất (máy lạnh, tủ lạnh, máy giặt), có gác, WC riêng. Giá 5.5 triệu/tháng. Điện 3.5k, nước 100k/người. Hẻm 200 Xô Viết Nghệ Tĩnh, P21, Quận 3. Gần chợ, đại học Hutech, Hồng Bàng.",
-                "type": [
-                    "price",
-                    "location"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 20m2 không máy giặt, không tủ lạnh, có gác, WC riêng. Giá 4.8 triệu/tháng. Điện 3.5k, nước 100k/người. Hẻm 200 Xô Viết Nghệ Tĩnh, P21, Bình Thạnh. Gần chợ, đại học Hutech, Hồng Bàng.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất (máy lạnh, tủ lạnh), có gác, WC chung. Giá 4.8 triệu/tháng. Điện 4k, nước 120k/người. Hẻm 200 Xô Viết Nghệ Tĩnh, P21, Bình Thạnh. Gần chợ, đại học Hutech, Hồng Bàng.",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
             }
         ]
     },
@@ -47821,7 +46412,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC riêng, không máy lạnh, không tủ lạnh, có máy giặt, không bếp riêng, không ban công. Gần ĐH Bách Khoa, đường Tô Hiến Thành, Quận 10. Giá 5.5tr, không chỗ để xe.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -48947,7 +47537,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, không máy lạnh, wc riêng, cửa sổ thoáng mát, không chỗ để xe. Giá 3tr5. Gần Bách Khoa, quận 10, HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -49175,7 +47764,6 @@
             {
                 "text": "Phòng trọ thường 25m2 có ban công riêng, wc riêng, không máy lạnh, không gác lửng. Giá 6.5 triệu. Địa chỉ 123/45 Lê Văn Sỹ, Q3.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -49298,7 +47886,6 @@
             {
                 "text": "Phòng trọ 25m2 có ban công, máy lạnh, WC chung, gần ĐH Bách Khoa, quận 10, giá 5.5 triệu, giờ giấc cố định, có chỗ để xe.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -49524,7 +48111,6 @@
             {
                 "text": "Phòng trọ đã sử dụng 2 năm, chỉ có giường tủ, máy lạnh. Không ban công. Chung chủ. Địa chỉ Q.3. Giá 5,5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -50360,7 +48946,6 @@
             {
                 "text": "Phòng trọ không gác, WC chung, nội thất cơ bản, máy lạnh, bếp, cửa sổ thoáng mát, diện tích 25m2. Giá 5.5 triệu. Địa chỉ: hẻm 210 Cách Mạng Tháng Tám, Quận 10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -50795,7 +49380,6 @@
             {
                 "text": "Phòng trọ 20m2, ban công, máy lạnh, tủ lạnh, không bếp, WC chung. Địa chỉ 342/22 Lý Thường Kiệt, P.14, Q.10. Giá 6.5 triệu. Giờ giấc giới hạn.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52223,7 +50807,6 @@
             {
                 "text": "Phòng trọ bình dân có gác, không máy lạnh, wc chung. Diện tích 25m2, giá 5tr5/tháng. Vị trí hẻm 256 Đặng Văn Bi, Thủ Đức, TP.HCM. Gần Vincom, ĐH Sư Phạm Kỹ Thuật.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52253,7 +50836,6 @@
             {
                 "text": "Phòng trọ bình dân có gác, không máy lạnh, wc chung. Diện tích 25m2, giá 5tr5/tháng. Vị trí hẻm 256 Đặng Văn Bi, Thủ Đức, TP.HCM. Gần Vincom, ĐH Sư Phạm Kỹ Thuật.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52283,7 +50865,6 @@
             {
                 "text": "Phòng trọ bình dân có gác, không máy lạnh, wc chung. Diện tích 25m2, giá 5tr5/tháng. Vị trí hẻm 256 Đặng Văn Bi, Thủ Đức, TP.HCM. Gần Vincom, ĐH Sư Phạm Kỹ Thuật.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52313,7 +50894,6 @@
             {
                 "text": "Phòng trọ bình dân có gác, không máy lạnh, wc chung. Diện tích 25m2, giá 5tr5/tháng. Vị trí hẻm 256 Đặng Văn Bi, Thủ Đức, TP.HCM. Gần Vincom, ĐH Sư Phạm Kỹ Thuật.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52343,7 +50923,6 @@
             {
                 "text": "Phòng trọ bình dân có gác, không máy lạnh, wc chung. Diện tích 25m2, giá 5tr5/tháng. Vị trí hẻm 256 Đặng Văn Bi, Thủ Đức, TP.HCM. Gần Vincom, ĐH Sư Phạm Kỹ Thuật.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52487,7 +51066,6 @@
                 "text": "Phòng trọ 25m2, 5tr5, không gác, máy lạnh, wc riêng, gần ĐH Bách Khoa, Q.10, HCM. Cấm nấu ăn.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -52536,7 +51114,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, không có gác, máy lạnh, wc riêng, gần ĐH Bách Khoa, Q.10, HCM. Yêu cầu ở ghép.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -52603,7 +51180,6 @@
             {
                 "text": "Căn hộ mini mới xây, có ban công, wc riêng, full nội thất, không giờ giấc tự do. Giá 6tr. Diện tích 25m2. Địa chỉ: Hẻm 210 Cách Mạng Tháng Tám, P.10, Q.3, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "price"
                 ],
@@ -52750,7 +51326,6 @@
             {
                 "text": "Phòng trọ 25m2, 6tr, không full nội thất, có ban công, ở Quận 1, xa Phố Đi Bộ, wc riêng, giờ giấc tự do, cho phép nuôi pet",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -53720,7 +52295,6 @@
             {
                 "text": "Phòng trọ cũ, có ban công, nội thất cơ bản, WC chung, không bếp nấu ăn, không máy lạnh, không tủ lạnh, không máy giặt. Diện tích 25m2. Giá 5.5 triệu/tháng. Gần trường ĐHBK. Địa chỉ: hẻm 606 Đường 3/2, P.14, Q.10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -54103,63 +52677,6 @@
                     "amenity"
                 ],
                 "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "cmt8 q3 phong co gac duoi 5tr5",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, có WC riêng, tủ lạnh, có gác. Giá 5.2 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Cách Mạng Tháng 8, Phường 11, Quận 3, TP.HCM, gần chợ Bến Thành.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2, có WC riêng, điều hòa, tủ lạnh, có gác. Giá 5.2 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Lý Chính Thắng, Phường 8, Quận 3, TP.HCM, gần công viên Tao Đàn.",
-                "type": [
-                    "location",
-                    "amenity"
-                ],
-                "weight": 2.8
-            },
-            {
-                "text": "Phòng trọ 30m2, có WC riêng, điều hòa, tủ lạnh, có gác. Giá 4.5 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Cách Mạng Tháng 8, Phường 11, Quận 3, TP.HCM, gần chợ Bến Thành.",
-                "type": [
-                    "area",
-                    "price"
-                ],
-                "weight": 2.45
-            }
-        ]
-    },
-    {
-        "query": "can phong tro q3 25m2 wc rieng co may lanh",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, có WC riêng, điều hòa, tủ lạnh, có gác. Giá 3.5 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Cách Mạng Tháng 8, Phường 11, Quận 3, TP.HCM, gần chợ Bến Thành.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 25m2, WC chung, điều hòa, tủ lạnh. Giá 5.2 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Cách Mạng Tháng 8, Phường 11, Quận 3, TP.HCM, gần chợ Bến Thành.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2, có WC riêng, điều hòa, tủ lạnh, có gác. Giá 5.2 triệu/tháng. Giờ giấc tự do. Địa chỉ: Đường Cách Mạng Tháng 8, Phường 9, Quận 3, TP.HCM, gần chợ Bến Thành.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
             }
         ]
     },
@@ -55233,7 +53750,6 @@
                 "text": "Phòng trọ 25m2 có gác, WC chung, máy lạnh, khu bếp riêng, hẻm xe hơi, gần DH Bách Khoa, quận 10, giá 4.5tr/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "price"
                 ],
                 "weight": 2.6
@@ -55263,7 +53779,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC chung, máy lạnh, khu bếp riêng, hẻm xe hơi, gần DH Bách Khoa, quận 10, giá 4.5tr/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "price"
                 ],
@@ -55295,7 +53810,6 @@
                 "text": "Phòng trọ 25m2 có gác, WC chung, máy lạnh, khu bếp riêng, hẻm xe hơi, gần DH Bách Khoa, quận 10, giá 4.5tr/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "price"
                 ],
                 "weight": 2.6
@@ -55326,7 +53840,6 @@
                 "text": "Phòng trọ 25m2 có gác, WC chung, máy lạnh, khu bếp riêng, hẻm xe hơi, gần DH Bách Khoa, quận 10, giá 4.5tr/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "price"
                 ],
                 "weight": 2.6
@@ -55356,7 +53869,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC chung, máy lạnh, khu bếp riêng, hẻm xe hơi, gần DH Bách Khoa, quận 10, giá 4.5tr/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "price"
                 ],
@@ -55416,7 +53928,6 @@
             {
                 "text": "Phòng trọ 20m2 có nội thất cơ bản, có ban công, giá 5.5 triệu ở Q10 gần Đại học Bách Khoa, giờ giấc giới hạn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -55629,7 +54140,6 @@
                 "text": "Phòng trọ không gác 25m2, 3tr5, wc riêng, máy lạnh, không tủ lạnh, gần chợ Bà Chiểu, Bình Thạnh, HCM",
                 "type": [
                     "price",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.6
@@ -56246,7 +54756,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, kệ bếp, WC riêng. Giá 6tr5, mặt tiền đường lớn, Quận Bình Thạnh, gần ngã tư Hàng Xanh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -56276,7 +54785,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, kệ bếp, WC riêng. Giá 6tr5, mặt tiền đường lớn, Quận Bình Thạnh, gần ngã tư Hàng Xanh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -56306,7 +54814,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, kệ bếp, WC riêng. Giá 6tr5, mặt tiền đường lớn, Quận Bình Thạnh, gần ngã tư Hàng Xanh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -56336,7 +54843,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, kệ bếp, WC riêng. Giá 6tr5, mặt tiền đường lớn, Quận Bình Thạnh, gần ngã tư Hàng Xanh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -56366,7 +54872,6 @@
             {
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, kệ bếp, WC riêng. Giá 6tr5, mặt tiền đường lớn, Quận Bình Thạnh, gần ngã tư Hàng Xanh.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -58466,7 +56971,6 @@
             {
                 "text": "Phòng trọ 25m2 full nội thất (máy lạnh, tủ lạnh, giường, tủ quần áo, bếp từ, wc chung). Giá 5.5tr. Hẻm 285 CMT8, P.12, Q.10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -58879,33 +57383,6 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dhbk full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có gác, WC riêng, full nội thất, giá 5tr5 ở Quận Bình Thạnh gần ĐH HUTECH.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, WC chung, không nội thất, giá 5tr5 ở Quận 10 gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, WC riêng, full nội thất, giá 6tr ở Quận 10 gần ĐH Bách Khoa.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            }
-        ]
-    },
-    {
         "query": "tro 25m2 co gac wc rieng gia 5tr5",
         "pos": "{pos}",
         "hard_neg": [
@@ -58927,35 +57404,6 @@
             },
             {
                 "text": "Phòng trọ 25m2 có gác, WC riêng, chỉ có giường, giá 5.5tr ở Quận 10 gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong q10 duoi 6tr full noi that co gac",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 18m2 không gác, WC riêng, full nội thất, giá 4tr ở Quận 10 gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.75
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, WC riêng, full nội thất, giá 5tr5 ở Quận Tân Bình gần chợ Hoàng Hoa Thám.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 có gác, WC khép kín, không máy lạnh, giá 5tr5 ở Quận 10 gần ĐH Bách Khoa.",
                 "type": [
                     "amenity"
                 ],
@@ -60430,7 +58878,6 @@
             {
                 "text": "Phòng trọ 20m2 full nội thất, wc riêng, không ban công, gần chợ Hòa Hưng, Q10. Giá 4tr5, có gác.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -60714,7 +59161,6 @@
                 "type": [
                     "area",
                     "amenity",
-                    "amenity",
                     "price"
                 ],
                 "weight": 3.05
@@ -60776,7 +59222,6 @@
                 "text": "Phòng trọ 20m2 có gác, máy lạnh, WC chung, giờ giới nghiêm, gần ĐH Bách Khoa, quận 10, giá 6 triệu",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity",
                     "price"
                 ],
@@ -61605,7 +60050,6 @@
             {
                 "text": "Phòng trọ 25m², 5.5 triệu/tháng, đầy đủ nội thất, vệ sinh riêng, không có gác, ban công, bếp riêng. Địa chỉ: Phường 13, Quận 10, TP.HCM. Xa trường Đại học Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -63325,7 +61769,6 @@
                 "text": "Phòng trọ 15m2 không gác, máy lạnh, wc riêng, giá 3.5tr ở Quận 10 gần Bệnh viện Chợ Rẫy",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -63356,8 +61799,7 @@
                 "type": [
                     "area",
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 3.05
             }
@@ -63416,7 +61858,6 @@
             {
                 "text": "Phòng trọ 20m2 có gác, máy lạnh, tủ lạnh, bếp nấu ăn, không ban công, có giờ giới nghiêm, điện nước giá dân. Gần Đại học Bách Khoa, quận 10, HCM. Giá 5.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -63642,93 +62083,6 @@
                     "price"
                 ],
                 "weight": 2.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro q3 25m2 full noi that co ban cong duoi 7tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất, có ban công, khu vực Quận 1 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất, không ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 5.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2 full nội thất, có ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc giới hạn.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong co cho de xe gio giac tu do gan ho con rua q3",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất, có ban công, khu vực Quận 1 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất, không ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 5.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2 full nội thất, có ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc giới hạn.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong 6tr5 gan ho con rua co ban cong q.3",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 full nội thất, có ban công, khu vực Quận 1 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất, không ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 5.5 triệu/tháng. Có chỗ để xe, giờ giấc tự do.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2 full nội thất, có ban công, khu vực Quận 3 gần Hồ Con Rùa. Giá 6.5 triệu/tháng. Có chỗ để xe, giờ giấc giới hạn.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
             }
         ]
     },
@@ -64006,34 +62360,6 @@
             },
             {
                 "text": "Phòng trọ 20m2, ban công, wc riêng, không giờ giấc tự do, có chỗ nấu ăn. Giá 4.5 triệu/tháng. Gần chợ Bà Chiểu, Quận Bình Thạnh, HCM.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 5tr5 wc rieng gan bach khoa",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ Q.11 TPHCM, 25m2, 5.5tr, WC riêng, có máy lạnh, có gác lửng, gần ĐH Bách Khoa.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ Q10 TPHCM, 20m2, 6.0tr, WC riêng, có máy lạnh, có gác lửng, gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "price"
-                ],
-                "weight": 2.45
-            },
-            {
-                "text": "Phòng trọ Q10 TPHCM, 25m2, 5.5tr, WC chung, không máy lạnh, có gác lửng, gần ĐH Bách Khoa.",
                 "type": [
                     "amenity"
                 ],
@@ -64464,7 +62790,6 @@
             {
                 "text": "Phòng trọ thường có gác, wc riêng. Giá 5.5 triệu. Diện tích 25m2. Địa chỉ: hẻm 280 Bùi Hữu Nghĩa, P2, Q.Bình Thạnh, TP.HCM. Gần chợ Bà Chiểu, ĐH Văn Lang.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -65079,7 +63404,6 @@
                 "text": "Phòng trọ 25m2 có wc riêng, không gác, không máy lạnh, không tủ lạnh. Gần ĐH Bách Khoa, tiện ích cơ bản. Quận 10, TPHCM. Giá 4.5 triệu.",
                 "type": [
                     "price",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.6
@@ -65173,7 +63497,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC chung, gần ĐH Bách Khoa, Q.10, TPHCM. Giá 5.5tr (không máy lạnh, có chung chủ)",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -65229,7 +63552,6 @@
             {
                 "text": "Phòng trọ 25m2 có bếp, máy lạnh, WC riêng, gần ĐH Bách Khoa, Q.10, TPHCM. Giá 5.5tr (có chung chủ)",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -65258,7 +63580,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, WC chung, gần ĐH Bách Khoa, Q.10, TPHCM. Giá 5.5tr (không máy lạnh, giờ giấc không tự do)",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -65745,7 +64066,6 @@
             {
                 "text": "Phòng trọ đầy đủ nội thất, WC chung, giờ giấc tự do, rộng 25m2, giá 5tr5, hẻm 273 Nguyễn Văn Đậu, P.11, Bình Thạnh, gần chợ Bà Chiểu, ĐH Hutech.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -65987,7 +64307,6 @@
             {
                 "text": "Phòng trọ 20m2 không gác, WC riêng, máy lạnh, tủ lạnh, bếp từ. Gần ĐH Bách Khoa Q10. Giá 5.5 triệu. Điện 3.5k/số, nước 100k/người. Có chỗ để xe. Không giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -66341,7 +64660,6 @@
             {
                 "text": "Phòng trọ mới xây, không gác, WC chung, có cửa sổ, ban công, máy lạnh, giờ giấc tự do. Giá 5tr5, diện tích 25m2. Gần ĐH Bách Khoa, quận 10, TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -66727,7 +65045,6 @@
             {
                 "text": "Phòng trọ studio 25m2, 5tr5, quận 10, TP.HCM, full nội thất, có máy lạnh, wc riêng, có gác, giờ giấc tự do, an ninh kém, gần trường Nguyễn Thị Minh Khai, phù hợp SV/NVVP",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -66757,7 +65074,6 @@
                 "text": "Phòng trọ 30m2, 5tr5, quận 10, TP.HCM, full nội thất, có máy lạnh, wc riêng, không gác, giờ giấc tự do, an ninh, gần bệnh viện 115, phù hợp cặp đôi",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -66787,7 +65103,6 @@
                 "text": "Phòng trọ 20m2, 5tr5, quận 10, TP.HCM, full nội thất, có máy lạnh, wc riêng, có gác, không giờ giấc tự do, an ninh, gần ĐH Sài Gòn, phù hợp NVVP",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -67759,7 +66074,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2, đủ nội thất, có máy lạnh, wc chung. Giá 5.5 triệu. Địa chỉ: Hẻm 123 Đường 3/2, Quận 10, gần Đại học Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -67789,7 +66103,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2, đủ nội thất, có máy lạnh, wc chung. Giá 5.5 triệu. Địa chỉ: Hẻm 123 Đường 3/2, Quận 10, gần Đại học Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -67819,7 +66132,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2, đủ nội thất, có máy lạnh, wc chung. Giá 5.5 triệu. Địa chỉ: Hẻm 123 Đường 3/2, Quận 10, gần Đại học Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -67849,7 +66161,6 @@
             {
                 "text": "Cho thuê căn hộ mini 25m2, đủ nội thất, có máy lạnh, wc chung. Giá 5.5 triệu. Địa chỉ: Hẻm 123 Đường 3/2, Quận 10, gần Đại học Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -67879,7 +66190,6 @@
             {
                 "text": "Phòng trọ thường 25m2 có gác, full nội thất, không máy lạnh, wc chung. Giá 5.0 triệu/tháng. Gần Đại học Bách Khoa, Quận 10, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "price"
                 ],
@@ -67925,7 +66235,6 @@
                 "text": "Phòng trọ 20m2 có gác, nội thất cơ bản. Giá 5.5 triệu/tháng. Gần Đại học Bách Khoa, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -68413,7 +66722,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, wc riêng, full nội thất cơ bản, có giờ giới nghiêm, giá 5tr5 ở Quận 10, gần ĐH Bách Khoa, ko cho nấu ăn.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -68775,7 +67083,6 @@
             {
                 "text": "Phòng trọ 20m2, không gác, máy lạnh, WC riêng, ở Quận 10, gần ĐH Bách Khoa, giá 5.5 triệu, yêu cầu đặt cọc 2 tháng.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -68831,7 +67138,6 @@
             {
                 "text": "Phòng trọ 20m2, có gác, không máy lạnh, WC riêng, ở Quận 10, gần ĐH Bách Khoa, giá 5.5 triệu, chỉ cho phép ở 1 người.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70312,7 +68618,6 @@
             {
                 "text": "Phòng trọ đã sử dụng lâu, giá 5.5tr/tháng, diện tích 25m2, không ban công, có máy lạnh, khu vực Quận 10, gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70394,7 +68699,6 @@
                 "text": "Phòng trọ đã sử dụng, không ban công, không máy lạnh, diện tích 20m2, giá 5.5tr/tháng, khu vực Quận 10, gần ĐH Bách Khoa.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -70637,7 +68941,6 @@
             {
                 "text": "Căn hộ mini 15m2, có gác, WC chung, bếp chung, gần ĐH Kinh Tế, Q.3, giá 3.8 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70667,7 +68970,6 @@
             {
                 "text": "Căn hộ mini 15m2, có gác, WC chung, bếp chung, gần ĐH Kinh Tế, Q.3, giá 3.8 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70697,7 +68999,6 @@
             {
                 "text": "Căn hộ mini 15m2, có gác, WC chung, bếp chung, gần ĐH Kinh Tế, Q.3, giá 3.8 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70727,7 +69028,6 @@
             {
                 "text": "Căn hộ mini 15m2, có gác, WC chung, bếp chung, gần ĐH Kinh Tế, Q.3, giá 3.8 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -70844,7 +69144,6 @@
                 "text": "{pos_modified_area_amenity_other}",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -70874,7 +69173,6 @@
                 "text": "{pos_modified_area_amenity_other}",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -70904,7 +69202,6 @@
                 "text": "{pos_modified_area_amenity_other}",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -70934,7 +69231,6 @@
                 "text": "{pos_modified_area_amenity_other}",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -70964,7 +69260,6 @@
                 "text": "{pos_modified_area_amenity_other}",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -71330,7 +69625,6 @@
             {
                 "text": "Phòng trọ cao cấp có gác, đầy đủ nội thất (máy lạnh, tủ lạnh, bếp từ, máy giặt, giường, tủ quần áo), cửa sổ, WC riêng, giờ giới nghiêm, vân tay an ninh, có hầm xe, gần Lotte Mart Q7, đại học Tôn Đức Thắng. Giá 5.5 triệu, diện tích 30m2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -71418,7 +69712,6 @@
                 "text": "Phòng trọ có gác, wc riêng, cửa sổ thoáng mát ở quận Bình Thạnh, gần chợ Bà Chiểu. Diện tích 18m2. Giá thuê 4.5 triệu/tháng. Không có chỗ để xe, chung chủ.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -72022,7 +70315,6 @@
             {
                 "text": "Căn hộ dịch vụ có ban công, máy lạnh, WC chung, có bếp, 25m2, giá 5.5 triệu/tháng. Địa chỉ: hẻm 280 Cách Mạng Tháng 8, P.10, Q.3, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -72052,7 +70344,6 @@
             {
                 "text": "Phòng cho thuê có ban công, không máy lạnh, WC riêng, có bếp chung, 25m2, giá 5.5 triệu/tháng. Địa chỉ: hẻm 280 Cách Mạng Tháng 8, P.10, Q.3, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -72780,7 +71071,6 @@
             {
                 "text": "Phòng trọ 25m2, có gác, wc chung, máy lạnh, giới nghiêm 11h, gần ĐH Bách Khoa Q10. Giá 5.5tr.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -72868,7 +71158,6 @@
             {
                 "text": "Tìm phòng Gò Vấp 4tr5 không có gác, có máy lạnh wc riêng.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -72923,7 +71212,6 @@
             {
                 "text": "Phòng dưới 5tr không gác gần ĐH Công Nghiệp Gò Vấp.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -73675,7 +71963,6 @@
             {
                 "text": "Phòng thuê chung cư mini, không nội thất, WC chung. Diện tích 25m2. Giá 5.5 triệu/tháng. Hẻm 123, đường Nguyễn Văn Cừ, Quận 5, TP.HCM. Gần Đại học Khoa học Tự nhiên.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -74695,7 +72982,6 @@
                 "text": "Phòng trọ cho thuê Quận 10, gần ĐH Bách Khoa, 5.5tr, có WC riêng, full nội thất, không gác, 18m2, bếp chung",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -74723,7 +73009,6 @@
             {
                 "text": "Phòng trọ cho thuê Quận 10, gần ĐH Bách Khoa, 5.5tr, có WC riêng, không nội thất, không gác, 25m2, không máy lạnh",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -74752,7 +73037,6 @@
             {
                 "text": "Phòng trọ cho thuê Quận 10, gần ĐH Bách Khoa, 5.5tr, WC chung, không gác, 25m2, không cho nuôi thú cưng",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -75289,7 +73573,6 @@
             {
                 "text": "Phòng trọ 20m2, không gác, có máy lạnh, wc chung. Giá 4.5tr. Địa chỉ: hẻm 256 Đ. Phan Huy Ích, P12, Gò Vấp, HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -75736,7 +74019,6 @@
             {
                 "text": "Phòng trọ mini studio full nội thất, có cửa sổ, ban công, WC riêng, khu không an ninh, gần Vincom Mega Mall, Q2, giá 6.5tr, 30m2.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -76277,7 +74559,6 @@
             {
                 "text": "Phòng trọ cho thuê 20m2 full nội thất, không ban công, wc riêng, gần chợ, gần Đại học Bách Khoa TP.HCM, Quận 10, giá 5.5 triệu, ưu tiên nữ",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -76651,7 +74932,6 @@
                 "text": "Phòng trọ 22m2 không gác, máy lạnh, wc riêng. Giá 4.5tr. Địa chỉ 111 Trần Hưng Đạo, P.10, Q.5, TP.HCM. Phòng cũ.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77182,7 +75462,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, wc chung, gần chợ, khu dân cư đông đúc, giá 4tr5, địa chỉ 123 Nguyễn Văn Linh, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77228,7 +75507,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, wc chung, gần chợ, khu dân cư đông đúc, giá 4tr5, địa chỉ 123 Nguyễn Văn Linh, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77274,7 +75552,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, wc chung, gần chợ, khu dân cư đông đúc, giá 4tr5, địa chỉ 123 Nguyễn Văn Linh, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77320,7 +75597,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, wc chung, gần chợ, khu dân cư đông đúc, giá 4tr5, địa chỉ 123 Nguyễn Văn Linh, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77366,7 +75642,6 @@
                 "text": "Phòng trọ 25m2, có ban công, máy lạnh, wc chung, gần chợ, khu dân cư đông đúc, giá 4tr5, địa chỉ 123 Nguyễn Văn Linh, Quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -77552,8 +75827,7 @@
                 "text": "Căn hộ mini Quận 10, Thành phố Hồ Chí Minh, 7 triệu, 25m2, full nội thất, có WC riêng, có ban công, không máy lạnh, không gác, gần Bách Khoa",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -77583,8 +75857,7 @@
                 "text": "Căn hộ mini Quận 10, Thành phố Hồ Chí Minh, 7 triệu, 25m2, full nội thất, có WC riêng, có ban công, không máy lạnh, không gác, gần Bách Khoa",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -77614,8 +75887,7 @@
                 "text": "Căn hộ mini Quận 10, Thành phố Hồ Chí Minh, 7 triệu, 25m2, full nội thất, có WC riêng, có ban công, không máy lạnh, không gác, gần Bách Khoa",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -77645,8 +75917,7 @@
                 "text": "Căn hộ mini Quận 10, Thành phố Hồ Chí Minh, 7 triệu, 25m2, full nội thất, có WC riêng, có ban công, không máy lạnh, không gác, gần Bách Khoa",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -77676,8 +75947,7 @@
                 "text": "Căn hộ mini Quận 10, Thành phố Hồ Chí Minh, 7 triệu, 25m2, full nội thất, có WC riêng, có ban công, không máy lạnh, không gác, gần Bách Khoa",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -78324,7 +76594,6 @@
             {
                 "text": "Phòng trọ 25m2, 3tr5, có nóng lạnh, không điều hòa, WC chung, không gác lửng, không giờ giấc tự do, gần ĐH Kiến Trúc, P.Văn Quán, Q.Hà Đông, Hà Nội",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -78672,7 +76941,6 @@
                 "text": "Phòng trọ 25m2, q.10, giá 5tr5, có máy lạnh, wc riêng, cách ĐH Bách Khoa khoảng 2km, không gác lửng.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -78875,7 +77143,6 @@
             {
                 "text": "Cho thuê phòng trọ cao cấp Q10, Nguyễn Tri Phương, Full nội thất, có máy lạnh, gác lửng, WC chung, giờ giấc giới hạn, diện tích 25m2, giá 5.5tr.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -79141,123 +77408,7 @@
         ]
     },
     {
-        "query": "phong tro q5 nguyen van cu",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có gác, WC riêng, máy lạnh, diện tích 25m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 10, TP.HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có gác, WC chung, máy lạnh, diện tích 25m2, giá 4tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ không gác, WC riêng, máy lạnh, diện tích 18m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
         "query": "phong 25m2 5tr5 co wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có gác, WC riêng, máy lạnh, diện tích 25m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 10, TP.HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có gác, WC chung, máy lạnh, diện tích 25m2, giá 4tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ không gác, WC riêng, máy lạnh, diện tích 18m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "can tim phong tro q5 co may lanh co gac",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có gác, WC riêng, máy lạnh, diện tích 25m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 10, TP.HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có gác, WC chung, máy lạnh, diện tích 25m2, giá 4tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ không gác, WC riêng, máy lạnh, diện tích 18m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong q5 gia duoi 6tr co wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ có gác, WC riêng, máy lạnh, diện tích 25m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 10, TP.HCM.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ có gác, WC chung, máy lạnh, diện tích 25m2, giá 4tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ không gác, WC riêng, máy lạnh, diện tích 18m2, giá 5tr5, địa chỉ: 123 Nguyễn Văn Cừ, Quận 5, TP.HCM.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong nguyen van cu q5",
         "pos": "{pos}",
         "hard_neg": [
             {
@@ -79949,7 +78100,6 @@
             {
                 "text": "Phòng trọ 20m2 không máy lạnh, wc riêng, giá 4.5tr ở Quận 10, gần Bệnh viện Trưng Vương",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -80042,7 +78192,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, wc riêng, không điều hòa. Giá 4.5 triệu, hẻm 100, đường số 10, P.Tân Quy, Quận 7, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -80637,97 +78786,7 @@
         ]
     },
     {
-        "query": "phong tro q10 25m2 6tr co may lanh wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, giá 7 triệu, có ban công, máy lạnh, wc riêng. Gần ĐH Sư Phạm Kỹ Thuật Thủ Đức.",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 20m2, giá 6 triệu, không ban công, máy lạnh, wc chung. Gần Bệnh viện Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2, giá 5 triệu, có ban công, không máy lạnh, wc riêng. Gần Bệnh viện Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            }
-        ]
-    },
-    {
         "query": "tim phong tro quan 10 duoi 6tr5 co ban cong gan benh vien",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, giá 7 triệu, có ban công, máy lạnh, wc riêng. Gần ĐH Sư Phạm Kỹ Thuật Thủ Đức.",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 20m2, giá 6 triệu, không ban công, máy lạnh, wc chung. Gần Bệnh viện Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2, giá 5 triệu, có ban công, không máy lạnh, wc riêng. Gần Bệnh viện Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            }
-        ]
-    },
-    {
-        "query": "tro 25m2 gan bv q10 co dieu hoa wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2, giá 7 triệu, có ban công, máy lạnh, wc riêng. Gần ĐH Sư Phạm Kỹ Thuật Thủ Đức.",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 20m2, giá 6 triệu, không ban công, máy lạnh, wc chung. Gần Bệnh viện Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Phòng trọ 25m2, giá 5 triệu, có ban công, không máy lạnh, wc riêng. Gần Bệnh viện Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            }
-        ]
-    },
-    {
-        "query": "can phong q10 6tr co ban cong may lanh",
         "pos": "{pos}",
         "hard_neg": [
             {
@@ -81936,123 +79995,7 @@
         ]
     },
     {
-        "query": "phong tro q10 gan dh bach khoa",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, full nội thất, có ban công, wc riêng. Giá 5tr5, ở chung chủ. Gần DH Y Dược, Q5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, nội thất cơ bản, không ban công, wc chung. Giá 4tr5, ở chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có ban công, wc riêng. Giá 5tr5, không chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tim phong tro 5tr5 full noi that q10",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, full nội thất, có ban công, wc riêng. Giá 5tr5, ở chung chủ. Gần DH Y Dược, Q5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, nội thất cơ bản, không ban công, wc chung. Giá 4tr5, ở chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có ban công, wc riêng. Giá 5tr5, không chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong 20m2 co ban cong wc rieng q10",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, full nội thất, có ban công, wc riêng. Giá 5tr5, ở chung chủ. Gần DH Y Dược, Q5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, nội thất cơ bản, không ban công, wc chung. Giá 4tr5, ở chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có ban công, wc riêng. Giá 5tr5, không chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
         "query": "phong tro gan bach khoa gia duoi 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, full nội thất, có ban công, wc riêng. Giá 5tr5, ở chung chủ. Gần DH Y Dược, Q5.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, nội thất cơ bản, không ban công, wc chung. Giá 4tr5, ở chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, full nội thất, có ban công, wc riêng. Giá 5tr5, không chung chủ. Gần DH Bách Khoa, Q10.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "q10 gan dhbk phong 5tr5 co wc rieng",
         "pos": "{pos}",
         "hard_neg": [
             {
@@ -82325,7 +80268,6 @@
             {
                 "text": "Phòng trọ 25m2 có bếp riêng, WC chung, máy lạnh, tủ lạnh, giường, nệm, bàn ghế. Giờ giấc tự do, cửa sổ thoáng mát. Giá 5.8tr. Quận 10, hẻm nhỏ đường 3/2, gần siêu thị.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -82926,7 +80868,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, ban công, giá 5tr5, quận 10 TPHCM, gần ĐH Kinh Tế, cho thuê lâu dài.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -82956,7 +80897,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, ban công, giá 5tr5, quận 10 TPHCM, gần ĐH Kinh Tế, cho thuê lâu dài.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -82986,7 +80926,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, ban công, giá 5tr5, quận 10 TPHCM, gần ĐH Kinh Tế, cho thuê lâu dài.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -83016,7 +80955,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, ban công, giá 5tr5, quận 10 TPHCM, gần ĐH Kinh Tế, cho thuê lâu dài.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -83046,7 +80984,6 @@
             {
                 "text": "Phòng trọ 25m2 có gác, không máy lạnh, wc riêng, ban công, giá 5tr5, quận 10 TPHCM, gần ĐH Kinh Tế, cho thuê lâu dài.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -83484,7 +81421,6 @@
                 "text": "Phòng trọ 18m2 không gác, WC chung, không máy lạnh, không ban công, nội thất cơ bản, giá 5tr5. Gần ĐH Bách Khoa, quận 10, TP.HCM.",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -83529,7 +81465,6 @@
                 "text": "Phòng trọ 25m2 không gác, WC riêng, máy lạnh, không ban công, nội thất cơ bản, giá 4tr8. Gần ĐH Bách Khoa, quận 10, TP.HCM.",
                 "type": [
                     "price",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.6
@@ -84665,7 +82600,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, máy lạnh, nước nóng lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4.5tr, giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -84695,7 +82629,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, máy lạnh, nước nóng lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4.5tr, giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -84725,7 +82658,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, máy lạnh, nước nóng lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4.5tr, giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -84755,7 +82687,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, máy lạnh, nước nóng lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4.5tr, giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -84785,7 +82716,6 @@
             {
                 "text": "Phòng trọ 20m2, có ban công, máy lạnh, nước nóng lạnh, wc riêng, gần chợ Tân Mỹ, Quận 7, giá 4.5tr, giờ giấc tự do.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -84930,7 +82860,6 @@
                 "text": "Phòng trọ không gác giá 3tr5 full nội thất wc riêng khu vực quận 10 gần trường DH Bách Khoa diện tích 25m2 không nấu ăn được",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -84959,8 +82888,7 @@
                 "text": "Phòng trọ có gác giá 3tr5 không nội thất wc riêng khu vực quận 10 gần trường DH Bách Khoa diện tích 15m2 không chỗ để xe",
                 "type": [
                     "amenity",
-                    "area",
-                    "amenity"
+                    "area"
                 ],
                 "weight": 2.1
             }
@@ -84987,7 +82915,6 @@
             {
                 "text": "Phòng trọ có gác giá 3tr5 full nội thất wc chung khu vực quận 10 gần trường DH Bách Khoa diện tích 20m2 giới hạn giờ giấc",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -85044,7 +82971,6 @@
             {
                 "text": "Phòng trọ không gác giá 3tr5 full nội thất wc riêng khu vực quận 10 gần trường DH Bách Khoa diện tích 20m2 chỉ dành cho nữ",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -85627,7 +83553,6 @@
             {
                 "text": "Căn hộ mini 25m2 có ban công, máy lạnh, WC riêng, không tủ lạnh, không bếp nấu ăn, gần chợ Phạm Thế Hiển, giá 4.5 triệu/tháng, ở Quận 8, TP.HCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -86180,7 +84105,6 @@
                 "text": "Phòng trọ 18m2, 5tr5, q10, có wc riêng, máy lạnh, có gác",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -86331,7 +84255,6 @@
             {
                 "text": "Căn hộ mini 20m2 không nội thất, có ban công, wc riêng, máy lạnh, khu vực Tân Bình, gần Lotte Mart. Giá 4.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -86970,7 +84893,6 @@
             {
                 "text": "Phòng trọ 20m2, có máy lạnh, toilet chung, không chỗ để xe, giá 3.5 triệu/tháng, gần ĐH Công nghiệp 4, Gò Vấp.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -87028,7 +84950,6 @@
             {
                 "text": "Phòng trọ 20m2, có máy lạnh, toilet chung, không có bảo vệ 24/7, giá 3.5 triệu/tháng, gần ĐH Công nghiệp 4, Gò Vấp.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -87289,7 +85210,6 @@
             {
                 "text": "Phòng trọ 20m2 có gác, wc riêng, chung chủ, không máy lạnh. Giá 4.5tr. Địa chỉ: hẻm 280 Lương Định Của, P.An Phú, Quận 2, TP.Thủ Đức",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -87429,7 +85349,6 @@
             {
                 "text": "Phòng trọ mới xây full nội thất Quận Bình Thạnh giá 4tr5 có máy lạnh, wc chung, không bếp, giờ giấc giới hạn, gần ĐH Ngoại Thương",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -87663,91 +85582,6 @@
         ]
     },
     {
-        "query": "phòng trọ có ban công, gác lửng, wc riêng, q10 dưới 6tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.3 gần chợ Bến Thành.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC chung, ban công. Giá 6 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 18m2 full nội thất có máy lạnh, WC riêng, ban công. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "thuê trọ q10 5tr5 full đồ có máy lạnh gần đại học Bách Khoa",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.5 gần ĐH Sư Phạm.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 có máy lạnh, gác lửng, WC riêng, ban công. Giá 4.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 25m2 full nội thất có máy lạnh, gác lửng, WC riêng. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "tìm phòng 20m2 có gác lửng q.10 full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.Tân Bình gần sân bay.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, không gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            },
-            {
-                "text": "Phòng trọ 15m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "area"
-                ],
-                "weight": 1.5
-            }
-        ]
-    },
-    {
         "query": "phong tro gia 5tr5 quan 10 co wc rieng co ban cong",
         "pos": "{pos}",
         "hard_neg": [
@@ -87767,33 +85601,6 @@
             },
             {
                 "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC chung, ban công. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "chính chủ cho thuê phòng trọ q10 5.5tr gần Bách Khoa",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.Bình Thạnh gần ĐH HUTECH.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2 full nội thất có máy lạnh, gác lửng, WC riêng, ban công. Giá 5 triệu ở Q.10 gần ĐH Bách Khoa.",
-                "type": [
-                    "price"
-                ],
-                "weight": 2.0
-            },
-            {
-                "text": "Phòng trọ 20m2 không nội thất, có máy lạnh, gác lửng, WC riêng, ban công. Giá 5.5 triệu ở Q.10 gần ĐH Bách Khoa.",
                 "type": [
                     "amenity"
                 ],
@@ -88022,7 +85829,6 @@
             {
                 "text": "Phòng trọ 25m2, 5.5 triệu/tháng, WC riêng, có ban công, máy lạnh, tủ lạnh, bếp nấu ăn, không giờ giấc tự do, có chỗ để xe. Gần Đại học Bách Khoa, Quận 10, TP.HCM. Chỉ cho sinh viên.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -88126,7 +85932,6 @@
             {
                 "text": "Căn hộ mini 20m2 full nội thất, không ban công, máy lạnh, wc riêng. Gần ĐH Bách Khoa, quận 10. Giá 5.5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -88630,35 +86435,6 @@
         ]
     },
     {
-        "query": "thuê phòng trọ gò vấp gần ĐHCN có máy lạnh WC riêng dưới 5tr",
-        "pos": "Phòng trọ 20m2, ban công riêng, có máy lạnh, WC riêng, gần ĐH Công Nghiệp TP.HCM, giá 4.5tr",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, ban công riêng, có máy lạnh, WC riêng, gần ĐH Bách Khoa TP.HCM, giá 4.5tr",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, không ban công, không máy lạnh, WC chung, gần ĐH Công Nghiệp TP.HCM, giá 3.8tr",
-                "type": [
-                    "price",
-                    "amenity"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Căn hộ mini 25m2, ban công riêng, có máy lạnh, WC riêng, gần ĐH Công Nghiệp TP.HCM, giá 4.5tr",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
         "query": "phòng trọ ban công máy lạnh 4tr5 20m2 khu vực đại học công nghiệp",
         "pos": "Phòng trọ 20m2, ban công riêng, có máy lạnh, WC riêng, gần ĐH Công Nghiệp TP.HCM, giá 4.5tr",
         "hard_neg": [
@@ -88852,7 +86628,6 @@
             {
                 "text": "Phòng trọ xây 5 năm, không gác, chỉ có nóng lạnh. WC riêng. Diện tích 25m2. Giá 5.5tr. Địa chỉ: hẻm 123 đường 3/2, P12, Q10, TPHCM. Gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89166,7 +86941,6 @@
             {
                 "text": "Phòng trọ 25m2, 5.5 triệu/tháng, có WC riêng, có gác, không máy lạnh, full nội thất, giờ giới hạn, gần ĐH Sư Phạm Q10 TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89194,7 +86968,6 @@
             {
                 "text": "Phòng trọ 25m2, 5.5 triệu/tháng, có WC riêng, không gác, máy lạnh, full nội thất, giờ tự do, gần ĐH Kinh Tế Q10 TPHCM.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89253,7 +87026,6 @@
             {
                 "text": "Căn hộ dịch vụ 20m2 full nội thất có máy lạnh, gác lửng, nhưng không có ban công, gần ĐH Công Nghiệp, Q10, HCM. Giá 4.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89283,7 +87055,6 @@
             {
                 "text": "Căn hộ dịch vụ 20m2 full nội thất có máy lạnh, gác lửng, nhưng không có ban công, gần ĐH Công Nghiệp, Q10, HCM. Giá 4.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89313,7 +87084,6 @@
             {
                 "text": "Căn hộ dịch vụ 20m2 full nội thất có máy lạnh, gác lửng, nhưng không có ban công, gần ĐH Công Nghiệp, Q10, HCM. Giá 4.5 triệu.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89601,7 +87371,6 @@
             {
                 "text": "Phòng trọ 20m2, 5tr5, quận 10 gần ĐH Bách Khoa, không có máy lạnh, WC riêng, có tủ lạnh",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89660,8 +87429,7 @@
                 "text": "Phòng trọ 25m2 không gác Q.10, giá 6tr full nội thất, gần Công Viên Lê Thị Riêng",
                 "type": [
                     "amenity",
-                    "price",
-                    "amenity"
+                    "price"
                 ],
                 "weight": 2.6
             }
@@ -89688,7 +87456,6 @@
             {
                 "text": "Phòng trọ 25m2 không gác Q.10, giá 5tr5 không nội thất, gần ĐH Y Dược",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -89717,7 +87484,6 @@
                 "text": "Phòng trọ 30m2 có gác Q.10, giá 5tr5 không nội thất, gần Chợ An Đông",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
@@ -89746,40 +87512,9 @@
                 "text": "Phòng trọ 20m2 không gác Q.10, giá 5tr5 full nội thất, gần Bệnh Viện 115",
                 "type": [
                     "area",
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 2.1
-            }
-        ]
-    },
-    {
-        "query": "phong tro q10 5tr5 full nt",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có WC riêng, máy lạnh, ban công, bếp, gần ĐH Kinh Tế Q3, giá 4.5tr",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 18m2 có WC chung, không máy lạnh, ban công, bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
             }
         ]
     },
@@ -89806,37 +87541,6 @@
             {
                 "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
                 "type": [
-                    "amenity",
-                    "amenity"
-                ],
-                "weight": 1.0
-            }
-        ]
-    },
-    {
-        "query": "phong tro 5,5tr q10 co may lanh wc rieng",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 25m2 có WC riêng, máy lạnh, ban công, bếp, gần ĐH Kinh Tế Q3, giá 4.5tr",
-                "type": [
-                    "location",
-                    "price"
-                ],
-                "weight": 3.1
-            },
-            {
-                "text": "Phòng trọ 18m2 có WC chung, không máy lạnh, ban công, bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            },
-            {
-                "text": "Chung cư mini 25m2 có WC riêng, máy lạnh, ban công, không bếp, gần ĐH Bách Khoa Q10, giá 5.5tr",
-                "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -90308,7 +88012,6 @@
             {
                 "text": "Phòng trọ QBT, 30m2, giá 6.5 triệu/tháng. Xa bệnh viện Ung Bướu. Không có ban công.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -90345,7 +88048,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -90374,7 +88076,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -90403,7 +88104,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -90432,7 +88132,6 @@
             {
                 "text": "Phòng trọ 25m2, không máy lạnh, gác lửng, WC chung, bếp, ban công, chung chủ, giá 5tr5, ở Quận Bình Thạnh, gần cầu Sài Gòn",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -91153,7 +88852,6 @@
             {
                 "text": "Phòng trọ 20m2 ở Q.10, có WC chung, chỉ máy lạnh, giá 5tr5. Gần ĐH Bách Khoa.",
                 "type": [
-                    "amenity",
                     "amenity"
                 ],
                 "weight": 1.0
@@ -91363,35 +89061,6 @@
             },
             {
                 "text": "Phòng trọ 18m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Giao Thông Vận Tải, có WC riêng, máy lạnh, có gác, giá 4.8tr.",
-                "type": [
-                    "area",
-                    "amenity"
-                ],
-                "weight": 1.8
-            }
-        ]
-    },
-    {
-        "query": "phong tro quan binh thanh co may lanh duoi 5tr",
-        "pos": "{pos}",
-        "hard_neg": [
-            {
-                "text": "Phòng trọ 20m2, Quận Phú Nhuận, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, máy lạnh, có gác, giá 4.8tr.",
-                "type": [
-                    "location"
-                ],
-                "weight": 2.5
-            },
-            {
-                "text": "Phòng trọ 20m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, không máy lạnh, có gác, giá 5.2tr.",
-                "type": [
-                    "amenity",
-                    "price"
-                ],
-                "weight": 2.3
-            },
-            {
-                "text": "Phòng trọ 30m2, Quận Bình Thạnh, Đường D2 (Nguyễn Gia Trí), gần ĐH Hutech, có WC riêng, máy lạnh, không gác, giá 4.8tr.",
                 "type": [
                     "area",
                     "amenity"
@@ -92065,7 +89734,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -92096,7 +89764,6 @@
             {
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "location",
                     "price"
@@ -92129,7 +89796,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -92161,7 +89827,6 @@
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
                     "amenity",
-                    "amenity",
                     "location",
                     "price"
                 ],
@@ -92192,7 +89857,6 @@
             {
                 "text": "Chung cư mini 25m2 có gác, WC chung, có máy lạnh, khu vực Quận 3, gần Chợ Bến Thành, giá 6.5 triệu/tháng.",
                 "type": [
-                    "amenity",
                     "amenity",
                     "location",
                     "price"
