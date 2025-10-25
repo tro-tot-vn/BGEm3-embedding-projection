@@ -7,7 +7,7 @@ from transformers import AutoModel, AutoTokenizer
 
 MODEL_NAME = "BAAI/bge-m3" # -> 1024 dim
 D_IN = 1024
-D_OUT = 256  # -> 256
+D_OUT = 128  # -> 128
 TAU = 0.07  # temperature cho InfoNCE
 
 
