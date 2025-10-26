@@ -66,8 +66,7 @@ class EmbeddingVisualizer:
         
         # Load model
         self.model = BGEM3WithHead(
-            model_name="BAAI/bge-m3",
-            d_out=256,
+            d_out=128,
             freeze_encoder=True
         ).to(device)
         

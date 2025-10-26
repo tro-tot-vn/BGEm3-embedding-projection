@@ -13,6 +13,7 @@ Everything is set up and ready for training & evaluation!
 | **Train model NOW** | `QUICK_START.md` | `python train_script.py` |
 | **Detailed training guide** | `TRAIN.md` | - |
 | **Evaluate model** | `EVALUATION_GUIDE.md` | `python evaluate_model.py` |
+| **Use trained model** 🚀 | `INFERENCE_GUIDE.md` | `python inference.py` |
 | **Visualize embeddings** 🎨 | `VISUALIZATION_GUIDE.md` | `python visualize_embeddings.py` |
 | **Understand changes** | `CHANGES_SUMMARY.md` | - |
 | **Project architecture** | `PROJECT_SUMMARY.md` | - |
@@ -99,6 +100,34 @@ python visualize_embeddings.py \
 
 ---
 
+### **Step 4: Use Your Trained Model (1 minute)** 🚀
+
+```bash
+# Demo: Load model and perform search
+python inference.py
+```
+
+**Or integrate into your app:**
+
+```python
+from inference import RentalSearchEngine
+
+# Load trained model
+engine = RentalSearchEngine("checkpoints/best_model.pt")
+
+# Index your properties
+engine.index_database(your_properties)
+
+# Search!
+results = engine.search("phòng q10 wc riêng 5tr", top_k=5)
+for rank, (text, score) in enumerate(results, 1):
+    print(f"{rank}. [{score:.4f}] {text}")
+```
+
+📖 **Full guide**: `INFERENCE_GUIDE.md`
+
+---
+
 ## 📁 **Project Files Overview**
 
 ### **🏃 Executable Scripts**
@@ -106,8 +135,9 @@ python visualize_embeddings.py \
 ```
 train_script.py          ⭐ Main training script
 evaluate_model.py        ⭐ Evaluation script
+inference.py             🚀 Use trained model (NEW!)
 visualize_embeddings.py  🎨 Embedding visualization
-plot_training_curves.py  📈 Loss curves (NEW!)
+plot_training_curves.py  📈 Loss curves
 test_weighted_pipeline.py  Test suite
 ```
 
@@ -122,7 +152,8 @@ test_weighted_pipeline.py  Test suite
 QUICK_START.md          ⭐ 5-minute quick start
 TRAIN.md                 📖 Complete training guide (600+ lines)
 EVALUATION_GUIDE.md      📊 Evaluation guide
-VISUALIZATION_GUIDE.md   🎨 Visualization guide (NEW!)
+INFERENCE_GUIDE.md       🚀 Using trained model (NEW!)
+VISUALIZATION_GUIDE.md   🎨 Visualization guide
 CHANGES_SUMMARY.md       🔧 What was fixed
 PROJECT_SUMMARY.md       📐 Technical architecture
 README_FINAL.md          📋 Summary
@@ -569,7 +600,10 @@ python plot_training_curves.py
 # 3. Evaluate
 python evaluate_model.py
 
-# 4. Visualize embeddings 🎨
+# 4. Use trained model 🚀
+python inference.py
+
+# 5. Visualize embeddings 🎨
 python visualize_embeddings.py \
     --checkpoint checkpoints/bgem3_projection_best.pt \
     --data data/gen-data-set.json
@@ -584,9 +618,10 @@ python visualize_embeddings.py \
 **Read these in order:**
 1. `QUICK_START.md` - For training
 2. `EVALUATION_GUIDE.md` - For evaluation
-3. `VISUALIZATION_GUIDE.md` - For understanding embeddings 🎨
-4. `TRAIN.md` - For detailed training info
-5. `CHANGES_SUMMARY.md` - For technical details
+3. `INFERENCE_GUIDE.md` - For using trained model 🚀
+4. `VISUALIZATION_GUIDE.md` - For understanding embeddings 🎨
+5. `TRAIN.md` - For detailed training info
+6. `CHANGES_SUMMARY.md` - For technical details
 
 **Still stuck?**
 - Check error messages carefully
