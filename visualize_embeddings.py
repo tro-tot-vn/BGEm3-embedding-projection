@@ -97,7 +97,7 @@ class EmbeddingVisualizer:
         
         for i in tqdm(range(0, len(texts), batch_size), desc="Encoding"):
             batch = texts[i:i + batch_size]
-            emb = self.model.encode(batch)
+            emb = self.model(batch, device=self.device)
             embeddings.append(emb.cpu().numpy())
         
         return np.vstack(embeddings)
