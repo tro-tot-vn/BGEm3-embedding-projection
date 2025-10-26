@@ -304,6 +304,15 @@ def train(config):
     best_val_loss = float('inf')
     best_train_loss = float('inf')
     
+    # Loss history tracking
+    loss_history = {
+        'train_loss': [],
+        'val_loss': [],
+        'epochs': [],
+        'learning_rate': config['learning_rate'],
+        'batch_size': config['batch_size']
+    }
+    
     # Create output directory (resolved to absolute path)
     output_dir = resolve_path(config["output_dir"])
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -373,11 +382,16 @@ def train(config):
         print(f"\n📈 Epoch {epoch+1}/{config['epochs']} Summary:")
         print(f"   Train Loss: {avg_train_loss:.4f}")
         
+        # Record loss history
+        loss_history['epochs'].append(epoch + 1)
+        loss_history['train_loss'].append(avg_train_loss)
+        
         # Validation
         val_loss = None
         if val_loader and (epoch + 1) % config["validate_every"] == 0:
             val_loss = validate(model, trainer, val_loader, device)
             print(f"   Val Loss:   {val_loss:.4f}")
+            loss_history['val_loss'].append(val_loss)
             
             # Check if best validation loss
             if config["save_best"] and val_loss < best_val_loss:
@@ -387,6 +401,9 @@ def train(config):
                     "bgem3_projection_best.pt"
                 )
                 print(f"   ⭐ New best val loss! Saved to: {best_path}")
+        else:
+            # No validation this epoch
+            loss_history['val_loss'].append(None)
         
         # Check if best train loss (when no validation)
         if val_loader is None and config["save_best"] and avg_train_loss < best_train_loss:
@@ -412,6 +429,11 @@ def train(config):
     final_path = output_dir / "bgem3_projection_final.pt"
     torch.save(model.state_dict(), final_path)
     
+    # Save loss history
+    loss_history_path = output_dir / "loss_history.json"
+    with open(loss_history_path, 'w') as f:
+        json.dump(loss_history, f, indent=2)
+    
     print("\n" + "=" * 80)
     print("✅ TRAINING COMPLETE!")
     print("=" * 80)
@@ -421,6 +443,7 @@ def train(config):
     if config["save_best"]:
         print(f"   - Best model:   bgem3_projection_best.pt")
     print(f"   - Config:       config.json")
+    print(f"   - Loss history: loss_history.json")
     
     if val_loss:
         print(f"\n📊 Final Results:")

@@ -13,6 +13,7 @@ Everything is set up and ready for training & evaluation!
 | **Train model NOW** | `QUICK_START.md` | `python train_script.py` |
 | **Detailed training guide** | `TRAIN.md` | - |
 | **Evaluate model** | `EVALUATION_GUIDE.md` | `python evaluate_model.py` |
+| **Visualize embeddings** 🎨 | `VISUALIZATION_GUIDE.md` | `python visualize_embeddings.py` |
 | **Understand changes** | `CHANGES_SUMMARY.md` | - |
 | **Project architecture** | `PROJECT_SUMMARY.md` | - |
 
@@ -59,13 +60,54 @@ Recall@10   :  94.50%
 
 ---
 
+### **Step 3: Visualize (3 minutes)** 🎨
+
+#### **3a. Training Curves** 📈
+```bash
+# Plot loss over time
+python plot_training_curves.py
+```
+
+**You'll get:**
+- 📈 Training loss curve
+- 📉 Validation loss curve
+- ⭐ Best checkpoints marked
+- 📊 Training statistics
+
+---
+
+#### **3b. Embedding Space** 🎨
+```bash
+# Visualize what the model learned
+python visualize_embeddings.py \
+    --checkpoint checkpoints/bgem3_projection_best.pt \
+    --data data/gen-data-set.json \
+    --max-samples 500
+```
+
+**You'll get 5 plots:**
+- 📍 t-SNE projection (embedding space clustering)
+- 🗺️ UMAP projection (alternative view)
+- 🔥 Similarity heatmap (query-document matches)
+- 📊 Distribution analysis (positive vs negative)
+- 🎯 Top-K predictions (example queries)
+
+**What to look for:**
+- Clear query-positive clustering ✅
+- Positive-negative separation ✅
+- Bright diagonal in heatmap ✅
+
+---
+
 ## 📁 **Project Files Overview**
 
 ### **🏃 Executable Scripts**
 
 ```
 train_script.py          ⭐ Main training script
-evaluate_model.py        ⭐ Evaluation script (NEW!)
+evaluate_model.py        ⭐ Evaluation script
+visualize_embeddings.py  🎨 Embedding visualization
+plot_training_curves.py  📈 Loss curves (NEW!)
 test_weighted_pipeline.py  Test suite
 ```
 
@@ -79,7 +121,8 @@ test_weighted_pipeline.py  Test suite
 00_START_HERE.md         ← You are here!
 QUICK_START.md          ⭐ 5-minute quick start
 TRAIN.md                 📖 Complete training guide (600+ lines)
-EVALUATION_GUIDE.md      📊 Evaluation guide (NEW!)
+EVALUATION_GUIDE.md      📊 Evaluation guide
+VISUALIZATION_GUIDE.md   🎨 Visualization guide (NEW!)
 CHANGES_SUMMARY.md       🔧 What was fixed
 PROJECT_SUMMARY.md       📐 Technical architecture
 README_FINAL.md          📋 Summary
@@ -89,6 +132,7 @@ README_FINAL.md          📋 Summary
 1. This file (00_START_HERE.md)
 2. QUICK_START.md
 3. EVALUATION_GUIDE.md (after training)
+4. VISUALIZATION_GUIDE.md (to understand embeddings)
 
 ---
 
@@ -115,7 +159,7 @@ requirements.txt         ✅ Restored - Dependencies
 
 ## 🎓 **Complete Workflow**
 
-### **Training Workflow:**
+### **Full Pipeline:**
 
 ```
 1. Setup Environment
@@ -123,26 +167,30 @@ requirements.txt         ✅ Restored - Dependencies
 2. Train Model
    python train_script.py
    ↓
-3. Monitor Loss
+3. Monitor Loss (during training)
    Watch: Train Loss ↓, Val Loss ↓
    ↓
 4. Checkpoints Saved
    checkpoints/bgem3_projection_best.pt ⭐
-```
-
-### **Evaluation Workflow:**
-
-```
-1. Load Best Model
-   python evaluate_model.py
+   checkpoints/loss_history.json 📊
    ↓
-2. Compute Metrics
+5. Plot Training Curves 📈
+   python plot_training_curves.py
+   Check: Converged? Overfitting?
+   ↓
+6. Evaluate Model
+   python evaluate_model.py
    MRR, Recall@K
    ↓
-3. Check Examples
-   See actual predictions
+7. Visualize Embeddings 🎨
+   python visualize_embeddings.py
+   t-SNE, Heatmap, Distribution
    ↓
-4. Decide: Deploy or Re-train
+8. Analyze Results
+   • Loss converged? → Check ✅
+   • Metrics good? → Check ✅
+   • Visualizations clear? → Check ✅
+   → Deploy! 🚀
 ```
 
 ---
@@ -176,6 +224,51 @@ python evaluate_model.py --examples 10
 
 # See all options
 python evaluate_model.py --help
+```
+
+### **Visualization:** 🎨📈
+
+#### **Training Curves:**
+```bash
+# Plot training loss curves
+python plot_training_curves.py
+
+# Custom history file
+python plot_training_curves.py --history checkpoints/loss_history.json
+
+# Compare multiple runs
+python plot_training_curves.py \
+    --compare run1/loss_history.json run2/loss_history.json \
+    --labels "Baseline" "Improved" \
+    --output comparison.png
+```
+
+#### **Embedding Space:**
+```bash
+# Basic visualization (500 samples)
+python visualize_embeddings.py \
+    --checkpoint checkpoints/bgem3_projection_best.pt \
+    --data data/gen-data-set.json
+
+# Quick viz (100 samples, faster)
+python visualize_embeddings.py \
+    --checkpoint checkpoints/bgem3_projection_best.pt \
+    --data data/gen-data-set.json \
+    --max-samples 100 \
+    --output quick_viz/
+
+# Full dataset (2000 samples, slower)
+python visualize_embeddings.py \
+    --checkpoint checkpoints/bgem3_projection_best.pt \
+    --data data/gen-data-set.json \
+    --max-samples 2000 \
+    --output full_viz/
+
+# Skip UMAP (faster)
+python visualize_embeddings.py ... --skip-umap
+
+# See all options
+python visualize_embeddings.py --help
 ```
 
 ### **Testing:**
@@ -253,12 +346,74 @@ Recall@50   :  99.10% │██████████████████�
 
 ---
 
+### **During Visualization:** 🎨
+
+```
+======================================================================
+🎨 BGE-M3 Embedding Visualization Tool
+======================================================================
+🔧 Loading model from: checkpoints/bgem3_projection_best.pt
+✅ Loaded checkpoint from epoch 10
+
+📁 Loading dataset from: data/gen-data-set.json
+✅ Loaded 500 query-positive pairs
+
+📊 Encoding texts...
+Encoding: 100%|████████████████████| 16/16 [00:12<00:00]
+
+🔢 Computing similarity matrix...
+
+----------------------------------------------------------------------
+🎨 Computing t-SNE (perplexity=30)...
+✅ Saved t-SNE plot to: visualizations/tsne_projection.png
+
+----------------------------------------------------------------------
+🎨 Computing UMAP (n_neighbors=15)...
+✅ Saved UMAP plot to: visualizations/umap_projection.png
+
+----------------------------------------------------------------------
+🎨 Plotting similarity heatmap...
+✅ Saved heatmap to: visualizations/similarity_heatmap.png
+
+----------------------------------------------------------------------
+🎨 Plotting similarity distribution...
+
+📊 Similarity Statistics:
+   Positive: 0.8234 ± 0.0876
+   Negative: 0.4521 ± 0.1234
+   Margin:   0.3713
+   Separation: 2.45σ
+
+✅ Saved distribution plot to: visualizations/similarity_distribution.png
+
+----------------------------------------------------------------------
+🎨 Plotting top-10 predictions for 5 examples...
+✅ Saved top-K predictions to: visualizations/top_k_predictions.png
+
+======================================================================
+✅ Visualization Complete!
+======================================================================
+
+📁 All plots saved to: /path/to/visualizations
+
+📊 Generated files:
+   ✓ similarity_distribution.png
+   ✓ similarity_heatmap.png
+   ✓ top_k_predictions.png
+   ✓ tsne_projection.png
+   ✓ umap_projection.png
+```
+
+---
+
 ## 🎯 **Success Criteria**
 
-### **Training Success:**
-- ✅ Loss giảm dần qua epochs
+### **Training Success:** 📈
+- ✅ Loss giảm dần qua epochs (check training curves!)
+- ✅ Loss converged (plateau in curve)
 - ✅ Val loss < 1.0 (good), < 0.5 (excellent)
-- ✅ Val loss không tăng (no overfitting)
+- ✅ Val loss không tăng (no overfitting in curve)
+- ✅ Train-val gap < 0.15 (good generalization)
 - ✅ Checkpoints được save
 
 ### **Evaluation Success:**
@@ -266,6 +421,13 @@ Recall@50   :  99.10% │██████████████████�
 - ✅ Recall@10 > 0.9
 - ✅ Examples show correct predictions
 - ✅ Margin > 0.05 between positive and negatives
+
+### **Visualization Success:** 🎨
+- ✅ t-SNE/UMAP: Clear query-positive clustering
+- ✅ Heatmap: Bright diagonal (>0.8)
+- ✅ Distribution: Margin > 0.25, Separation > 2.0σ
+- ✅ Top-K: >85% queries have correct at Rank 1
+- ✅ No strange patterns (e.g., all points in one cluster)
 
 ---
 
@@ -291,6 +453,21 @@ python train_script.py  # Just works!
 - Check if training converged (loss should be < 1.0)
 - Train more epochs: `--epochs 20`
 - Check data quality
+
+### **Issue 5: UMAP Not Available** 🎨
+```bash
+pip install umap-learn
+# Or skip UMAP
+python visualize_embeddings.py ... --skip-umap
+```
+
+### **Issue 6: Visualization OOM** 🎨
+```bash
+# Reduce samples
+python visualize_embeddings.py ... --max-samples 200
+# Or use CPU
+python visualize_embeddings.py ... --device cpu
+```
 
 ---
 
@@ -383,15 +560,21 @@ python train_script.py --config my_config.json
 **Just run:**
 
 ```bash
-# Train
+# 1. Train
 python train_script.py
 
-# Wait for training to complete...
+# 2. Plot training curves 📈
+python plot_training_curves.py
 
-# Evaluate
+# 3. Evaluate
 python evaluate_model.py
 
-# Done! 🚀
+# 4. Visualize embeddings 🎨
+python visualize_embeddings.py \
+    --checkpoint checkpoints/bgem3_projection_best.pt \
+    --data data/gen-data-set.json
+
+# Done! Check training_curves.png and visualizations/ 🚀
 ```
 
 ---
@@ -401,8 +584,9 @@ python evaluate_model.py
 **Read these in order:**
 1. `QUICK_START.md` - For training
 2. `EVALUATION_GUIDE.md` - For evaluation
-3. `TRAIN.md` - For detailed training info
-4. `CHANGES_SUMMARY.md` - For technical details
+3. `VISUALIZATION_GUIDE.md` - For understanding embeddings 🎨
+4. `TRAIN.md` - For detailed training info
+5. `CHANGES_SUMMARY.md` - For technical details
 
 **Still stuck?**
 - Check error messages carefully
@@ -411,11 +595,11 @@ python evaluate_model.py
 
 ---
 
-**Last Updated:** October 23, 2025  
+**Last Updated:** October 26, 2025  
 **Status:** ✅ Production Ready  
-**Version:** 2.0 (with Evaluation)
+**Version:** 3.1 (with Loss Curves 📈)
 
 ---
 
-**Happy Training & Evaluating! 🚀📊**
+**Happy Training, Evaluating & Visualizing! 🚀📊📈🎨**
 
