@@ -1,0 +1,107 @@
+============================================================
+🎯 BGE-M3 MODEL EVALUATION
+============================================================
+Device: cuda
+📦 Loading model from: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+2025-10-26 09:56:48.257603: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1761472608.277746   44074 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1761472608.283902   44074 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1761472608.300189   44074 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761472608.300217   44074 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761472608.300223   44074 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761472608.300227   44074 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-10-26 09:56:48.305672: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+   Epoch: 16
+   Loss: 1.8215
+✅ Model loaded successfully
+
+📂 Loading data from: /content/BGEm3-embedding-projection/data/new-data-set/test-data-set-1.json
+✅ Using last 10% of data: 96 test examples
+
+📊 Evaluating on 96 examples...
+🔄 Encoding queries...
+Queries: 100% 3/3 [00:00<00:00,  3.82it/s]
+🔄 Encoding documents...
+Documents: 100% 3/3 [00:00<00:00,  6.68it/s]
+🔄 Computing similarities...
+🔄 Computing metrics...
+
+============================================================
+📊 EVALUATION RESULTS
+============================================================
+MRR         :  98.44% │█████████████████████████████████████████████████░│
+Recall@1    :  96.88% │████████████████████████████████████████████████░░│
+Recall@5    : 100.00% │██████████████████████████████████████████████████│
+Recall@10   : 100.00% │██████████████████████████████████████████████████│
+Recall@50   : 100.00% │██████████████████████████████████████████████████│
+============================================================
+
+💡 Interpretation:
+   🟢 Excellent! Model retrieves correct docs very accurately.
+
+   In top-10 results: 100.0% queries find correct match
+
+============================================================
+🔍 EXAMPLE PREDICTIONS
+============================================================
+
+📝 Example 1:
+   Query: Phòng trọ Gò Vấp 18m² 3tr5 có wc riêng, không chung chủ...
+
+   Similarities:
+   ✅ Positive:    0.9470 - Phòng trọ Gò Vấp 18m² giá 3tr5, có wc riêng, máy lạnh, không...
+   ❌ Negative 1:  0.3663 - Phòng trọ Quận 12 18m² giá 3tr5, có wc riêng, máy lạnh, khôn...
+   ❌ Negative 2:  0.4107 - Phòng trọ Gò Vấp 18m² giá 4tr2, có wc riêng, máy lạnh, không...
+   ❌ Negative 3:  0.8278 - Phòng trọ Gò Vấp 18m² giá 3tr5, có wc chung, máy lạnh, không...
+   ✅ Correct! Positive has highest similarity
+   📊 Margin: +0.1192 (higher is better)
+
+📝 Example 2:
+   Query: phòng trọ Long Biên 20m² 4tr có máy lạnh, wc riêng...
+
+   Similarities:
+   ✅ Positive:    0.9139 - Phòng trọ Long Biên 20m² giá 4tr, có máy lạnh, wc riêng, ban...
+   ❌ Negative 1:  0.5882 - Phòng trọ Nam Từ Liêm 20m² giá 4tr, có máy lạnh, wc riêng, b...
+   ❌ Negative 2:  0.4384 - Phòng trọ Long Biên 20m² giá 5tr, có máy lạnh, wc riêng, ban...
+   ❌ Negative 3:  0.6497 - Phòng trọ Long Biên 16m² giá 4tr, có máy lạnh, wc riêng, ban...
+   ✅ Correct! Positive has highest similarity
+   📊 Margin: +0.2642 (higher is better)
+
+📝 Example 3:
+   Query: Cần thuê phòng trọ Quận 2, 30m², 6tr5, có bếp, ban công, không chung chủ...
+
+   Similarities:
+   ✅ Positive:    0.9558 - Phòng trọ Quận 2 30m² giá 6tr5, có bếp, ban công, máy lạnh, ...
+   ❌ Negative 1:  0.5822 - Phòng trọ Quận 9 30m² giá 6tr5, có bếp, ban công, máy lạnh, ...
+   ❌ Negative 2:  0.4657 - Phòng trọ Quận 2 30m² giá 8tr, có bếp, ban công, máy lạnh, w...
+   ❌ Negative 3:  0.7146 - Phòng trọ Quận 2 25m² giá 6tr5, có bếp, ban công, máy lạnh, ...
+   ✅ Correct! Positive has highest similarity
+   📊 Margin: +0.2411 (higher is better)
+
+📝 Example 4:
+   Query: phòng trọ q10 4tr 20m2 có máy lạnh wc riêng gần chợ...
+
+   Similarities:
+   ✅ Positive:    0.9036 - Phòng trọ Quận 10, 20m², giá 4tr, có máy lạnh, wc riêng, ban...
+   ❌ Negative 1:  0.5424 - Phòng trọ Quận 3, 20m², giá 4tr, có máy lạnh, wc riêng, ban ...
+   ❌ Negative 2:  0.4183 - Phòng trọ Quận 10, 20m², giá 5.5tr, có máy lạnh, wc riêng, b...
+   ❌ Negative 3:  0.2574 - Phòng trọ Quận 10, 15m², giá 4tr, có máy lạnh, wc chung, khô...
+   ✅ Correct! Positive has highest similarity
+   📊 Margin: +0.3612 (higher is better)
+
+📝 Example 5:
+   Query: Cần thuê phòng quận Bình Thạnh, 25m², giá 5tr, có ban công, không chung chủ...
+
+   Similarities:
+   ✅ Positive:    0.9098 - Phòng trọ Quận Bình Thạnh, 25m², giá 5tr, có máy lạnh, wc ri...
+   ❌ Negative 1:  0.4845 - Phòng trọ Quận Gò Vấp, 25m², giá 5tr, có máy lạnh, wc riêng,...
+   ❌ Negative 2:  0.4175 - Phòng trọ Quận Bình Thạnh, 25m², giá 6.5tr, có máy lạnh, wc ...
+   ❌ Negative 3:  0.5500 - Phòng trọ Quận Bình Thạnh, 35m², giá 5tr, có máy lạnh, wc ri...
+   ✅ Correct! Positive has highest similarity
+   📊 Margin: +0.3598 (higher is better)
+
+============================================================
+✅ Evaluation complete!
+============================================================

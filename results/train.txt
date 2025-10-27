@@ -1,0 +1,325 @@
+config.json: 100% 687/687 [00:00<00:00, 4.98MB/s]
+2025-10-26 06:58:54.939560: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1761461934.958935     435 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1761461934.964722     435 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1761461934.979270     435 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761461934.979296     435 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761461934.979300     435 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1761461934.979305     435 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-10-26 06:58:54.983640: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+pytorch_model.bin: 100% 2.27G/2.27G [00:45<00:00, 50.1MB/s]
+model.safetensors:   0% 2.19M/2.27G [00:01<15:23, 2.46MB/s]
+tokenizer_config.json: 100% 444/444 [00:00<00:00, 1.87MB/s]
+
+sentencepiece.bpe.model:   0% 0.00/5.07M [00:00<?, ?B/s]
+sentencepiece.bpe.model: 100% 5.07M/5.07M [00:00<00:00, 6.33MB/s]
+
+tokenizer.json:   0% 0.00/17.1M [00:00<?, ?B/s]
+tokenizer.json: 100% 17.1M/17.1M [00:01<00:00, 12.0MB/s]
+
+special_tokens_map.json: 100% 964/964 [00:00<00:00, 2.72MB/s]
+model.safetensors: 100% 2.27G/2.27G [00:45<00:00, 49.9MB/s]
+================================================================================
+🚀 BGE-M3 PROJECTION HEAD TRAINING
+   Vietnamese Rental Market (Phòng Trọ)
+================================================================================
+Started at: 2025-10-26 07:00:32
+
+📍 Environment:
+   Platform: Google Colab
+   Working dir: /content
+   Project root: /content/BGEm3-embedding-projection
+   Python: 3.12.12
+🖥️  Device: cuda
+   GPU: Tesla T4
+   Memory: 15.8 GB
+
+📊 Loading dataset
+   Project root: /content/BGEm3-embedding-projection
+   Data path: /content/BGEm3-embedding-projection/data/gen-data-set.json
+✅ Loaded 10384 examples
+   Train: 9345 examples
+   Val:   1039 examples
+✅ Train batches: 73
+✅ Val batches:   9
+
+🤖 Initializing model
+   Output dimension: 128
+   Freeze encoder: True
+   Use LayerNorm: False
+✅ Model initialized
+   Trainable params: 131,072
+   Total params:     567,885,824
+   Trainable ratio:  0.02%
+
+⚙️  Optimizer: AdamW
+   Learning rate: 0.0002
+   Weight decay:  0.01
+
+💾 Config saved to: /content/BGEm3-embedding-projection/checkpoints/config.json
+
+🏋️  Starting training for 17 epochs
+================================================================================
+   Batch 10/73: loss=3.3848, avg_loss=3.4708
+   Batch 20/73: loss=2.9386, avg_loss=3.2851
+   Batch 30/73: loss=2.7962, avg_loss=3.1773
+   Batch 40/73: loss=2.9600, avg_loss=3.0846
+   Batch 50/73: loss=2.9187, avg_loss=3.0248
+   Batch 60/73: loss=2.6092, avg_loss=2.9590
+   Batch 70/73: loss=2.6204, avg_loss=2.9226
+Epoch 1/17: 100%|██████████████████████████| 73/73 [08:17<00:00,  6.82s/it, loss=2.4237, avg=2.9054]
+
+📈 Epoch 1/17 Summary:
+   Train Loss: 2.9054
+   Val Loss:   2.4529
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.7031, avg_loss=2.5645
+   Batch 20/73: loss=2.5652, avg_loss=2.5120
+   Batch 30/73: loss=2.2067, avg_loss=2.4826
+   Batch 40/73: loss=2.3406, avg_loss=2.4641
+   Batch 50/73: loss=2.4903, avg_loss=2.4640
+   Batch 60/73: loss=2.3708, avg_loss=2.4528
+   Batch 70/73: loss=2.1360, avg_loss=2.4427
+Epoch 2/17: 100%|██████████████████████████| 73/73 [08:21<00:00,  6.87s/it, loss=2.4988, avg=2.4403]
+
+📈 Epoch 2/17 Summary:
+   Train Loss: 2.4403
+   Val Loss:   2.2261
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch2.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.1963, avg_loss=2.3840
+   Batch 20/73: loss=2.2169, avg_loss=2.3376
+   Batch 30/73: loss=2.3034, avg_loss=2.3072
+   Batch 40/73: loss=2.4406, avg_loss=2.3259
+   Batch 50/73: loss=2.3744, avg_loss=2.3053
+   Batch 60/73: loss=2.3542, avg_loss=2.3015
+   Batch 70/73: loss=2.0390, avg_loss=2.2920
+Epoch 3/17: 100%|██████████████████████████| 73/73 [08:20<00:00,  6.86s/it, loss=2.5135, avg=2.2964]
+
+📈 Epoch 3/17 Summary:
+   Train Loss: 2.2964
+   Val Loss:   2.1229
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0310, avg_loss=2.2596
+   Batch 20/73: loss=2.2981, avg_loss=2.2123
+   Batch 30/73: loss=1.9257, avg_loss=2.2088
+   Batch 40/73: loss=2.2440, avg_loss=2.2165
+   Batch 50/73: loss=1.9629, avg_loss=2.2168
+   Batch 60/73: loss=2.3051, avg_loss=2.2060
+   Batch 70/73: loss=1.9803, avg_loss=2.2029
+Epoch 4/17: 100%|██████████████████████████| 73/73 [08:19<00:00,  6.84s/it, loss=2.1635, avg=2.2040]
+
+📈 Epoch 4/17 Summary:
+   Train Loss: 2.2040
+   Val Loss:   2.0430
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch4.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0734, avg_loss=2.2343
+   Batch 20/73: loss=1.9515, avg_loss=2.1602
+   Batch 30/73: loss=2.1064, avg_loss=2.1475
+   Batch 40/73: loss=2.2069, avg_loss=2.1549
+   Batch 50/73: loss=2.3410, avg_loss=2.1747
+   Batch 60/73: loss=2.0624, avg_loss=2.1697
+   Batch 70/73: loss=2.0873, avg_loss=2.1651
+Epoch 5/17: 100%|██████████████████████████| 73/73 [08:21<00:00,  6.87s/it, loss=1.9113, avg=2.1609]
+
+📈 Epoch 5/17 Summary:
+   Train Loss: 2.1609
+   Val Loss:   2.0078
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0284, avg_loss=2.2073
+   Batch 20/73: loss=2.1551, avg_loss=2.1387
+   Batch 30/73: loss=2.2065, avg_loss=2.1357
+   Batch 40/73: loss=1.8225, avg_loss=2.1134
+   Batch 50/73: loss=2.0075, avg_loss=2.1109
+   Batch 60/73: loss=1.9837, avg_loss=2.1032
+   Batch 70/73: loss=2.1805, avg_loss=2.1128
+Epoch 6/17: 100%|██████████████████████████| 73/73 [08:19<00:00,  6.84s/it, loss=2.1340, avg=2.1130]
+
+📈 Epoch 6/17 Summary:
+   Train Loss: 2.1130
+   Val Loss:   1.9804
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch6.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.2888, avg_loss=2.0129
+   Batch 20/73: loss=1.9437, avg_loss=2.0246
+   Batch 30/73: loss=2.1938, avg_loss=2.0301
+   Batch 40/73: loss=1.7554, avg_loss=2.0347
+   Batch 50/73: loss=2.1809, avg_loss=2.0578
+   Batch 60/73: loss=2.2295, avg_loss=2.0642
+   Batch 70/73: loss=2.1666, avg_loss=2.0699
+Epoch 7/17: 100%|██████████████████████████| 73/73 [08:19<00:00,  6.84s/it, loss=2.5208, avg=2.0776]
+
+📈 Epoch 7/17 Summary:
+   Train Loss: 2.0776
+   Val Loss:   1.9547
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.2839, avg_loss=2.0308
+   Batch 20/73: loss=2.0877, avg_loss=2.0177
+   Batch 30/73: loss=2.0569, avg_loss=2.0545
+   Batch 40/73: loss=2.2131, avg_loss=2.0402
+   Batch 50/73: loss=1.8710, avg_loss=2.0345
+   Batch 60/73: loss=1.8114, avg_loss=2.0328
+   Batch 70/73: loss=2.1058, avg_loss=2.0432
+Epoch 8/17: 100%|██████████████████████████| 73/73 [08:19<00:00,  6.85s/it, loss=2.2001, avg=2.0509]
+
+📈 Epoch 8/17 Summary:
+   Train Loss: 2.0509
+   Val Loss:   1.9271
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch8.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=1.7809, avg_loss=1.9855
+   Batch 20/73: loss=1.8116, avg_loss=1.9884
+   Batch 30/73: loss=2.1217, avg_loss=2.0084
+   Batch 40/73: loss=2.3058, avg_loss=2.0156
+   Batch 50/73: loss=1.8336, avg_loss=2.0100
+   Batch 60/73: loss=2.1193, avg_loss=2.0132
+   Batch 70/73: loss=2.3713, avg_loss=2.0173
+Epoch 9/17: 100%|██████████████████████████| 73/73 [08:17<00:00,  6.81s/it, loss=2.4633, avg=2.0237]
+
+📈 Epoch 9/17 Summary:
+   Train Loss: 2.0237
+   Val Loss:   1.8906
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0462, avg_loss=1.9113
+   Batch 20/73: loss=1.8429, avg_loss=1.9521
+   Batch 30/73: loss=1.8195, avg_loss=1.9570
+   Batch 40/73: loss=2.1881, avg_loss=1.9854
+   Batch 50/73: loss=2.0998, avg_loss=1.9938
+   Batch 60/73: loss=2.1554, avg_loss=1.9998
+   Batch 70/73: loss=2.1809, avg_loss=2.0030
+Epoch 10/17: 100%|█████████████████████████| 73/73 [08:19<00:00,  6.85s/it, loss=1.9557, avg=2.0000]
+
+📈 Epoch 10/17 Summary:
+   Train Loss: 2.0000
+   Val Loss:   1.9092
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch10.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=1.9857, avg_loss=1.9959
+   Batch 20/73: loss=1.9601, avg_loss=2.0068
+   Batch 30/73: loss=1.7897, avg_loss=1.9994
+   Batch 40/73: loss=2.0926, avg_loss=1.9796
+   Batch 50/73: loss=1.9001, avg_loss=1.9912
+   Batch 60/73: loss=1.9513, avg_loss=1.9942
+   Batch 70/73: loss=2.0426, avg_loss=1.9890
+Epoch 11/17: 100%|█████████████████████████| 73/73 [08:19<00:00,  6.84s/it, loss=1.8930, avg=1.9865]
+
+📈 Epoch 11/17 Summary:
+   Train Loss: 1.9865
+   Val Loss:   1.8914
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.1072, avg_loss=1.9812
+   Batch 20/73: loss=1.9851, avg_loss=1.9916
+   Batch 30/73: loss=1.8257, avg_loss=1.9677
+   Batch 40/73: loss=1.7047, avg_loss=1.9597
+   Batch 50/73: loss=1.9315, avg_loss=1.9563
+   Batch 60/73: loss=2.0288, avg_loss=1.9666
+   Batch 70/73: loss=1.9153, avg_loss=1.9603
+Epoch 12/17: 100%|█████████████████████████| 73/73 [08:20<00:00,  6.86s/it, loss=2.1769, avg=1.9722]
+
+📈 Epoch 12/17 Summary:
+   Train Loss: 1.9722
+   Val Loss:   1.8760
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch12.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0906, avg_loss=1.9557
+   Batch 20/73: loss=2.0396, avg_loss=1.9405
+   Batch 30/73: loss=1.8970, avg_loss=1.9445
+   Batch 40/73: loss=1.9814, avg_loss=1.9535
+   Batch 50/73: loss=2.1485, avg_loss=1.9589
+   Batch 60/73: loss=1.9000, avg_loss=1.9531
+   Batch 70/73: loss=1.7910, avg_loss=1.9589
+Epoch 13/17: 100%|█████████████████████████| 73/73 [08:18<00:00,  6.83s/it, loss=2.1301, avg=1.9620]
+
+📈 Epoch 13/17 Summary:
+   Train Loss: 1.9620
+   Val Loss:   1.8744
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=2.0059, avg_loss=1.8890
+   Batch 20/73: loss=1.8974, avg_loss=1.9204
+   Batch 30/73: loss=2.0766, avg_loss=1.9494
+   Batch 40/73: loss=2.1344, avg_loss=1.9599
+   Batch 50/73: loss=1.8224, avg_loss=1.9576
+   Batch 60/73: loss=1.8606, avg_loss=1.9414
+   Batch 70/73: loss=2.0393, avg_loss=1.9487
+Epoch 14/17: 100%|█████████████████████████| 73/73 [08:20<00:00,  6.85s/it, loss=2.0465, avg=1.9472]
+
+📈 Epoch 14/17 Summary:
+   Train Loss: 1.9472
+   Val Loss:   1.8412
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch14.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=1.8957, avg_loss=1.8778
+   Batch 20/73: loss=1.8110, avg_loss=1.9434
+   Batch 30/73: loss=2.1845, avg_loss=1.9419
+   Batch 40/73: loss=1.9151, avg_loss=1.9267
+   Batch 50/73: loss=1.8497, avg_loss=1.9432
+   Batch 60/73: loss=1.9083, avg_loss=1.9392
+   Batch 70/73: loss=1.6697, avg_loss=1.9296
+Epoch 15/17: 100%|█████████████████████████| 73/73 [08:17<00:00,  6.82s/it, loss=2.1173, avg=1.9296]
+
+📈 Epoch 15/17 Summary:
+   Train Loss: 1.9296
+   Val Loss:   1.8354
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=1.7930, avg_loss=1.9122
+   Batch 20/73: loss=1.7656, avg_loss=1.9079
+   Batch 30/73: loss=1.7309, avg_loss=1.9056
+   Batch 40/73: loss=1.7516, avg_loss=1.9394
+   Batch 50/73: loss=1.8703, avg_loss=1.9406
+   Batch 60/73: loss=1.9723, avg_loss=1.9372
+   Batch 70/73: loss=1.7469, avg_loss=1.9313
+Epoch 16/17: 100%|█████████████████████████| 73/73 [08:19<00:00,  6.85s/it, loss=1.8168, avg=1.9297]
+
+📈 Epoch 16/17 Summary:
+   Train Loss: 1.9297
+   Val Loss:   1.8215
+   ⭐ New best val loss! Saved to: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_best.pt
+   💾 Checkpoint saved: /content/BGEm3-embedding-projection/checkpoints/bgem3_projection_epoch16.pt
+--------------------------------------------------------------------------------
+   Batch 10/73: loss=1.7992, avg_loss=1.8985
+   Batch 20/73: loss=1.8017, avg_loss=1.9233
+   Batch 30/73: loss=2.1474, avg_loss=1.9103
+   Batch 40/73: loss=2.0217, avg_loss=1.9167
+   Batch 50/73: loss=1.6283, avg_loss=1.9001
+   Batch 60/73: loss=1.7351, avg_loss=1.9175
+   Batch 70/73: loss=2.0641, avg_loss=1.9247
+Epoch 17/17: 100%|█████████████████████████| 73/73 [08:20<00:00,  6.85s/it, loss=1.6835, avg=1.9191]
+
+📈 Epoch 17/17 Summary:
+   Train Loss: 1.9191
+   Val Loss:   1.8276
+--------------------------------------------------------------------------------
+
+================================================================================
+✅ TRAINING COMPLETE!
+================================================================================
+Finished at: 2025-10-26 09:55:31
+
+📁 Output directory: /content/BGEm3-embedding-projection/checkpoints
+   - Final model:  bgem3_projection_final.pt
+   - Best model:   bgem3_projection_best.pt
+   - Config:       config.json
+   - Loss history: loss_history.json
+
+📊 Final Results:
+   Best Val Loss:   1.8215
+   Final Train Loss: 1.9191
+
+🎉 Ready for inference!
+   Load model: model.load_state_dict(torch.load('/content/BGEm3-embedding-projection/checkpoints/bgem3_projection_final.pt'))
