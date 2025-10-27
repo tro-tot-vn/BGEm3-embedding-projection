@@ -1,0 +1,56 @@
+{
+  "training": {
+    "dataset_size": 10384,
+    "train_examples": 9345,
+    "val_examples": 1039,
+    "epochs": 17,
+    "best_epoch": 16,
+    "batch_size": 128,
+    "learning_rate": 0.0002,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "device": "Tesla T4 (Google Colab)",
+    "training_time": "~2.5 hours"
+  },
+  "loss": {
+    "final_train_loss": 1.9191,
+    "best_val_loss": 1.8215122487809923,
+    "initial_train_loss": 2.9054,
+    "initial_val_loss": 2.4529,
+    "improvement": {
+      "train": "-34%",
+      "val": "-26%"
+    }
+  },
+  "evaluation": {
+    "test_examples": 96,
+    "metrics": {
+      "MRR": 0.9844,
+      "Recall@1": 0.9688,
+      "Recall@5": 1.0,
+      "Recall@10": 1.0,
+      "Recall@50": 1.0
+    },
+    "interpretation": "Excellent retrieval performance. 96.88% of queries find correct match at rank 1."
+  },
+  "model_details": {
+    "base_model": "BAAI/bge-m3",
+    "projection_dim": 128,
+    "trainable_params": 131072,
+    "total_params": 567885824,
+    "trainable_ratio": "0.02%",
+    "training_strategy": "Frozen encoder + trainable projection head"
+  },
+  "loss_function": {
+    "type": "Weighted InfoNCE",
+    "temperature": 0.07,
+    "symmetric": true,
+    "weighted_hard_negatives": true,
+    "feature_weights": {
+      "location": 2.5,
+      "price": 2.0,
+      "area": 1.8,
+      "amenity": 1.5
+    }
+  }
+}

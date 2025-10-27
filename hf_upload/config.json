@@ -1,0 +1,14 @@
+{
+  "model_type": "bgem3_projection",
+  "base_model": "BAAI/bge-m3",
+  "d_in": 1024,
+  "d_out": 128,
+  "use_layernorm": false,
+  "freeze_encoder": true,
+  "max_length": 512,
+  "architectures": [
+    "BGEM3ProjectionModel"
+  ],
+  "torch_dtype": "float32",
+  "transformers_version": "4.36.0"
+}
