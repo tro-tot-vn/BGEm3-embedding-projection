@@ -126,6 +126,9 @@ class BGEM3ProjectionModel(PreTrainedModel):
         # Load base encoder
         self.encoder = AutoModel.from_pretrained(config.base_model)
         
+        # Tokenizer will be lazy-loaded when needed
+        self._tokenizer = None
+        
         # Freeze encoder if specified
         if config.freeze_encoder:
             for param in self.encoder.parameters():
@@ -138,13 +141,57 @@ class BGEM3ProjectionModel(PreTrainedModel):
             use_layernorm=config.use_layernorm
         )
         
-        # Initialize tokenizer (for convenience)
-        self._tokenizer = None
+        self.post_init()
+    
+    @classmethod
+    def from_pretrained(cls, pretrained_model_name_or_path, *model_args, **kwargs):
+        """
+        Override from_pretrained to only load projection head weights
+        
+        The base encoder should always be loaded from BAAI/bge-m3,
+        NOT from our checkpoint (which only contains projection head weights).
+        """
+        # Load config
+        config = kwargs.pop("config", None)
+        if config is None:
+            config = cls.config_class.from_pretrained(pretrained_model_name_or_path, **kwargs)
+        
+        # Initialize model (this loads encoder from BAAI/bge-m3)
+        model = cls(config)
+        
+        # Now load ONLY the projection head weights from our checkpoint
+        from safetensors import safe_open
+        import os
+        
+        # Find the safetensors file
+        if os.path.isdir(pretrained_model_name_or_path):
+            # Local directory
+            safetensors_path = os.path.join(pretrained_model_name_or_path, "model.safetensors")
+        else:
+            # Download from HF Hub
+            from huggingface_hub import hf_hub_download
+            safetensors_path = hf_hub_download(
+                repo_id=pretrained_model_name_or_path,
+                filename="model.safetensors"
+            )
+        
+        # Load only head weights
+        state_dict = {}
+        with safe_open(safetensors_path, framework="pt", device="cpu") as f:
+            for key in f.keys():
+                if key.startswith("head."):
+                    state_dict[key] = f.get_tensor(key)
+        
+        # Load into model (only affects head)
+        model.load_state_dict(state_dict, strict=False)
+        
+        return model
     
     @property
     def tokenizer(self):
-        """Lazy load tokenizer"""
+        """Lazy load tokenizer when needed"""
         if self._tokenizer is None:
+            from transformers import AutoTokenizer
             self._tokenizer = AutoTokenizer.from_pretrained(
                 self.config.base_model,
                 use_fast=True

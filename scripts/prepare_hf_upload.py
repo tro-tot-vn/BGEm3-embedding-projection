@@ -52,10 +52,9 @@ def extract_projection_weights(checkpoint_path: Path):
     projection_weights = {}
     for key, value in full_state_dict.items():
         if key.startswith('head.'):
-            # Remove 'head.' prefix for cleaner naming
-            new_key = key.replace('head.', '')
-            projection_weights[new_key] = value
-            print(f"   ✓ Extracted: {key} -> {new_key} {list(value.shape)}")
+            # Keep the full key name (including 'head.' prefix)
+            projection_weights[key] = value
+            print(f"   ✓ Extracted: {key} {list(value.shape)}")
     
     if not projection_weights:
         raise ValueError("No projection head weights found! Keys in checkpoint: " + str(list(full_state_dict.keys())))
