@@ -96,6 +96,10 @@ def create_config(output_dir: Path, use_layernorm: bool = False):
         "freeze_encoder": True,
         "max_length": 512,
         "architectures": ["BGEM3ProjectionModel"],
+        "auto_map": {
+            "AutoConfig": "modeling_bgem3_projection.BGEM3ProjectionConfig",
+            "AutoModel": "modeling_bgem3_projection.BGEM3ProjectionModel"
+        },
         "torch_dtype": "float32",
         "transformers_version": "4.36.0"
     }
