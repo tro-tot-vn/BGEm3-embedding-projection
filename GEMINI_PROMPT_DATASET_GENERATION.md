@@ -410,7 +410,7 @@ Make sure JSON is valid (proper quotes, commas, brackets).
 
 ## 🚀 Now Generate!
 
-Please generate 50 high-quality training examples following ALL rules above.
+Please generate 15 high-quality training examples following ALL rules above.
 
 Focus on:
 - Diverse locations (mix TPHCM and Hà Nội)
